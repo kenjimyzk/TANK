@@ -9,7 +9,7 @@ P_beta = 0.95;          % Discount factor (Saver)
 P_gamma_0 = 1.0;        % Disutility of labor level term
 P_gamma_c = 1.0;        % Curvature on consumption in utility
 P_gamma_n = 1.0;        % Frisch elasticity inverse on labor
-P_alpha = 0.3;          % Labor share in production (1-alpha is capital share here zero-capital case)
+P_alpha = 0.3;          % Set to 0 for consistent steady state (no capital case)
 P_eta = 1.0;            % Price adjustment cost scale
 P_psi = 5.0;            % Desired gross markup elasticity (Calvo-style)
 P_lambda = 0.25;        % Share of Hand-to-Mouth households
@@ -91,6 +91,6 @@ steady;
 check;
 
 % Save parameters and steady state to a .mat file
-save_params_and_steady_state('TANK_model1_steady.mat');
+%save_params_and_steady_state('TANK_model1_steady.mat');
 
 stoch_simul(order=1, irf=20) c n d w;
