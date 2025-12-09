@@ -48,26 +48,26 @@ c_h = w + n;
 y = lambda_h * c_h + (1 - lambda_h) * c_s;
 
 % 4. Labor supply (from aggregation across households)
-% n(t) = -gamma * (w(t) - pi(t)) + u(t)
-n = -gamma * w + gamma * pi + u;
+% n(t) = -gamma * w(t) + u(t)
+n = -gamma * w + u;
 
-% 5. New Keynesian Phillips Curve
-% pi(t) = beta_r * E[pi(t+1)] + (sigma + gamma) * y(t) / theta
+% 5. Real wage determination
+% w(t) = sigma * c_s(t) + gamma * n(t)
+w = sigma * c_s + gamma * n;
+
+% 6. New Keynesian Phillips Curve
+% pi(t) = beta_s * E[pi(t+1)] + ((sigma + gamma) / theta) * (y - n)
 pi = beta_s * pi(+1) + ((sigma + gamma) / theta) * (y - n);
 
-% 6. Monetary policy (Taylor Rule)
+% 7. Monetary policy (Taylor Rule)
 % i(t) = phi_pi * pi(t) + phi_y * y(t) + eps_i(t)
 i = phi_pi * pi + phi_y * y + eps_i;
 
-% 7. Preference shock (AR(1) process)
+% 8. Preference shock (AR(1) process)
 a = rho_a * a(-1) + eps_a;
 
-% 8. Labor supply shock (AR(1) process)
+% 9. Labor supply shock (AR(1) process)
 u = rho_u * u(-1) + eps_u;
-
-% 9. Market clearing (aggregation)
-% This equation defines aggregate labor as weighted average
-% (Implicit in the model through Equations 2-4)
 
 end;
 
@@ -103,8 +103,6 @@ end;
 
 % Computation and simulation
 options_.solve_tol = 1e-12;
-options_.homotopy_mode = 1;
-options_.homotopy_steps = 500;
 
 % Solve the model
 resid;
@@ -113,6 +111,3 @@ check;
 
 % Compute impulse responses and simulations
 stoch_simul(order=1, irf=40, periods=1000) c_s c_h w y pi i;
-
-% Save results
-save tank_results y pi i c_s c_h w n;
