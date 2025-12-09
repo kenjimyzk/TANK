@@ -90,7 +90,7 @@ end;
 steady;
 check;
 
-% Save parameters and steady state to a .mat file
-%save_params_and_steady_state('TANK_model1_steady.mat');
+s = oo_.steady_state;    % フィールドを別変数にコピー
+save('steady2.mat','s'); % 's' として保存
 
 stoch_simul(order=1, irf=20) c n d w;
