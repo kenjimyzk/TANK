@@ -1,12 +1,11 @@
 // =========================================================================
 // TANK Model 1 - Two-Agent New Keynesian Model without Capital
-// =========================================================================
 // 2つの家計タイプ: Saver (リカード型) と Hand-to-Mouth (流動性制約)
 // =========================================================================
 
-	
-@#define CRRA = 0	
-@#define KPR = 1	
+// マクロスイッチ: CRRA=1 で CRRA 効用、KPR=1 で King-Plosser-Rebelo 型
+@#define CRRA = 0
+@#define KPR  = 1
 var D W N N_H N_S MC MU_S C C_H C_S Y R_N R PI m a c n d w;
 varexo eps_a eps_m;
 
@@ -18,15 +17,14 @@ parameters P_beta P_gamma_0 P_gamma P_varphi P_xi P_phi
 // -------------------------------------------------------------------------
 P_beta    = 0.95;       // 割引因子 (Saver)
 P_gamma_0 = 1.0;        // 労働の不効用レベル項
-
-P_gamma   = 1.0;        // 効用における消費の曲率
-P_varphi  = 1.0;        // 効用における労働の曲率
-P_xi     =  .5;        // フリッシュ弾力性の逆数
+P_gamma   = 1.0;        // 消費の曲率
+P_varphi  = 1.0;        // 労働の曲率
+P_xi      = 0.5;        // フリッシュ弾力性の逆数
 @#if CRRA==1
-    P_xi = 0;
+    P_xi = 0;           // CRRA モードで労働分離型に
 @#endif
 @#if KPR==1
-    P_gamma = 1.0;        // 効用における消費の曲率
+    P_gamma = 1.0;      // KPR スイッチで消費曲率を1に
 @#endif
 
 P_alpha   = 0.4;        // 生産における労働シェア (資本なしケース)
@@ -65,16 +63,19 @@ C_H = W * N_H + (P_tau_d / P_lambda) * D;
 // -------------------------------------------------------------------------
 // 賃金条件
 W = C_S^P_gamma * N_S^P_varphi;
-// 
+
+// 限界効用（CRRAまたはGHH/KPRで切替）
 @#if CRRA==1
     MU_S = C_S^(-P_gamma);
 @#else
     @#if KPR==1
-        MU_S = C_S^(-P_xi-1) * exp(P_gamma_0*P_xi*N_S^(1+P_varphi)/(1+P_varphi));
+        // King-Plosser-Rebelo 型: GHH 近似
+        MU_S = C_S^(-P_xi-1) * exp(P_gamma_0 * P_xi * N_S^(1+P_varphi) / (1+P_varphi));
     @#else
+        // GHH 型 (Greenwood-Hercowitz-Huffman)
         MU_S = - C_S^(-P_gamma) * (
-        - C_S^(1-P_gamma)/(1-P_gamma)
-        + P_gamma_0 * N_S^(1+P_varphi)/(1+P_varphi)
+            - C_S^(1-P_gamma) / (1-P_gamma)
+            + P_gamma_0 * N_S^(1+P_varphi) / (1+P_varphi)
         )^(-P_xi/(1-P_gamma));
     @#endif
 @#endif
