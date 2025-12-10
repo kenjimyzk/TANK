@@ -5,8 +5,8 @@
 // =========================================================================
 
 	
-@#define CRRA = 1	
-@#define KPR = 0	
+@#define CRRA = 0	
+@#define KPR = 1	
 var D W N N_H N_S MC MU_S C C_H C_S Y R_N R PI m a c n d w;
 varexo eps_a eps_m;
 
@@ -21,7 +21,7 @@ P_gamma_0 = 1.0;        // 労働の不効用レベル項
 
 P_gamma   = 1.0;        // 効用における消費の曲率
 P_varphi  = 1.0;        // 効用における労働の曲率
-P_xi     =  .0;        // フリッシュ弾力性の逆数
+P_xi     =  .5;        // フリッシュ弾力性の逆数
 @#if CRRA==1
     P_xi = 0;
 @#endif
@@ -119,7 +119,7 @@ m = P_rho_m * m(-1) + eps_m;
 c = log(C / steady_state(C));
 n = log(N / steady_state(N));
 w = log(W / steady_state(W));
-d = D / steady_state(Y);
+d = (D -steady_state(D))/ steady_state(Y);
 
 end;
 

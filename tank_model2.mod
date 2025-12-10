@@ -36,7 +36,7 @@ r_N = pi(+1) + P_gamma_c * (c_S(+1) - c_S);
 // 限界費用
 w = mc + a - P_alpha * n;
 // 配当
-d = (P_alpha - 1) * MC * mc - (1 + (P_alpha - 1) * MC) * y;
+d = (P_alpha - 1) * MC * mc + (1 + (P_alpha - 1) * MC) * y;
 // ニューケインジアン・フィリップス曲線
 pi = P_beta * pi(+1) + P_psi * MC / P_eta * mc;
 
