@@ -9,7 +9,7 @@ P_beta = 0.95;          % Discount factor (Saver)
 P_gamma_0 = 1.0;        % Disutility of labor level term
 P_gamma_c = 1.0;        % Curvature on consumption in utility
 P_gamma_n = 1.0;        % Frisch elasticity inverse on labor
-P_alpha = 0.3;          % Set to 0 for consistent steady state (no capital case)
+P_alpha = 0.0;          % Set to 0 for consistent steady state (no capital case)
 P_eta = 1.0;            % Price adjustment cost scale
 P_psi = 5.0;            % Desired gross markup elasticity (Calvo-style)
 P_lambda = 0.25;        % Share of Hand-to-Mouth households
@@ -90,7 +90,26 @@ end;
 steady;
 check;
 
-s = oo_.steady_state;    % フィールドを別変数にコピー
-save('steady2.mat','s'); % 's' として保存
+// パラメータと定常状態をテキストファイルに保存
+save_params_and_steady_state('TANK_model1_steady.txt');
+
+// 定常状態の値を _ss 付きパラメータとしてファイルに追記
+// tank_model2.mod で load_params_and_steady_state で読み込める
+// フォーマット: 変数名 値 (スペース区切り、セミコロンなし)
+fid = fopen('TANK_model1_steady.txt', 'a');
+fprintf(fid, 'D_ss %.16g\n', oo_.steady_state(1));
+fprintf(fid, 'W_ss %.16g\n', oo_.steady_state(2));
+fprintf(fid, 'N_ss %.16g\n', oo_.steady_state(3));
+fprintf(fid, 'N_H_ss %.16g\n', oo_.steady_state(4));
+fprintf(fid, 'N_S_ss %.16g\n', oo_.steady_state(5));
+fprintf(fid, 'MC_ss %.16g\n', oo_.steady_state(6));
+fprintf(fid, 'C_ss %.16g\n', oo_.steady_state(7));
+fprintf(fid, 'C_H_ss %.16g\n', oo_.steady_state(8));
+fprintf(fid, 'C_S_ss %.16g\n', oo_.steady_state(9));
+fprintf(fid, 'Y_ss %.16g\n', oo_.steady_state(10));
+fprintf(fid, 'R_N_ss %.16g\n', oo_.steady_state(11));
+fprintf(fid, 'R_ss %.16g\n', oo_.steady_state(12));
+fprintf(fid, 'PI_ss %.16g\n', oo_.steady_state(13));
+fclose(fid);
 
 stoch_simul(order=1, irf=20) c n d w;
