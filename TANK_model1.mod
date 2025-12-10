@@ -1,115 +1,138 @@
-var D, W, N, N_H, N_S, MC, C, C_H, C_S, Y, R_N, R, PI, m, a, c, n, d, w;
+// =========================================================================
+// TANK Model 1 - Two-Agent New Keynesian Model without Capital
+// =========================================================================
+// 2つの家計タイプ: Saver (リカード型) と Hand-to-Mouth (流動性制約)
+// =========================================================================
+
+var D W N N_H N_S MC C C_H C_S Y R_N R PI m a c n d w;
 varexo eps_a eps_m;
 
 parameters P_beta P_gamma_0 P_gamma_c P_gamma_n P_phi
-P_psi P_eta P_tau_s P_tau_d P_lambda P_alpha P_rho_a P_rho_m;
+           P_psi P_eta P_tau_s P_tau_d P_lambda P_alpha P_rho_a P_rho_m;
 
-% Household parameters
-P_beta = 0.95;          % Discount factor (Saver)
-P_gamma_0 = 1.0;        % Disutility of labor level term
-P_gamma_c = 1.0;        % Curvature on consumption in utility
-P_gamma_n = 1.0;        % Frisch elasticity inverse on labor
-P_alpha = 0.3;          % Set to 0 for consistent steady state (no capital case)
-P_eta = 1.0;            % Price adjustment cost scale
-P_psi = 5.0;            % Desired gross markup elasticity (Calvo-style)
-P_lambda = 0.25;        % Share of Hand-to-Mouth households
-%P_tau_s = 1/(1-1/P_psi)-1; % Sales tax rate ensuring zero steady-state subsidy
-P_tau_s = 0.0;         % Alternative: zero sales tax
-P_tau_d = 0.0;          % Dividend tax rate
+// -------------------------------------------------------------------------
+// 家計パラメータ
+// -------------------------------------------------------------------------
+P_beta    = 0.95;       // 割引因子 (Saver)
+P_gamma_0 = 1.0;        // 労働の不効用レベル項
+P_gamma_c = 1.0;        // 効用における消費の曲率
+P_gamma_n = 1.0;        // フリッシュ弾力性の逆数
+P_alpha   = 0.3;        // 生産における労働シェア (資本なしケース)
+P_eta     = 1.0;        // 価格調整コストのスケール
+P_psi     = 5.0;        // マークアップ弾力性 (カルボ型)
+P_lambda  = 0.25;       // Hand-to-Mouth 家計のシェア
+// P_tau_s = 1/(1-1/P_psi)-1; // 定常状態補助金ゼロの売上税率
+P_tau_s   = 0.0;        // 売上税率
+P_tau_d   = 0.0;        // 配当税率
 
-% Policy parameters
-P_phi = 1.5;            % Taylor rule inflation coefficient
+// -------------------------------------------------------------------------
+// 政策パラメータ
+// -------------------------------------------------------------------------
+P_phi = 1.5;            // テイラー・ルールのインフレ係数
 
-% Shock persistence
-P_rho_a = 0.9;          % Preference shock persistence
-P_rho_m = 0.8;          % Monetary policy shock persistence
+// -------------------------------------------------------------------------
+// ショック持続性
+// -------------------------------------------------------------------------
+P_rho_a = 0.9;          // 選好ショック持続性
+P_rho_m = 0.8;          // 金融政策ショック持続性
 
+// =========================================================================
 model;
-% Hand-to-mouth household wage-consumption condition and budget
+// =========================================================================
+
+// -------------------------------------------------------------------------
+// Hand-to-Mouth 家計
+// -------------------------------------------------------------------------
+// 賃金条件
 W = C_H^P_gamma_c * N_H^P_gamma_n;
-C_H = W * N_H + (P_tau_d/P_lambda)*D;
+// 予算制約
+C_H = W * N_H + (P_tau_d / P_lambda) * D;
 
-% Saver household wage condition and Euler equation
+// -------------------------------------------------------------------------
+// Saver 家計
+// -------------------------------------------------------------------------
+// 賃金条件
 W = C_S^P_gamma_c * N_S^P_gamma_n;
-1 = P_beta*(C_S(+1)/C_S)^(-P_gamma_c)*R_N/PI(+1);
+// オイラー方程式
+1 = P_beta * (C_S(+1) / C_S)^(-P_gamma_c) * R_N / PI(+1);
 
-% Marginal cost from firm side
-W = (1-P_alpha)*MC * exp(a) * N^(-P_alpha);
+// -------------------------------------------------------------------------
+// 企業
+// -------------------------------------------------------------------------
+// 限界費用
+W = (1 - P_alpha) * MC * exp(a) * N^(-P_alpha);
+// 配当（価格調整コスト込み）
+D = Y - 0.5 * P_eta * (PI - 1)^2 * Y - W * N;
+// ニューケインジアン・フィリップス曲線
+P_eta * (PI - 1) * PI = P_psi * (MC - (1 + P_tau_s) * (1 - 1/P_psi))
+    + P_beta * P_eta * (C_S(+1) / C_S)^(-P_gamma_c) * (Y(+1) / Y) * (PI(+1) - 1) * PI(+1);
 
-% Profits and resource constraint with price adjustment cost
-D = Y - 0.5 * P_eta * (PI-1)^2 * Y - W*N;
-% New Keynesian Phillips curve
-P_eta*(PI-1)*PI = P_psi*(MC - (1+P_tau_s)*(1-1/P_psi))
-    + P_beta*P_eta*(C_S(+1)/C_S)^(-P_gamma_c)*(Y(+1)/Y)*(PI(+1)-1)*PI(+1);
+// -------------------------------------------------------------------------
+// 金融政策（テイラー・ルール）
+// -------------------------------------------------------------------------
+R_N = exp(-m) * (1 / P_beta) * (PI^P_phi);
+R = R_N / PI(+1);
 
-% Monetary policy (Taylor rule)
-R_N = exp(-m)*(1/P_beta)*(PI^P_phi);
-R = R_N/PI(+1);
-
-% Aggregation
-C= P_lambda*C_H + (1-P_lambda)*C_S;
-N= P_lambda*N_H + (1-P_lambda)*N_S;
-Y = exp(a) * N^(1-P_alpha);
+// -------------------------------------------------------------------------
+// 集計
+// -------------------------------------------------------------------------
+C = P_lambda * C_H + (1 - P_lambda) * C_S;
+N = P_lambda * N_H + (1 - P_lambda) * N_S;
+Y = exp(a) * N^(1 - P_alpha);
 Y = C;
 
-% Shock processes
+// -------------------------------------------------------------------------
+// ショック過程
+// -------------------------------------------------------------------------
 a = P_rho_a * a(-1) + eps_a;
 m = P_rho_m * m(-1) + eps_m;
 
-% Aux variables: log deviations from steady state
-c = log(C/steady_state(C));
-n = log(N/steady_state(N));
-w = log(W/steady_state(W));
-d = D/steady_state(Y);
+// -------------------------------------------------------------------------
+// 補助変数: 定常状態からの対数偏差
+// -------------------------------------------------------------------------
+c = log(C / steady_state(C));
+n = log(N / steady_state(N));
+w = log(W / steady_state(W));
+d = D / steady_state(Y);
+
 end;
 
-
+// =========================================================================
+// 初期値
+// =========================================================================
 initval;
-D=0;
-W=1;
-N=1;
-N_H=1;
-N_S=1;
-C = 1;
-C_H=1;
-C_S=1;
-MC = (1+P_tau_s)*(1-1/P_psi);
-Y=1;
-R_N=1;
-R=1;
-PI=1;
-m = 0;
-a = 0;
+D   = 0;
+W   = 1;
+N   = 1;
+N_H = 1;
+N_S = 1;
+C   = 1;
+C_H = 1;
+C_S = 1;
+MC  = (1 + P_tau_s) * (1 - 1/P_psi);
+Y   = 1;
+R_N = 1;
+R   = 1;
+PI  = 1;
+m   = 0;
+a   = 0;
 end;
 
+// =========================================================================
+// ショック
+// =========================================================================
 shocks;
-var eps_a = 0.01;         % Preference shock variance
-var eps_m = 0.01;       % Monetary policy shock variance
+var eps_a = 0.01;   // 選好ショック分散
+var eps_m = 0.01;   // 金融政策ショック分散
 end;
 
+// =========================================================================
+// 計算
+// =========================================================================
 steady;
 check;
 
 // パラメータと定常状態をテキストファイルに保存
 save_params_and_steady_state('TANK_model1_steady.txt');
-
-// 定常状態の値を _ss 付きパラメータとしてファイルに追記
-// tank_model2.mod で load_params_and_steady_state で読み込める
-// // フォーマット: 変数名 値 (スペース区切り、セミコロンなし)
-// fid = fopen('TANK_model1_steady.txt', 'a');
-// fprintf(fid, 'D_ss %.16g\n', oo_.steady_state(1));
-// fprintf(fid, 'W_ss %.16g\n', oo_.steady_state(2));
-// fprintf(fid, 'N_ss %.16g\n', oo_.steady_state(3));
-// fprintf(fid, 'N_H_ss %.16g\n', oo_.steady_state(4));
-// fprintf(fid, 'N_S_ss %.16g\n', oo_.steady_state(5));
-// fprintf(fid, 'MC_ss %.16g\n', oo_.steady_state(6));
-// fprintf(fid, 'C_ss %.16g\n', oo_.steady_state(7));
-// fprintf(fid, 'C_H_ss %.16g\n', oo_.steady_state(8));
-// fprintf(fid, 'C_S_ss %.16g\n', oo_.steady_state(9));
-// fprintf(fid, 'Y_ss %.16g\n', oo_.steady_state(10));
-// fprintf(fid, 'R_N_ss %.16g\n', oo_.steady_state(11));
-// fprintf(fid, 'R_ss %.16g\n', oo_.steady_state(12));
-// fprintf(fid, 'PI_ss %.16g\n', oo_.steady_state(13));
-// fclose(fid);
 
 stoch_simul(order=1, irf=20) c n d w;

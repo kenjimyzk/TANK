@@ -4,8 +4,9 @@
 // 1. まず TANK_model1.mod を実行して TANK_model1_steady.txt を生成
 // 2. その後 tank_model2.mod を実行
 
+
 var d w n n_H n_S mc c c_H c_S y r_N r pi m a;
-varexo eps_a eps_m;
+varexo eps_a eps_;
 
 // 元のパラメータ
 parameters P_beta P_gamma_0 P_gamma_c P_gamma_n P_phi
