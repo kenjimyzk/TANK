@@ -34,6 +34,7 @@ w = P_gamma * c_H + P_varphi * n_H;
 w = P_gamma * c_S + P_varphi * n_S;
 // オイラー方程式
 r_N = pi(+1) + mu_S - mu_S(+1);
+// 限界効用　
 mu_S = - (P_gamma + P_kappa) * c_S
      + P_kappa * (1-P_alpha) * MC * ((N_S/N)/(C_S/Y)) * n_S;
 
@@ -41,8 +42,8 @@ mu_S = - (P_gamma + P_kappa) * c_S
 // 限界費用
 w = mc + a - P_alpha * n;
 // 配当
-//d = (P_alpha - 1) * MC * mc - (1 + (P_alpha - 1) * MC) * y;
-d = (P_alpha - 1) * MC * mc + (1 + (P_alpha - 1) * MC) * y;
+d = (P_alpha - 1) * MC * mc - (1 + (P_alpha - 1) * MC) * y;
+
 // ニューケインジアン・フィリップス曲線
 pi = P_beta * pi(+1) + P_psi * (MC / P_eta) * mc;
 
@@ -51,7 +52,7 @@ r_N = P_phi * pi - m;
 r = r_N - pi(+1);
 
 // 集計
-c = P_lambda * (C_H / C) * c_H + (1 - P_lambda) * (C_S / C) * c_S;
+c = P_lambda *  (C_H / C)* c_H + (1 - P_lambda) * (C_S / C) * c_S;
 n = P_lambda * (N_H / N) * n_H + (1 - P_lambda) * (N_S / N) * n_S;
 y = a + (1 - P_alpha) * n;
 y = c;
@@ -63,8 +64,8 @@ m = P_rho_m * m(-1) + eps_m;
 end;
 
 shocks;
-var eps_a = 1;    // 選好ショック分散
-var eps_m = 1;    // 金融政策ショック分散
+var eps_a = 0.01;    // 選好ショック分散
+var eps_m = 0.01;    // 金融政策ショック分散
 end;
 
 steady;

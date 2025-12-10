@@ -29,7 +29,7 @@ P_xi     =  .5;        // フリッシュ弾力性の逆数
     P_gamma = 1.0;        // 効用における消費の曲率
 @#endif
 
-P_alpha   = 0.;        // 生産における労働シェア (資本なしケース)
+P_alpha   = 0.4;        // 生産における労働シェア (資本なしケース)
 P_eta     = 1.0;        // 価格調整コストのスケール
 P_psi     = 5.0;        // マークアップ弾力性 (カルボ型)
 P_lambda  = 0.25;       // Hand-to-Mouth 家計のシェア
@@ -70,7 +70,7 @@ W = C_S^P_gamma * N_S^P_varphi;
     MU_S = C_S^(-P_gamma);
 @#else
     @#if KPR==1
-        MU_S = C_S^(-P_xi-1) * exp(P_gamma_0*N_S^(1+P_varphi)/(1+P_varphi));
+        MU_S = C_S^(-P_xi-1) * exp(P_gamma_0*P_xi*N_S^(1+P_varphi)/(1+P_varphi));
     @#else
         MU_S = - C_S^(-P_gamma) * (
         - C_S^(1-P_gamma)/(1-P_gamma)
