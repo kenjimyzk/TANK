@@ -31,9 +31,9 @@ r_N = pi(+1) + P_gamma_c*(c_S(+1)-c_S);
 w = (1-P_alpha)*mc + a + (-P_alpha)*n;
 
 % Profits and resource constraint with price adjustment cost
-d = (P_alpha -1)*mc - (1+(P_alpha-1)*(1+P_tau_s)*(1-1/P_psi)) * y;
+d = (P_alpha -1) * MC_ss * mc - (1 + (P_alpha - 1) * MC_ss) * y;
 % New Keynesian Phillips curve
-pi = P_beta*pi(+1) + P_psi * (1+P_tau_s)*(1-1/P_psi)/P_eta * mc;
+pi = P_beta*pi(+1) + P_psi * MC_ss/P_eta * mc;
 % Monetary policy (Taylor rule)
 r_N = P_phi*pi - m;
 r = r_N - pi(+1);
