@@ -5,8 +5,8 @@
 // =========================================================================
 
 	
-@#define CRRA = 0	
-@#define KPR = 0 	
+@#define CRRA = 1	
+@#define KPR = 0	
 var D W N N_H N_S MC MU_S C C_H C_S Y R_N R PI m a c n d w;
 varexo eps_a eps_m;
 
@@ -19,9 +19,9 @@ parameters P_beta P_gamma_0 P_gamma P_varphi P_xi P_phi
 P_beta    = 0.95;       // 割引因子 (Saver)
 P_gamma_0 = 1.0;        // 労働の不効用レベル項
 
-P_gamma   = 2.0;        // 効用における消費の曲率
-P_varphi  = 2.0;        // 効用における労働の曲率
-P_xi     =  .5;        // フリッシュ弾力性の逆数
+P_gamma   = 1.0;        // 効用における消費の曲率
+P_varphi  = 1.0;        // 効用における労働の曲率
+P_xi     =  .0;        // フリッシュ弾力性の逆数
 @#if CRRA==1
     P_xi = 0;
 @#endif
@@ -33,8 +33,8 @@ P_alpha   = 0.;        // 生産における労働シェア (資本なしケー�
 P_eta     = 1.0;        // 価格調整コストのスケール
 P_psi     = 5.0;        // マークアップ弾力性 (カルボ型)
 P_lambda  = 0.25;       // Hand-to-Mouth 家計のシェア
-//P_tau_s = 1/(1-1/P_psi)-1; // 定常状態補助金ゼロの売上税率
-P_tau_s   = 0.0;        // 売上税率
+P_tau_s = 1/(1-1/P_psi)-1; // 定常状態補助金ゼロの売上税率
+//P_tau_s   = 0.0;        // 売上税率
 P_tau_d   = 0.0;        // 配当税率
 
 // -------------------------------------------------------------------------
@@ -56,7 +56,7 @@ model;
 // Hand-to-Mouth 家計
 // -------------------------------------------------------------------------
 // 賃金条件
-W = C_H^P_gamma * N_H^P_xi;
+W = C_H^P_gamma * N_H^P_varphi;
 // 予算制約
 C_H = W * N_H + (P_tau_d / P_lambda) * D;
 
@@ -64,13 +64,13 @@ C_H = W * N_H + (P_tau_d / P_lambda) * D;
 // Saver 家計
 // -------------------------------------------------------------------------
 // 賃金条件
-W = C_S^P_gamma * N_S^P_xi;
+W = C_S^P_gamma * N_S^P_varphi;
 // 
 @#if CRRA==1
     MU_S = C_S^(-P_gamma);
 @#else
     @#if KPR==1
-        MU_C = C_S^(-P_xi-)*exp(P_gamma_0*N_S^(1+P_varphi)/(1+P_varphi));
+        MU_S = C_S^(-P_xi-1) * exp(P_gamma_0*N_S^(1+P_varphi)/(1+P_varphi));
     @#else
         MU_S = - C_S^(-P_gamma) * (
         - C_S^(1-P_gamma)/(1-P_gamma)
@@ -160,6 +160,6 @@ steady;
 check;
 
 // パラメータと定常状態をテキストファイルに保存
-save_params_and_steady_state('TANK_model1_steady.txt');
+save_params_and_steady_state('TANKC_model1_steady.txt');
 
 stoch_simul(order=1, irf=20) c n d w;
