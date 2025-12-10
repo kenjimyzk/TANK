@@ -6,7 +6,7 @@
 
 
 var d w n n_H n_S mc c c_H c_S y r_N r pi m a;
-varexo eps_a eps_;
+varexo eps_a eps_m;
 
 // 元のパラメータ
 parameters P_beta P_gamma_0 P_gamma_c P_gamma_n P_phi
