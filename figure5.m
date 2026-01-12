@@ -1,5 +1,6 @@
 % parameters
-gamma = 1.5;
+gamma = 1.0;
+gamma2 = 1.5;
 tau = 0.2;
 varphi = 1;
 Phi = 0.2;
@@ -13,23 +14,32 @@ Xi1 = calc_Xi1(alpha, Phi, gamma, varphi);
 Xi2 = calc_Xi2(alpha, Phi, gamma, varphi);
 Xi1_2 = calc_Xi1(alpha, Phi2, gamma, varphi);
 Xi2_2 = calc_Xi2(alpha, Phi2, gamma, varphi);
+Xi1_g2 = calc_Xi1(alpha, Phi, gamma2, varphi);
+Xi2_g2 = calc_Xi2(alpha, Phi, gamma2, varphi);
+Xi1_2_g2 = calc_Xi1(alpha, Phi2, gamma2, varphi);
+Xi2_2_g2 = calc_Xi2(alpha, Phi2, gamma2, varphi);
 
 % lambda formula
 lambda = calc_lambda(Xi1, Xi2, Phi, tau);
 lambda2 = calc_lambda(Xi1_2, Xi2_2, Phi2, tau);
+lambda_g2 = calc_lambda(Xi1_g2, Xi2_g2, Phi, tau);
+lambda2_g2 = calc_lambda(Xi1_2_g2, Xi2_2_g2, Phi2, tau);
 
 % plot
 figure;
 plot(alpha, lambda, '-', 'LineWidth', 1.5);
 hold on;
 plot(alpha, lambda2, '--', 'LineWidth', 1.5);
+plot(alpha, lambda_g2, ':', 'LineWidth', 1.5);
+plot(alpha, lambda2_g2, '-.', 'LineWidth', 1.5);
 xlabel('\alpha');
 ylabel('\lambda');
 grid on;
 xlim([alpha_min alpha_max]);
 ylim([0 0.4]);
 yline(tau, '--', '\lambda=\tau', 'LabelHorizontalAlignment', 'left');
-legend('\Phi=0.2', '\Phi=0', 'Location', 'best');
+legend('\Phi=0.2,\gamma=1.0', '\Phi=0,\gamma=1.0', '\Phi=0.2,\gamma=1.5', '\Phi=0,\gamma=1.5', ...
+  'Location', 'best');
 
 function Xi1 = calc_Xi1(alpha, Phi, gamma, varphi)
 Xi1 = ((1 - alpha) * gamma + varphi) ./ ((1 - alpha) * (gamma + varphi)) .* ...
