@@ -1,0 +1,1516 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass bxjsarticle
+\use_default_options true
+\maintain_unincluded_children no
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Variables:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="16" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Consumption
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C^{S}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Consumption,
+ S
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C^{H}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Consumption,
+ H
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Labor Inputs
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N^{S}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Labor Inputs,
+ S
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N^{H}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Labor Inputs,
+ H
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Output
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $W$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wage Rate
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $D$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dividends
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Pi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rates of Inflation
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R^{N}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nominal Rates of Interests
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Real Rates of Interests
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $MC$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Marginal Cost
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $MU$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Marginal Utility
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $m_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Monetary shock
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Parameters
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="15" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\gamma$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+income effect
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\varphi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+inverse of wage elasticity wrt labor inputs
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\xi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+degree of non-separability
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\kappa^{S}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+degree of complementarity
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\kappa^{S}=\left[1-\frac{(1-\gamma)(1-\alpha)(1-\Phi)}{1+\varphi}\frac{N^{S}/N}{C^{S}/Y}\right]^{-1}\xi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\psi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Elasticity of substitution between intermediate inputs
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\eta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+price adjustment cost
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\tau$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tax rate on dividends
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+subsidy rate on intermediate goods
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Phi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+degree of efficiency 
+\begin_inset Formula $\Phi=(1-1/\psi)(1+\sigma)-1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\lambda$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ratio of type H consumers
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\beta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+discount rate
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+capital share
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Taylor rule parameter
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+persistency of monetary shock
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Equation:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="16" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Equation
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Euler equation,
+ S
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $r_{t}=mu_{t}^{S}-E_{t}mu_{t+1}^{S}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Marginal utility,
+ S
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $mu_{t}^{S}=-(\gamma+\kappa^{S})c_{t}^{S}+\kappa^{S}(1-\alpha)(1-\Phi)\frac{N^{S}/N}{C^{S}/Y}n_{t}^{S}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Labor supply,
+ S
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{t}=\gamma c_{t}^{S}+\varphi n_{t}^{S}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Labor supply,
+ H
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{t}=\gamma c_{t}^{H}+\varphi n_{t}^{H}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Budget constraint,
+ H
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{C^{H}}{Y}c_{t}^{H}=\frac{WN^{H}}{Y}(w_{t}+n_{t}^{H})+\frac{\tau^{D}}{\lambda}d_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Labor demand
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{t}=mc_{t}+y_{t}-n_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Phillips curve
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\pi_{t}=(\psi_{p}/\eta_{p})(1-\Phi)mc_{t}+\beta E_{t}\pi_{t+1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Profits
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d_{t}=\Phi y_{t}-(1-\alpha)(1-\Phi)w_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aggregate consumption
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $c_{t}=\lambda\frac{C^{H}}{C}c_{t}^{H}+(1-\lambda)\frac{C^{S}}{C}c_{t}^{S}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aggregate labor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $n_{t}=\lambda\frac{N^{H}}{N}n_{t}^{H}+(1-\lambda)\frac{N^{S}}{N}n_{t}^{S}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Production function
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y_{t}=(1-\alpha)n_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Resource constraint
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y_{t}=c_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Taylor rule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $r_{t}^{N}=\phi\pi_{t}^{p}-m_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Monetary shock
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $m_{t}=\rho m_{t-1}+e_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fischer equation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $r_{t}=r_{t}^{N}-E_{t}\pi_{t+1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+15変数 (
+\begin_inset Formula $D_{t},W_{t},N_{t},N_{t}^{H},N_{t}^{S},MC_{t},C_{t},C_{t}^{H},C_{t}^{S},Y_{t},R_{t}^{N}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\Pi_{t}$
+\end_inset
+
+,
+\begin_inset Formula $MU_{t}^{S}$
+\end_inset
+
+,
+\begin_inset Formula $MC_{t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $m_{t}$
+\end_inset
+
+):
+\begin_inset Formula 
+\begin{align*}
+W_{t} & =\Xi(N_{t}^{H})^{\varphi}(C_{t}^{H})^{\gamma}\\
+C_{t}^{H} & =W_{t}N_{t}^{H}+\frac{\tau^{D}}{\lambda}D_{t}\\
+W_{t} & =\Xi(N_{t}^{S})^{\varphi}(C_{t}^{S})^{\gamma}\\
+1 & =\mathbb{E}_{t}\left[\beta R_{t}\frac{MU_{t+1}^{S}}{MU_{t}^{S}}\right]\\
+R_{t} & =\mathbb{E}_{t}\left[\frac{R_{t}^{N}}{\Pi_{t+1}}\right]\\
+MU_{t}^{S} & =(C_{t}^{S})^{-\gamma}\left(\frac{(C_{t}^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N_{t}^{S})^{1+\varphi}}{1+\varphi}\right)^{-\xi/(1-\gamma)}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+W_{t} & =(1-\alpha)MC_{t}N_{t}^{-\alpha}\\
+D_{t}= & Y_{t}-\frac{\eta_{P}}{2}\left(\frac{\Pi_{t}}{\Pi}-1\right)^{2}Y_{t}-W_{t}N_{t}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\eta_{P}\frac{\Pi_{t}}{\Pi}\left(\frac{\Pi_{t}}{\Pi}-1\right)=\psi_{P}\left(MC_{t}-(1+\tau^{S})(1-1/\psi_{P})\right)\\
++\beta\eta_{P}\mathbb{E}_{t}\left[\left(\frac{C_{t+1}^{S}}{C_{t}^{S}}\right)^{-\sigma}\frac{Y_{t+1}}{Y_{t}}\frac{\Pi_{t+1}}{\Pi}\left(\frac{\Pi_{t+1}}{\Pi}-1\right)\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+C_{t} & =\lambda C_{t}^{H}+(1-\lambda)C_{t}^{S}\\
+N_{t} & =\lambda N_{t}^{S}+(1-\lambda)N_{t}^{S}\\
+Y_{t} & =C_{t}+\frac{\eta_{P}}{2}\left(\frac{\Pi_{t}}{\Pi}-1\right)^{2}Y_{t}\\
+Y_{t} & =N_{t}^{1-\alpha}\\
+\frac{R_{t}^{N}}{R^{N}} & =\left(\frac{\Pi_{t}}{\Pi}\right)^{\phi}\exp(-m_{t})\\
+m_{t} & =\rho_{m}m_{t-1}+e_{t}^{m}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+定常状態
+\begin_inset Formula 
+\begin{align*}
+W & =\Xi(N^{H})^{\varphi}(C^{H})^{\gamma}\\
+C^{H} & =WN^{H}+\frac{\tau^{D}}{\lambda}D\\
+W & =\Xi(N^{S})^{\varphi}(C^{S})^{\gamma}\\
+1 & =\mathbb{E}_{t}\left[\beta\frac{R^{N}}{\Pi}\right]\\
+MU^{S} & =(C^{S})^{-\gamma}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-\xi/(1-\gamma)}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+W & =(1-\alpha)MCN^{-\alpha}\\
+D=Y & -WN
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+MC=(1+\sigma)(1-1/\psi)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+C & =\lambda C^{H}+(1-\lambda)C^{S}\\
+N & =\lambda N^{H}+(1-\lambda)N^{S}\\
+Y & =C\\
+Y & =N^{1-\alpha}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+対数線形近は以下である 
+\begin_inset Formula $d_{t}=(D_{t}-D)/Y$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+w_{t} & =\varphi n_{t}^{H}+\gamma c_{t}^{H}\\
+\frac{C^{H}}{Y}c_{t}^{H} & =\frac{WN^{H}}{Y}(w_{t}+n_{t}^{H})+\frac{\tau^{D}}{\lambda}d_{t}\\
+w_{t} & =\varphi n_{t}^{S}+\gamma c_{t}^{S}\\
+r_{t}^{N} & =\mathbb{E}_{t}\left[\pi_{t+1}\right]-\mathbb{E}_{t}\left[\Delta mu_{t+1}^{S}\right]
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+mu_{t}^{S} & =-(\gamma+\kappa)c_{t}^{S}+\kappa^{S}(1-\alpha)MC\frac{N^{S}/N}{C^{S}/Y}n_{t}^{S}\\
+\kappa^{S} & =\xi\left[1-\frac{1-\gamma}{1+\varphi}(1-\alpha)MC\frac{N^{S}/N}{C^{S}/Y}\right]^{-1}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+w_{t}= & mc_{t}+y_{t}-n_{t}\\
+d_{t}= & (1-MC)y_{t}-(1-\alpha)MCw_{t}\\
+\pi_{t}= & \frac{\psi_{p}MC}{\eta_{p}}mc_{t}+\beta\mathbb{E}_{t}\left[\pi_{t+1}\right]
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+c_{t} & =\lambda\frac{C^{H}}{C}c_{t}^{H}+(1-\lambda)\frac{C^{S}}{C}c_{t}^{S}\\
+n_{t} & =\lambda\frac{N^{H}}{N}n_{t}^{H}+(1-\lambda)\frac{N^{S}}{N}n_{t}^{S}\\
+y_{t} & =c_{t}\\
+y_{t} & =(1-\alpha)n_{t}\\
+r_{t}^{N} & =\phi\pi_{t}-m_{t}\\
+m_{t} & =\rho_{m}m_{t-1}+e_{t}^{m}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $\Xi=1$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\Pi=1$
+\end_inset
+
+,
+ 
+\begin_inset Formula $MC=1$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\alpha=0$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $C=C^{S}=C^{H}=N=N^{S}=N^{H}=Y=W=1$
+\end_inset
+
+,
+ 
+\begin_inset Formula $D=0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $R^{N}=1/\beta$
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{align*}
+w_{t} & =\varphi n_{t}^{H}+\gamma c_{t}^{H}\\
+c_{t}^{H} & =w_{t}+n_{t}^{H}+\frac{\tau^{D}}{\lambda}d_{t}\\
+w_{t} & =\varphi n_{t}^{S}+\gamma c_{t}^{S}\\
+r_{t}^{N} & =\mathbb{E}_{t}\left[\pi_{t+1}\right]-\mathbb{E}_{t}\left[\Delta mu_{t+1}^{S}\right]
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+mu_{t}^{S} & =-(\gamma+\kappa^{S})c_{t}^{S}+\kappa^{S}n_{t}^{S}\\
+\kappa^{S} & =\xi\left[1-\frac{1-\gamma}{1+\varphi}\right]^{-1}=\frac{\varphi+\gamma}{1+\varphi}\xi
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+w_{t}= & mc_{t}\\
+d_{t}= & -w_{t}\\
+\pi_{t}= & \frac{\psi_{p}(\varphi+\gamma)}{\eta_{p}}mc_{t}+\beta\mathbb{E}_{t}\left[\pi_{t+1}\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+c_{t} & =\lambda c_{t}^{H}+(1-\lambda)c_{t}^{S}\\
+n_{t} & =\lambda n_{t}^{H}+(1-\lambda)n_{t}^{S}\\
+y_{t} & =c_{t}\\
+y_{t} & =(1-\alpha)n_{t}\\
+r_{t}^{N} & =\phi\pi_{t}-m_{t}\\
+m_{t} & =\rho_{m}m_{t-1}+e_{t}^{m}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+General solution:
+\begin_inset Formula 
+\begin{align*}
+c_{t}^{H} & =(1+\tilde{\tilde{\varphi}})y_{t}\\
+c_{t}^{S} & =\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}\\
+n_{t}^{H} & =(1-\tilde{\tilde{\gamma}})y_{t}\\
+n_{t}^{S} & =\left\{ \frac{1-\lambda(1-\alpha)}{(1-\alpha)(1-\lambda)}+\frac{\lambda\tilde{\tilde{\gamma}}}{1-\lambda}\right\} y_{t}\\
+w_{t} & =(\gamma+\varphi)(1+\tilde{\alpha})y_{t}=\left\{ \gamma+\frac{\varphi}{1-\alpha}\right\} y_{t}\\
+d_{t} & =\Phi y_{t}-(1-\alpha)(1-\Phi)w_{t}\\
+ & =\{\Phi-(1-\Phi)\{(1-\alpha)\gamma+\varphi\}\}y_{t}\\
+mc_{t} & =w_{t}+y_{t}\alpha/(1-\alpha)=\left\{ \gamma+\frac{\varphi+\alpha}{1-\alpha}\right\} y_{t}\\
+\pi_{t} & =\frac{\psi_{p}(1-\Phi)}{\eta_{p}}mc_{t}+\beta\mathbb{E}_{t}\left[\pi_{t+1}\right]\\
+r_{t}^{N} & =\phi\pi_{t}-m_{t}\\
+mu_{t}^{S} & =-(\gamma+\kappa^{S})c_{t}^{S}+\kappa^{S}n_{t}^{S}\\
+r_{t} & =mu_{t}^{S}-E_{t}mu_{t+1}^{S}\\
+r_{t} & =r_{t}^{N}-E_{t}\pi_{t+1}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

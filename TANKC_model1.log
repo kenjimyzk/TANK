@@ -1,0 +1,113 @@
+Starting Dynare (version 6.1).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ...
+Found 20 equation(s).
+Evaluating expressions...
+Computing static model derivatives (order 1).
+Normalizing the static model...
+Finding the optimal block decomposition of the static model...
+6 block(s) found:
+  4 recursive block(s) and 2 simultaneous block(s).
+  the largest simultaneous block has 9 equation(s)
+                                 and 9 feedback variable(s).
+Computing dynamic model derivatives (order 1).
+Normalizing the dynamic model...
+Finding the optimal block decomposition of the dynamic model...
+3 block(s) found:
+  2 recursive block(s) and 1 simultaneous block(s).
+  the largest simultaneous block has 13 equation(s)
+                                 and 9 feedback variable(s).
+Preprocessing completed.
+Preprocessing time: 0h00m00s.
+
+STEADY-STATE RESULTS:
+
+D    		 0.345421
+W    		 0.661646
+N    		 0.783095
+N_H  		 1
+N_S  		 0.710794
+MC   		 1
+MU_S 		 1.26337
+C    		 0.863552
+C_H  		 0.661646
+C_S  		 0.930855
+Y    		 0.863552
+R_N  		 1.05263
+R    		 1.05263
+PI   		 1
+m    		 0
+a    		 0
+c    		 0
+n    		 0
+d    		 0
+w    		 0
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+             0.8              0.8                0
+             0.9              0.9                0
+           1.502            1.502                0
+           108.3            108.3                0
+             Inf              Inf                0
+
+There are 3 eigenvalue(s) larger than 1 in modulus for 3 forward-looking variable(s)
+The rank condition is verified.
+
+
+MODEL SUMMARY
+
+  Number of variables:         20
+  Number of stochastic shocks: 2
+  Number of state variables:   2
+  Number of jumpers:           3
+  Number of static variables:  15
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables       eps_a     eps_m
+eps_a        0.010000  0.000000
+eps_m        0.000000  0.010000
+
+POLICY AND TRANSITION FUNCTIONS
+                                   c               n               d               w
+m(-1)                       0.015036        0.025060       -0.026878        0.044796
+a(-1)                       0.898211       -0.002982        0.363198        0.894669
+eps_a                       0.998012       -0.003313        0.403554        0.994077
+eps_m                       0.018795        0.031325       -0.033597        0.055996
+
+
+THEORETICAL MOMENTS
+VARIABLE         MEAN  STD. DEV.   VARIANCE
+c              0.0000     0.2290     0.0524
+n              0.0000     0.0053     0.0000
+d              0.0000     0.0928     0.0086
+w              0.0000     0.2282     0.0521
+
+
+
+VARIANCE DECOMPOSITION (in percent)
+      eps_a   eps_m
+c     99.98    0.02
+n      2.08   97.92
+d     99.64    0.36
+w     99.83    0.17
+
+
+
+MATRIX OF CORRELATIONS
+Variables          c        n        d        w
+c             1.0000  -0.1305   0.9973   0.9996
+n            -0.1305   1.0000  -0.2036  -0.1035
+d             0.9973  -0.2036   1.0000   0.9949
+w             0.9996  -0.1035   0.9949   1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+Order          1       2       3       4       5
+c         0.9000  0.8100  0.7290  0.6561  0.5904
+n         0.8021  0.6435  0.5165  0.4147  0.3331
+d         0.8996  0.8094  0.7282  0.6552  0.5895
+w         0.8998  0.8097  0.7286  0.6557  0.5901
+Total computing time : 0h00m02s

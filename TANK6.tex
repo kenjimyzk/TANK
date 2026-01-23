@@ -1,0 +1,598 @@
+%% LyX 2.4.4 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english,autodetect-engine, dvi=dvipdfmx, ja=standard]{bxjsarticle}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
+\usepackage{varwidth}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+%% Variable width box for table cells
+\newenvironment{cellvarwidth}[1][t]
+    {\begin{varwidth}[#1]{\linewidth}}
+    {\@finalstrut\@arstrutbox\end{varwidth}}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+Variables:
+
+\begin{tabular}{|c|c|}
+\hline 
+ & description\tabularnewline
+\hline 
+\hline 
+$C$ & Consumption\tabularnewline
+\hline 
+$C^{S}$ & Consumption, S\tabularnewline
+\hline 
+$C^{H}$ & Consumption, H\tabularnewline
+\hline 
+$N$ & Labor Inputs\tabularnewline
+\hline 
+$N^{S}$ & Labor Inputs, S\tabularnewline
+\hline 
+$N^{H}$ & Labor Inputs, H\tabularnewline
+\hline 
+$Y$ & Output\tabularnewline
+\hline 
+$W$ & Wage Rate\tabularnewline
+\hline 
+$D$ & Dividends\tabularnewline
+\hline 
+$\Pi$ & Rates of Inflation\tabularnewline
+\hline 
+$R^{N}$ & Nominal Rates of Interests \tabularnewline
+\hline 
+$R$ & Real Rates of Interests \tabularnewline
+\hline 
+$MC$ & Marginal Cost\tabularnewline
+\hline 
+$MU$ & Marginal Utility\tabularnewline
+\hline 
+$m_{t}$ & Monetary shock\tabularnewline
+\hline 
+\end{tabular}
+
+Parameters
+
+\begin{tabular}{|c|c|}
+\hline 
+ & \tabularnewline
+\hline 
+\hline 
+$\gamma$ & income effect\tabularnewline
+\hline 
+$\varphi$ & inverse of wage elasticity wrt labor inputs\tabularnewline
+\hline 
+$\xi$ & degree of non-separability \tabularnewline
+\hline 
+$\kappa^{S}$ & \begin{cellvarwidth}[t]
+\centering
+degree of complementarity\\
+$\kappa^{S}=\left[1-\frac{(1-\gamma)(1-\alpha)(1-\Phi)}{1+\varphi}\frac{N^{S}/N}{C^{S}/Y}\right]^{-1}\xi$
+\end{cellvarwidth}\tabularnewline
+\hline 
+$\psi$ & Elasticity of substitution between intermediate inputs\tabularnewline
+\hline 
+$\eta$ & price adjustment cost\tabularnewline
+\hline 
+$\tau$ & tax rate on dividends\tabularnewline
+\hline 
+$\sigma$ & subsidy rate on intermediate goods\tabularnewline
+\hline 
+$\Phi$ & degree of efficiency $\Phi=(1-1/\psi)(1+\sigma)-1$\tabularnewline
+\hline 
+$\lambda$ & ratio of type H consumers\tabularnewline
+\hline 
+$\beta$ & discount rate\tabularnewline
+\hline 
+$\alpha$ & capital share\tabularnewline
+\hline 
+$\phi$ & Taylor rule parameter\tabularnewline
+\hline 
+$\rho$ & persistency of monetary shock\tabularnewline
+\hline 
+\end{tabular}
+
+Equation:
+\begin{center}
+\begin{tabular}{l|c}
+\hline 
+Name & Equation\tabularnewline
+\hline 
+Euler equation, S & $r_{t}=mu_{t}^{S}-E_{t}mu_{t+1}^{S}$\tabularnewline
+Marginal utility, S & $mu_{t}^{S}=-(\gamma+\kappa^{S})c_{t}^{S}+\kappa^{S}(1-\alpha)(1-\Phi)\frac{N^{S}/N}{C^{S}/Y}n_{t}^{S}$\tabularnewline
+Labor supply, S & $w_{t}=\gamma c_{t}^{S}+\varphi n_{t}^{S}$\tabularnewline
+Labor supply, H & $w_{t}=\gamma c_{t}^{H}+\varphi n_{t}^{H}$\tabularnewline
+Budget constraint, H & $\frac{C^{H}}{Y}c_{t}^{H}=\frac{WN^{H}}{Y}(w_{t}+n_{t}^{H})+\frac{\tau^{D}}{\lambda}d_{t}$\tabularnewline
+Labor demand & $w_{t}=mc_{t}+y_{t}-n_{t}$\tabularnewline
+Phillips curve & $\pi_{t}=(\psi_{p}/\eta_{p})(1-\Phi)mc_{t}+\beta E_{t}\pi_{t+1}$\tabularnewline
+Profits & $d_{t}=\Phi y_{t}-(1-\alpha)(1-\Phi)w_{t}$\tabularnewline
+Aggregate consumption & $c_{t}=\lambda\frac{C^{H}}{C}c_{t}^{H}+(1-\lambda)\frac{C^{S}}{C}c_{t}^{S}$\tabularnewline
+Aggregate labor & $n_{t}=\lambda\frac{N^{H}}{N}n_{t}^{H}+(1-\lambda)\frac{N^{S}}{N}n_{t}^{S}$\tabularnewline
+Production function & $y_{t}=(1-\alpha)n_{t}$\tabularnewline
+Resource constraint & $y_{t}=c_{t}$\tabularnewline
+Taylor rule & $r_{t}^{N}=\phi\pi_{t}^{p}-m_{t}$\tabularnewline
+Monetary shock & $m_{t}=\rho m_{t-1}+e_{t}$\tabularnewline
+Fischer equation & $r_{t}=r_{t}^{N}-E_{t}\pi_{t+1}$\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+\begin{itemize}
+\item 15変数 ($D_{t},W_{t},N_{t},N_{t}^{H},N_{t}^{S},MC_{t},C_{t},C_{t}^{H},C_{t}^{S},Y_{t},R_{t}^{N}$,
+$\Pi_{t}$,$MU_{t}^{S}$,$MC_{t}$, $m_{t}$):
+\begin{align*}
+W_{t} & =\Xi(N_{t}^{H})^{\varphi}(C_{t}^{H})^{\gamma}\\
+C_{t}^{H} & =W_{t}N_{t}^{H}+\frac{\tau^{D}}{\lambda}D_{t}\\
+W_{t} & =\Xi(N_{t}^{S})^{\varphi}(C_{t}^{S})^{\gamma}\\
+1 & =\mathbb{E}_{t}\left[\beta R_{t}\frac{MU_{t+1}^{S}}{MU_{t}^{S}}\right]\\
+R_{t} & =\mathbb{E}_{t}\left[\frac{R_{t}^{N}}{\Pi_{t+1}}\right]\\
+MU_{t}^{S} & =(C_{t}^{S})^{-\gamma}\left(\frac{(C_{t}^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N_{t}^{S})^{1+\varphi}}{1+\varphi}\right)^{-\xi/(1-\gamma)}
+\end{align*}
+\begin{align*}
+W_{t} & =(1-\alpha)MC_{t}N_{t}^{-\alpha}\\
+D_{t}= & Y_{t}-\frac{\eta_{P}}{2}\left(\frac{\Pi_{t}}{\Pi}-1\right)^{2}Y_{t}-W_{t}N_{t}
+\end{align*}
+\begin{align*}
+\eta_{P}\frac{\Pi_{t}}{\Pi}\left(\frac{\Pi_{t}}{\Pi}-1\right)=\psi_{P}\left(MC_{t}-(1+\tau^{S})(1-1/\psi_{P})\right)\\
++\beta\eta_{P}\mathbb{E}_{t}\left[\left(\frac{C_{t+1}^{S}}{C_{t}^{S}}\right)^{-\sigma}\frac{Y_{t+1}}{Y_{t}}\frac{\Pi_{t+1}}{\Pi}\left(\frac{\Pi_{t+1}}{\Pi}-1\right)\right]
+\end{align*}
+\end{itemize}
+\begin{align*}
+C_{t} & =\lambda C_{t}^{H}+(1-\lambda)C_{t}^{S}\\
+N_{t} & =\lambda N_{t}^{S}+(1-\lambda)N_{t}^{S}\\
+Y_{t} & =C_{t}+\frac{\eta_{P}}{2}\left(\frac{\Pi_{t}}{\Pi}-1\right)^{2}Y_{t}\\
+Y_{t} & =N_{t}^{1-\alpha}\\
+\frac{R_{t}^{N}}{R^{N}} & =\left(\frac{\Pi_{t}}{\Pi}\right)^{\phi}\exp(-m_{t})\\
+m_{t} & =\rho_{m}m_{t-1}+e_{t}^{m}
+\end{align*}
+
+\begin{itemize}
+\item 定常状態
+\begin{align*}
+W & =\Xi(N^{H})^{\varphi}(C^{H})^{\gamma}\\
+C^{H} & =WN^{H}+\frac{\tau^{D}}{\lambda}D\\
+W & =\Xi(N^{S})^{\varphi}(C^{S})^{\gamma}\\
+1 & =\mathbb{E}_{t}\left[\beta\frac{R^{N}}{\Pi}\right]\\
+MU^{S} & =(C^{S})^{-\gamma}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-\xi/(1-\gamma)}
+\end{align*}
+\begin{align*}
+W & =(1-\alpha)MCN^{-\alpha}\\
+D=Y & -WN
+\end{align*}
+\[
+MC=(1+\sigma)(1-1/\psi)
+\]
+\end{itemize}
+\begin{align*}
+C & =\lambda C^{H}+(1-\lambda)C^{S}\\
+N & =\lambda N^{H}+(1-\lambda)N^{S}\\
+Y & =C\\
+Y & =N^{1-\alpha}
+\end{align*}
+
+\begin{itemize}
+\item 対数線形近は以下である $d_{t}=(D_{t}-D)/Y$:
+\begin{align*}
+w_{t} & =\varphi n_{t}^{H}+\gamma c_{t}^{H}\\
+\frac{C^{H}}{Y}c_{t}^{H} & =\frac{WN^{H}}{Y}(w_{t}+n_{t}^{H})+\frac{\tau^{D}}{\lambda}d_{t}\\
+w_{t} & =\varphi n_{t}^{S}+\gamma c_{t}^{S}\\
+r_{t}^{N} & =\mathbb{E}_{t}\left[\pi_{t+1}\right]-\mathbb{E}_{t}\left[\Delta mu_{t+1}^{S}\right]
+\end{align*}
+\begin{align*}
+mu_{t}^{S} & =-(\gamma+\kappa)c_{t}^{S}+\kappa^{S}(1-\alpha)MC\frac{N^{S}/N}{C^{S}/Y}n_{t}^{S}\\
+\kappa^{S} & =\xi\left[1-\frac{1-\gamma}{1+\varphi}(1-\alpha)MC\frac{N^{S}/N}{C^{S}/Y}\right]^{-1}
+\end{align*}
+\begin{align*}
+w_{t}= & mc_{t}+y_{t}-n_{t}\\
+d_{t}= & (1-MC)y_{t}-(1-\alpha)MCw_{t}\\
+\pi_{t}= & \frac{\psi_{p}MC}{\eta_{p}}mc_{t}+\beta\mathbb{E}_{t}\left[\pi_{t+1}\right]
+\end{align*}
+\begin{align*}
+c_{t} & =\lambda\frac{C^{H}}{C}c_{t}^{H}+(1-\lambda)\frac{C^{S}}{C}c_{t}^{S}\\
+n_{t} & =\lambda\frac{N^{H}}{N}n_{t}^{H}+(1-\lambda)\frac{N^{S}}{N}n_{t}^{S}\\
+y_{t} & =c_{t}\\
+y_{t} & =(1-\alpha)n_{t}\\
+r_{t}^{N} & =\phi\pi_{t}-m_{t}\\
+m_{t} & =\rho_{m}m_{t-1}+e_{t}^{m}
+\end{align*}
+\item If $\Xi=1$, $\Pi=1$, $MC=1$, $\alpha=0$, then $C=C^{S}=C^{H}=N=N^{S}=N^{H}=Y=W=1$,
+$D=0$, $R^{N}=1/\beta$.
+\begin{align*}
+w_{t} & =\varphi n_{t}^{H}+\gamma c_{t}^{H}\\
+c_{t}^{H} & =w_{t}+n_{t}^{H}+\frac{\tau^{D}}{\lambda}d_{t}\\
+w_{t} & =\varphi n_{t}^{S}+\gamma c_{t}^{S}\\
+r_{t}^{N} & =\mathbb{E}_{t}\left[\pi_{t+1}\right]-\mathbb{E}_{t}\left[\Delta mu_{t+1}^{S}\right]
+\end{align*}
+\begin{align*}
+mu_{t}^{S} & =-(\gamma+\kappa^{S})c_{t}^{S}+\kappa^{S}n_{t}^{S}\\
+\kappa^{S} & =\xi\left[1-\frac{1-\gamma}{1+\varphi}\right]^{-1}=\frac{\varphi+\gamma}{1+\varphi}\xi
+\end{align*}
+\begin{align*}
+w_{t}= & mc_{t}\\
+d_{t}= & -w_{t}\\
+\pi_{t}= & \frac{\psi_{p}(\varphi+\gamma)}{\eta_{p}}mc_{t}+\beta\mathbb{E}_{t}\left[\pi_{t+1}\right]
+\end{align*}
+\end{itemize}
+\begin{align*}
+c_{t} & =\lambda c_{t}^{H}+(1-\lambda)c_{t}^{S}\\
+n_{t} & =\lambda n_{t}^{H}+(1-\lambda)n_{t}^{S}\\
+y_{t} & =c_{t}\\
+y_{t} & =(1-\alpha)n_{t}\\
+r_{t}^{N} & =\phi\pi_{t}-m_{t}\\
+m_{t} & =\rho_{m}m_{t-1}+e_{t}^{m}
+\end{align*}
+
+General solution:
+\begin{align*}
+c_{t}^{H} & =(1+\tilde{\tilde{\varphi}})y_{t}\\
+c_{t}^{S} & =\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}\\
+n_{t}^{H} & =(1-\tilde{\tilde{\gamma}})y_{t}\\
+n_{t}^{S} & =\left\{ \frac{1-\lambda(1-\alpha)}{(1-\alpha)(1-\lambda)}+\frac{\lambda\tilde{\tilde{\gamma}}}{1-\lambda}\right\} y_{t}\\
+w_{t} & =(\gamma+\varphi)(1+\tilde{\alpha})y_{t}=\frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)}y_{t}\\
+d_{t} & =\Phi y_{t}-(1-\alpha)(1-\Phi)w_{t}\\
+ & =\{\Phi-(1-\Phi)\{(1-\alpha)\gamma+\varphi\}\}y_{t}\\
+mc_{t} & =w_{t}+y_{t}\alpha/(1-\alpha)=\left\{ \gamma+\frac{\varphi+\alpha}{1-\alpha}\right\} y_{t}\\
+\pi_{t} & =\frac{\psi_{p}(1-\Phi)}{\eta_{p}}mc_{t}+\beta\mathbb{E}_{t}\left[\pi_{t+1}\right]\\
+r_{t}^{N} & =\phi\pi_{t}-m_{t}\\
+mu_{t}^{S} & =-(\gamma+\kappa^{S})c_{t}^{S}+\kappa^{S}n_{t}^{S}\\
+r_{t} & =mu_{t}^{S}-E_{t}mu_{t+1}^{S}\\
+r_{t} & =r_{t}^{N}-E_{t}\pi_{t+1}
+\end{align*}
+
+\begin{align*}
+c_{t}^{H} & =\{1+\varphi(1-\tilde{\tilde{\tau}}/\lambda)\}y_{t}+\frac{\alpha\varphi\{1+\varphi(1-\tilde{\tau}/\lambda)\}}{(1-\alpha)(\gamma+\varphi)}y_{t}\\
+ & =\frac{\varphi(\tau/\lambda)(1-MC)}{\varphi+\gamma}y_{t}+\{1+\varphi(1-\tilde{\tau}/\lambda)\}\left\{ 1+\frac{\alpha\varphi\{1+\varphi(1-\tilde{\tau}/\lambda)\}}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+ & =\{1+\tilde{\varphi}\}\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}+\frac{\varphi(\tau/\lambda)(1-MC)}{\varphi+\gamma}y_{t}\\
+ & =\{1+\tilde{\varphi}\}\left\{ 1+\tilde{\alpha}\right\} y_{t}+\frac{\varphi}{\varphi+\gamma}\tilde{\Phi}y_{t}\\
+ & =y_{t}(1+\tilde{\tilde{\varphi}})\\
+\tilde{\tau} & =(1-\alpha)MC\tau\\
+\tilde{\varphi} & =\varphi(1-\tilde{\tau}/\lambda)\\
+\tilde{\alpha} & =\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\\
+\tilde{\Phi} & =(\tau/\lambda)(1-MC)\\
+\tilde{\tilde{\tau}} & =\tilde{\tau}-\frac{\tau(1-MC)}{\varphi+\gamma}
+\end{align*}
+\begin{align*}
+c_{t}^{S} & =\frac{c_{t}-\lambda c_{t}^{H}}{1-\lambda}=\frac{1-\lambda\{1+\tilde{\varphi}\}\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} -\lambda\frac{\varphi(\tau/\lambda)(1-MC)}{\varphi+\gamma}y_{t}}{1-\lambda}y_{t}\\
+ & =\left\{ 1-\frac{\lambda\tilde{\varphi}}{1-\lambda}-\frac{\lambda\{1+\tilde{\varphi}\}}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}-\frac{\lambda}{1-\lambda}\frac{\varphi(\tau/\lambda)(1-MC)}{\varphi+\gamma}\right\} y_{t}\\
+ & =\left\{ 1-\frac{\lambda\tilde{\varphi}}{1-\lambda}-\frac{\lambda\{1+\tilde{\varphi}\}}{1-\lambda}\tilde{\alpha}-\frac{\lambda}{1-\lambda}\frac{\varphi}{\varphi+\gamma}\tilde{\Phi}\right\} y_{t}\\
+ & =\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}\\
+\tilde{\tilde{\varphi}} & =\tilde{\varphi}+\{1+\tilde{\varphi}\}\tilde{\alpha}+\frac{\varphi}{\varphi+\gamma}\tilde{\Phi}
+\end{align*}
+\begin{align*}
+gap_{t} & =-\frac{\tilde{\tilde{\varphi}}}{1-\lambda}y_{t}\\
+ & =-\frac{1}{1-\lambda}\left[\tilde{\varphi}+\{1+\tilde{\varphi}\}\tilde{\alpha}+\frac{\varphi}{\varphi+\gamma}\tilde{\Phi}\right]y_{t}\\
+ & =-\frac{1}{1-\lambda}\left[\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}+\frac{\varphi}{\varphi+\gamma}\tilde{\Phi}+\tilde{\varphi}(1+\tilde{\alpha})\right]y_{t}\\
+ & =-\frac{1}{1-\lambda}\frac{\varphi}{\varphi+\gamma}\left[\frac{\alpha}{(1-\alpha)}+(\tau/\lambda)\Phi+(1-\tau/\lambda)\frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)}\right]y_{t}
+\end{align*}
+\begin{align*}
+n_{t}^{H} & =-\frac{\gamma(\tau/\lambda)(1-MC)}{\varphi+\gamma}y_{t}+\{1-\tilde{\gamma}\}\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+ & =\{1-\tilde{\gamma}\}\left\{ 1+\tilde{\alpha}\right\} y_{t}-\frac{\gamma}{\varphi+\gamma}\tilde{\Phi}y_{t}\\
+ & =y_{t}-\tilde{\tilde{\gamma}}y_{t}\\
+\tilde{\gamma} & =\gamma(1-\tilde{\tau}/\lambda)
+\end{align*}
+\begin{align*}
+n_{t}^{S} & =\frac{n_{t}-\lambda n_{t}^{H}}{1-\lambda}=\frac{\frac{1}{1-\alpha}y_{t}-\lambda n_{t}^{H}}{1-\lambda}\\
+ & =\left\{ \frac{1}{1-\alpha}\frac{1}{1-\lambda}-\frac{\lambda(1-\tilde{\gamma})}{1-\lambda}-\frac{\lambda\{1-\tilde{\gamma}\}}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}+\frac{\lambda}{1-\lambda}\frac{\gamma(\tau/\lambda)(1-MC)}{\varphi+\gamma}\right\} y_{t}\\
+ & =\left\{ \frac{1-\lambda(1-\alpha)}{(1-\alpha)(1-\lambda)}+\frac{\lambda\tilde{\gamma}}{1-\lambda}-\frac{\lambda\{1-\tilde{\gamma}\}}{1-\lambda}\tilde{\alpha}+\frac{\lambda}{1-\lambda}\frac{\gamma}{\varphi+\gamma}\tilde{\Phi}\right\} y_{t}\\
+ & =\left\{ \frac{1-\lambda(1-\alpha)}{(1-\alpha)(1-\lambda)}+\frac{\lambda\tilde{\tilde{\gamma}}}{1-\lambda}\right\} y_{t}\\
+\tilde{\tilde{\gamma}} & =\tilde{\gamma}-\{1-\tilde{\gamma}\}\tilde{\alpha}+\frac{\gamma}{\varphi+\gamma}\tilde{\Phi}
+\end{align*}
+\[
+\lambda n_{t}^{H}+(1-\lambda)n_{t}^{S}=\frac{1}{1-\alpha}y_{t}=n_{t}
+\]
+\begin{align*}
+gap_{t}^{n} & =\left(\frac{1-\lambda(1-\alpha)}{(1-\alpha)(1-\lambda)}-1\right)y_{t}+\frac{\tilde{\tilde{\gamma}}}{1-\lambda}y_{t}\\
+ & =\frac{1-\lambda(1-\alpha)-(1-\alpha)(1-\lambda)}{(1-\alpha)(1-\lambda)}y_{t}+\frac{\tilde{\tilde{\gamma}}}{1-\lambda}y_{t}\\
+ & =\frac{1}{1-\lambda}\left[\frac{\alpha}{1-\alpha}-\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}+\tilde{\tilde{\gamma}}\right]y_{t}\\
+ & =\frac{1}{1-\lambda}\left[\frac{\alpha\gamma}{(1-\alpha)(\gamma+\varphi)}+\frac{\gamma}{\varphi+\gamma}\tilde{\Phi}+\tilde{\gamma}(1+\tilde{\alpha})\right]y_{t}\\
+ & =-\frac{1}{1-\lambda}\frac{\gamma}{\varphi+\gamma}\left[\frac{\alpha}{(1-\alpha)}+(\tau/\lambda)\Phi+(1-\tau/\lambda)\frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)}\right]y_{t}\\
+ & =
+\end{align*}
+\begin{align*}
+\kappa^{S} & =\kappa=\xi\left[1-\frac{1-\gamma}{1+\varphi}(1-\alpha)(1-\Phi)\right]^{-1}\\
+ & =\xi(1+\varphi)\left[1+\varphi-(1-\gamma)(1-\alpha)(1-\Phi)\right]^{-1}
+\end{align*}
+\begin{align*}
+mu_{t}^{S} & =-(\gamma+\kappa)c_{t}^{S}+\kappa(1-\alpha)MCn_{t}^{S}\\
+ & =-(\gamma+\kappa)\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}\\
+ & +\kappa(1-\alpha)MC\left\{ \frac{1-\lambda(1-\alpha)}{(1-\alpha)(1-\lambda)}+\frac{\lambda\tilde{\tilde{\gamma}}}{1-\lambda}\right\} y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}-\kappa\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}\\
+ & +\kappa MC\left\{ \frac{1-\lambda(1-\alpha)}{1-\lambda}+(1-\alpha)\frac{\lambda\tilde{\tilde{\gamma}}}{1-\lambda}\right\} y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}+\kappa(MC-1)\\
+ & +\kappa\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}y_{t}+\kappa MC(1-\alpha)\frac{\lambda\tilde{\tilde{\gamma}}}{1-\lambda}y_{t}+\kappa MC\frac{\lambda\alpha}{1-\lambda}y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}-\kappa\Phi\\
+ & +\kappa\frac{\lambda}{1-\lambda}\left\{ \tilde{\tilde{\varphi}}+(1-\Phi)(1-\alpha)\tilde{\tilde{\gamma}}+(1-\Phi)\alpha\right\} y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}-\kappa\Phi\\
+ & +\kappa\frac{\lambda}{1-\lambda}\left\{ \tilde{\tilde{\varphi}}+1+(1-\Phi)(1-\alpha)(\tilde{\tilde{\gamma}}-1)-\Phi\right\} y_{t}\\
+ & =-\gamma y_{t}-\kappa\Phi+\frac{\lambda}{1-\lambda}\left\{ \gamma\tilde{\tilde{\varphi}}+\kappa\left\{ \tilde{\tilde{\varphi}}+(1-\Phi)(1-\alpha)\tilde{\tilde{\gamma}}+(1-\Phi)\alpha\right\} \right\} y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}+\frac{\kappa}{1-\lambda}\left\{ \lambda\left\{ \tilde{\tilde{\varphi}}+1+(1-\Phi)(1-\alpha)(\tilde{\tilde{\gamma}}-1)\right\} -\Phi\right\} y_{t}
+\end{align*}
+\begin{align*}
+\tilde{\tilde{\gamma}} & =\tilde{\gamma}-\{1-\tilde{\gamma}\}\tilde{\alpha}+\frac{\gamma}{\varphi+\gamma}\tilde{\Phi}\\
+\tilde{\tilde{\gamma}}-1 & =(\tilde{\gamma}-1)(1+\tilde{\alpha})+\frac{\gamma}{\varphi+\gamma}\tilde{\Phi}\\
+\tilde{\tilde{\varphi}} & =\tilde{\varphi}+\{1+\tilde{\varphi}\}\tilde{\alpha}+\frac{\varphi}{\varphi+\gamma}\tilde{\Phi}\\
+\tilde{\tilde{\varphi}}+1 & =(1+\tilde{\varphi})(1+\tilde{\alpha})+\frac{\varphi}{\varphi+\gamma}\tilde{\Phi}
+\end{align*}
+\begin{align*}
+\tilde{\tau} & =(1-\alpha)MC\tau\\
+\tilde{\gamma} & =\gamma(1-\tilde{\tau}/\lambda)\\
+\tilde{\varphi} & =\varphi(1-\tilde{\tau}/\lambda)\\
+\tilde{\alpha} & =\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\\
+\tilde{\Phi} & =(\tau/\lambda)(1-MC)
+\end{align*}
+When $\alpha=\Phi=0$, 
+\begin{align*}
+mu_{t}^{S} & =-\gamma\left\{ 1-\frac{\lambda\tilde{\varphi}}{1-\lambda}\right\} y_{t}+\kappa\frac{\lambda}{1-\lambda}(\tilde{\varphi}+\tilde{\gamma})\\
+ & =-\gamma\left\{ 1-\frac{\lambda\varphi(1-\tau/\lambda)}{1-\lambda}\right\} y_{t}+\kappa\frac{\lambda}{1-\lambda}(\varphi+\gamma)(1-\tau/\lambda)\\
+ & =-\gamma\left\{ 1-\frac{\lambda\varphi(1-\tau/\lambda)}{1-\lambda}\right\} y_{t}+\xi\frac{\lambda}{1-\lambda}(\varphi+1)(1-\tau/\lambda)\\
+ & =-\gamma y_{t}+\frac{\lambda(1-\tau/\lambda)}{1-\lambda}\left\{ \gamma\varphi+\xi(\varphi+1)\right\} y_{t}
+\end{align*}
+GS-EIS is 
+\[
+\left[\gamma-\frac{\lambda(1-\tau/\lambda)}{1-\lambda}\left\{ \gamma\varphi+\xi(\varphi+1)\right\} \right]^{-1}
+\]
+
+GE-EIS is increasing with $\lambda$ and $\xi$ iff $\lambda>\tau$
+
+GE-EIS is positive iff
+\begin{align*}
+(1-\lambda)\gamma & >\lambda(1-\tau/\lambda)\left\{ \gamma\varphi+\xi(\varphi+1)\right\} \\
+(1-\lambda)\gamma & >(\lambda-\tau)\left\{ \gamma\varphi+\xi(\varphi+1)\right\} 
+\end{align*}
+\begin{align*}
+\gamma\lambda+\lambda\left\{ \gamma\varphi+\xi(\varphi+1)\right\}  & <\gamma+\tau\left\{ \gamma\varphi+\xi(\varphi+1)\right\} \\
+\lambda & <\frac{\gamma(1+\tau\varphi)+\tau\xi(\varphi+1)}{(\gamma+\xi)(\varphi+1)}
+\end{align*}
+
+When $\alpha=0$, $\kappa=\xi(1+\varphi)\left[1+\varphi-(1-\gamma)(1-\Phi)\right]^{-1}$
+\begin{align*}
+mu_{t}^{S} & =-\gamma\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}-\kappa(1-MC)\\
+ & +\kappa\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}y_{t}+\kappa MC\frac{\lambda\tilde{\tilde{\gamma}}}{1-\lambda}y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}-\kappa\Phi y_{t}\\
+ & +\kappa\frac{\lambda\left\{ \tilde{\tilde{\varphi}}+(1-\Phi)\tilde{\tilde{\gamma}}\right\} }{1-\lambda}y_{t}\\
+ & =-\gamma\left\{ \frac{1}{1-\lambda}-\frac{\lambda(\tilde{\tilde{\varphi}}+1)}{1-\lambda}\right\} y_{t}-\kappa\Phi y_{t}\\
+ & +\kappa\frac{\lambda\left\{ 1+\tilde{\tilde{\varphi}}+(1-\Phi)\tilde{(\tilde{\gamma}}-1)-\Phi\right\} }{1-\lambda}y_{t}\\
+ & =-\gamma\left\{ \frac{1}{1-\lambda}-\frac{\lambda(\tilde{\tilde{\varphi}}+1)}{1-\lambda}\right\} y_{t}-\frac{\kappa}{1-\lambda}\Phi y_{t}\\
+ & +\kappa\frac{\lambda\left\{ 1+\tilde{\tilde{\varphi}}+(1-\Phi)\tilde{(\tilde{\gamma}}-1)\right\} }{1-\lambda}y_{t}
+\end{align*}
+\begin{align*}
+\tilde{\tilde{\gamma}} & =\tilde{\gamma}+\frac{\gamma}{\varphi+\gamma}\tilde{\Phi}=\gamma(1-\tilde{\tau}/\lambda)+\frac{\gamma}{\varphi+\gamma}(\tau/\lambda)\Phi\\
+ & =\gamma(1-(1-\Phi)(\tau/\lambda))+\frac{\gamma}{\varphi+\gamma}(\tau/\lambda)\Phi\\
+ & =\gamma\left(1-\left\{ 1-\frac{\varphi+\gamma+1}{\varphi+\gamma}\Phi\right\} \frac{\tau}{\lambda}\right)\\
+\tilde{\tilde{\varphi}} & =\tilde{\varphi}+\frac{\varphi}{\varphi+\gamma}\tilde{\Phi}=\varphi(1-\tilde{\tau}/\lambda)+\frac{\varphi}{\varphi+\gamma}(\tau/\lambda)\Phi\\
+ & =\varphi\left(1-s\frac{\tau}{\lambda}\right)
+\end{align*}
+GE-EIS is positive iff
+\[
+-\gamma\left\{ \frac{1}{1-\lambda}-\frac{\lambda(\tilde{\tilde{\varphi}}+1)}{1-\lambda}\right\} y_{t}-\frac{\kappa}{1-\lambda}\Phi+\kappa\frac{\lambda\left\{ 1+\tilde{\tilde{\varphi}}+(1-\Phi)\tilde{(\tilde{\gamma}}-1)\right\} }{1-\lambda}>0
+\]
+iff
+\[
+\kappa\lambda\left\{ 1+\tilde{\tilde{\varphi}}+(1-\Phi)\tilde{(\tilde{\gamma}}-1)\right\} <\gamma\left\{ 1-\lambda(\tilde{\tilde{\varphi}}+1)\right\} +\kappa\Phi
+\]
+\[
+\lambda<\frac{\gamma+\kappa\Phi}{\gamma(1+\tilde{\tilde{\varphi})}+\kappa\{(1+\tilde{\tilde{\varphi})}+(1-\Phi)\tilde{(\tilde{\gamma}}-1)\}}
+\]
+GEIS is increasing with $\lambda$ iff
+\[
+\gamma\tilde{(\tilde{\varphi}}+1)+\kappa(\tilde{\tilde{\varphi}}+(1-\Phi))>0
+\]
+\begin{align*}
+\frac{\partial mu_{t}^{S}}{\partial\kappa}= & -\frac{1}{1-\lambda}\Phi+\frac{\lambda\left\{ 1+\tilde{\tilde{\varphi}}+(1-\Phi)\tilde{(\tilde{\gamma}}-1)\right\} }{1-\lambda}>0
+\end{align*}
+iff
+\[
+\lambda\left\{ \tilde{\tilde{\varphi}}+(1-\Phi)\tilde{\tilde{\gamma}}\right\} >(1-\lambda)\Phi
+\]
+\[
+\tilde{\tilde{\varphi}}+(1-\Phi)\tilde{\tilde{\gamma}}=(\varphi+(1-\Phi)\gamma)\left((1-\frac{\tau}{\lambda})/\Phi+\frac{\varphi+\gamma+1}{\varphi+\gamma}\frac{\tau}{\lambda}\right)
+\]
+\[
+\frac{\lambda}{1-\lambda}(\varphi+(1-\Phi)\gamma)>\frac{1}{\left((1-\frac{\tau}{\lambda})/\Phi+\frac{\varphi+\gamma+1}{\varphi+\gamma}\frac{\tau}{\lambda}\right)}
+\]
+\[
+\lambda\{1+\tilde{\tilde{\varphi}}+(1-\Phi)\tilde{(\tilde{\gamma}}-1)\}-\Phi>0
+\]
+iff 
+\begin{align*}
+\Phi & <\lambda\{1+\tilde{\tilde{\varphi}}+(1-\Phi)\tilde{(\tilde{\gamma}}-1)\}\\
+\Phi & <\lambda(\tilde{\varphi}+\tilde{\gamma})-\lambda\Phi(\tilde{\gamma}-1)\\
+ & =\lambda(\tilde{\varphi}+\tilde{\gamma})/(1-\lambda+\lambda\tilde{\gamma})
+\end{align*}
+When $\Phi=0$, 
+\begin{align*}
+mu_{t}^{S} & =-\gamma\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}\\
+ & +\kappa\frac{\lambda}{1-\lambda}\left\{ \tilde{\tilde{\varphi}}+(1-\alpha)\tilde{\tilde{\gamma}}+\alpha\right\} y_{t}
+\end{align*}
+\begin{align*}
+\tilde{\tilde{\gamma}} & =\tilde{\gamma}-\{1-\tilde{\gamma}\}\tilde{\alpha}\\
+ & =(1+\tilde{\alpha})(\tilde{\gamma}-1)+1\\
+\tilde{\tilde{\varphi}} & =\tilde{\varphi}+\{1+\tilde{\varphi}\}\tilde{\alpha}\\
+ & =(1+\tilde{\alpha})(1+\tilde{\varphi})-1
+\end{align*}
+\begin{align*}
+\tilde{\tau} & =(1-\alpha)\tau\\
+\tilde{\varphi} & =\varphi(1-\tilde{\tau}/\lambda)\\
+\tilde{\alpha} & =\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}
+\end{align*}
+\begin{align*}
+mu_{t}^{S} & =-\gamma\left\{ 1-\frac{\lambda\{(1+\tilde{\alpha})(1+\tilde{\varphi})-1\}}{1-\lambda}\right\} y_{t}\\
+ & +\kappa\frac{\lambda}{1-\lambda}\left\{ (1+\tilde{\alpha})(1+\tilde{\varphi})-1+(1-\alpha)(1+\tilde{\alpha})(\tilde{\gamma}-1)+(1-\alpha)+\alpha\right\} y_{t}\\
+ & =-\gamma\left\{ \frac{1}{1-\lambda}-\frac{\lambda(1+\tilde{\alpha})(1+\tilde{\varphi})}{1-\lambda}\right\} y_{t}\\
+ & +\kappa\frac{\lambda(1+\tilde{\alpha})}{1-\lambda}\left\{ 1+\tilde{\varphi}+(1-\alpha)(\tilde{\gamma}-1)\right\} y_{t}
+\end{align*}
+\begin{align*}
+ & \frac{\lambda}{1-\lambda}\frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)(\gamma+\varphi)}\left\{ 1+\tilde{\varphi}+(1-\alpha)(\tilde{\gamma}-1)\right\} y_{t}\\
+ & =\frac{\lambda}{1-\lambda}\left\{ \frac{\gamma(1+\tilde{\varphi})}{(\gamma+\varphi)}+\frac{\varphi(1+\tilde{\varphi})}{(1-\alpha)(\gamma+\varphi)}+\frac{(1-\alpha)\gamma+\varphi}{(\gamma+\varphi)}(\tilde{\gamma}-1)\right\} y_{t}
+\end{align*}
+\begin{align*}
+\frac{\partial mu_{t}^{S}}{\partial\kappa} & >0
+\end{align*}
+iff
+\[
+(1+\tilde{\alpha})\left\{ 1+\tilde{\varphi}+(1-\alpha)(\tilde{\gamma}-1)\right\} >0
+\]
+iff 
+\[
+\alpha<1-\sqrt{\frac{\varphi(1+\tilde{\varphi})}{\gamma(\tilde{\gamma}-1)}}
+\]
+
+\begin{itemize}
+\item When $\tau=0$,
+\begin{align*}
+mu_{t}^{S} & =-\gamma\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}-\kappa\Phi\\
+ & +\kappa\frac{\lambda}{1-\lambda}\left\{ \tilde{\tilde{\varphi}}+(1-\Phi)(1-\alpha)\tilde{\tilde{\gamma}}+(1-\Phi)\alpha\right\} y_{t}
+\end{align*}
+\begin{align*}
+\tilde{\tilde{\gamma}} & =\gamma-\{1-\gamma\}\tilde{\alpha}\\
+ & =(1+\tilde{\alpha})(\gamma-1)+1\\
+\tilde{\tilde{\varphi}} & =\varphi+\{1+\varphi\}\tilde{\alpha}\\
+ & =(1+\tilde{\alpha})(1+\varphi)-1+(1+\tilde{\alpha})(1+\varphi)
+\end{align*}
+\begin{align*}
+\tilde{\alpha} & =\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}
+\end{align*}
+\begin{align*}
+mu_{t}^{S} & =-\gamma\left\{ \frac{1}{1-\lambda}-\frac{\lambda(1+\tilde{\tilde{\varphi})}}{1-\lambda}\right\} y_{t}-\kappa\Phi\\
+ & +\kappa\frac{\lambda}{1-\lambda}\left\{ 1+\tilde{\tilde{\varphi}}-1+(1-\Phi)(1-\alpha)\tilde{\tilde{\gamma}}+(1-\Phi)(\alpha-1)+(1-\Phi)\right\} y_{t}\\
+ & =-\gamma\left\{ \frac{1}{1-\lambda}-\frac{\lambda(1+\tilde{\tilde{\varphi})}}{1-\lambda}\right\} y_{t}-\kappa\Phi-\kappa\frac{\lambda}{1-\lambda}\Phi\\
+ & +\kappa\frac{\lambda}{1-\lambda}\left\{ 1+\tilde{\tilde{\varphi}}+(1-\Phi)(1-\alpha)(\tilde{\tilde{\gamma}}-1)\right\} y_{t}\\
+ & =-\gamma\left\{ \frac{1}{1-\lambda}-\frac{\lambda(1+\tilde{\alpha})(1+\varphi)}{1-\lambda}\right\} y_{t}-\frac{\kappa}{1-\lambda}\Phi\\
+ & +\kappa\frac{\lambda(1+\tilde{\alpha})}{1-\lambda}\left\{ 1+\varphi+(1-\Phi)(1-\alpha)(\gamma-1)\right\} y_{t}
+\end{align*}
+Since $\kappa=\xi(1+\varphi)\left[1+\varphi-(1-\gamma)(1-\alpha)(1-\Phi)\right]^{-1}$,
+\begin{align*}
+mu_{t}^{S} & =-\gamma\left\{ \frac{1}{1-\lambda}-\frac{\lambda(1+\tilde{\alpha})(1+\varphi)}{1-\lambda}\right\} y_{t}\\
+ & -\frac{1}{1-\lambda}\frac{\xi(1+\varphi)\Phi}{1+\varphi-(1-\gamma)(1-\alpha)(1-\Phi)}\\
+ & +\xi\frac{\lambda(1+\tilde{\alpha})}{1-\lambda}(1+\varphi)y_{t}\\
+ & =-\frac{\gamma}{1-\lambda}y_{t}+(\gamma+\xi)\frac{\lambda(1+\tilde{\alpha})(1+\varphi)}{1-\lambda}y_{t}\\
+ & -\frac{1}{1-\lambda}\frac{\xi(1+\varphi)\Phi}{1+\varphi-(1-\gamma)(1-\alpha)(1-\Phi)}y_{t}
+\end{align*}
+\[
+\frac{\partial mu_{t}^{S}}{\partial\xi}>0
+\]
+iff
+\begin{align*}
+\{1+\varphi-(1-\gamma)(1-\alpha)(1-\Phi)\}\lambda(1+\tilde{\alpha}) & >\Phi\\
+\{1-\lambda(1+\tilde{\alpha})(1-\gamma)(1-\alpha)\}\Phi & <\{1+\varphi-(1-\gamma)(1-\alpha)\}\lambda(1+\tilde{\alpha})\\
+\Phi & <\lambda\frac{(1+\tilde{\alpha})\{1+\varphi-(1-\gamma)(1-\alpha)\}}{1-\lambda(1+\tilde{\alpha})(1-\gamma)(1-\alpha)}\\
+ & =\frac{\lambda\{(1-\alpha)(\gamma+\varphi)+\alpha\varphi\}\{1+\varphi-(1-\gamma)(1-\alpha)\}}{(1-\alpha)(\gamma+\varphi)-\lambda\{(1-\alpha)(\gamma+\varphi)+\alpha\varphi\}(1-\gamma)(1-\alpha)}\\
+ & =\frac{\lambda\{(1-\alpha)\gamma+\varphi\}\{\varphi+\alpha+(1-\alpha)\gamma\}}{(1-\alpha)(\gamma+\varphi)-\lambda\{(1-\alpha)\gamma+\varphi\}(1-\gamma)(1-\alpha)}
+\end{align*}
+\item Since
+\[
+1+\tilde{\alpha}=1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}=\frac{(1-\alpha)(\gamma+\varphi)+\alpha\varphi}{(1-\alpha)(\gamma+\varphi)},
+\]
+\begin{align*}
+mu_{t}^{S} & =-\gamma+\frac{\lambda}{1-\lambda}\{\varphi+\xi(1+\varphi)\}y_{t}\\
+ & +\frac{\lambda}{1-\lambda}\frac{\alpha\varphi(\gamma+\xi)}{(1-\alpha)(\gamma+\varphi)}y_{t}\\
+ & -\frac{1}{1-\lambda}\frac{\xi(1+\varphi)\Phi}{1+\varphi-(1-\gamma)(1-\alpha)(1-\Phi)}y_{t}
+\end{align*}
+\begin{align*}
+mu_{t}^{S} & =-\xi\Phi y_{t}+\frac{\lambda}{1-\lambda}\varphi y_{t}\\
+ & =\frac{\lambda}{1-\lambda}\xi(1+\varphi-\frac{\alpha}{1-\alpha}+\Phi)y_{t}\\
+\end{align*}
+When $\Phi=\alpha=0$,
+\begin{align*}
+mu_{t}^{S} & =-\frac{\gamma}{1-\lambda}y_{t}-\frac{\lambda}{1-\lambda}(\gamma+\xi)(1+\varphi)y_{t}\\
+ & =-\gamma y_{t}+\frac{\lambda}{1-\lambda}\{\varphi+\xi(1+\varphi)\}y_{t}
+\end{align*}
+\item $\alpha=0$
+\begin{align*}
+c_{t}^{H} & =\{1+\varphi(1-\tilde{\tilde{\tau}}/\lambda)\}y_{t}\\
+\tilde{\tilde{\tau}} & =MC\tau-\frac{\tau(1-MC)}{\varphi+\gamma}\\
+ & =\tau+\frac{\varphi+\gamma-1}{\varphi+\gamma}(1-MC)\tau
+\end{align*}
+\begin{align*}
+n_{t}^{H} & =(1-\gamma(1-\tilde{\tau}/\lambda))y_{t}
+\end{align*}
+\begin{align*}
+c_{t}^{S} & =\frac{c_{t}-\lambda c_{t}^{H}}{1-\lambda}\\
+ & =\left\{ 1-\frac{\lambda\varphi(1-\tilde{\tau}/\lambda)}{1-\lambda}\right\} y_{t}\\
+n_{t}^{S} & =\left\{ 1+\frac{\lambda\gamma(1-\tilde{\tau}/\lambda)}{1-\lambda}\right\} y_{t}
+\end{align*}
+\begin{align*}
+mu_{t}^{S} & =-(\gamma+\kappa)c_{t}^{S}+\kappa MCn_{t}^{S}\\
+ & =-\gamma c_{t}^{S}-\kappa(c_{t}^{S}-MCn_{t}^{S})\\
+ & =-\gamma\left\{ 1-\frac{\lambda\varphi(1-\tilde{\tau}/\lambda)}{1-\lambda}\right\} y_{t}-\kappa\left\{ 1-\frac{\lambda\varphi(1-\tilde{\tau}/\lambda)}{1-\lambda}\right\} y_{t}+MC\kappa\left\{ 1+\frac{\lambda\gamma(1-\tilde{\tau}/\lambda)}{1-\lambda}\right\} y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\varphi(1-\tilde{\tau}/\lambda)}{1-\lambda}\right\} y_{t}-\kappa(1-MC)y_{t}+\kappa\frac{\lambda(1-\tilde{\tau}/\lambda)}{1-\lambda}(\varphi+\gamma+(MC-1)\gamma)y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\varphi(1-\tilde{\tau}/\lambda)}{1-\lambda}\right\} y_{t}-\kappa(1-MC)y_{t}+\kappa\frac{\lambda(1-\tilde{\tau}/\lambda)}{1-\lambda}(\varphi+\gamma)y_{t}-\kappa\frac{\lambda(1-\tilde{\tau}/\lambda)}{1-\lambda}\gamma(1-MC)y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\varphi(1-\tilde{\tau}/\lambda)}{1-\lambda}\right\} y_{t}+\kappa(\varphi+\gamma)\frac{\lambda(1-\tilde{\tau}/\lambda)}{1-\lambda}y_{t}-\kappa(1-MC)\left\{ 1+\frac{\lambda\gamma(1-\tilde{\tau}/\lambda)}{1-\lambda}\right\} y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\varphi(1-\tilde{\tau}/\lambda)}{1-\lambda}\right\} y_{t}+\kappa(\varphi+\gamma)\frac{\lambda(1-\tilde{\tau}/\lambda)}{1-\lambda}y_{t}-\kappa(1-MC)\left\{ 1+\frac{\lambda\gamma(1-\tilde{\tau}/\lambda)}{1-\lambda}\right\} y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\varphi(1-\tilde{\tau}/\lambda)}{1-\lambda}\right\} y_{t}+\kappa(\varphi+MC\gamma)\frac{\lambda(1-\tilde{\tau}/\lambda)}{1-\lambda}y_{t}-\kappa(1-MC)y_{t}\\
+\tilde{\tau} & =\tau\left\{ MC-\frac{1-MC}{\varphi+\gamma}\right\} 
+\end{align*}
+\item $MC=1$
+\begin{align*}
+c_{t}^{H} & =\{1+\varphi(1-\tilde{\tau}/\lambda)\}y_{t}+\frac{\alpha\varphi\{1+\varphi(1-\tilde{\tau}/\lambda)\}}{(1-\alpha)(\gamma+\varphi)}y_{t}\\
+ & =\{1+\tilde{\varphi}(1-\tilde{\tau}/\lambda)\}\left\{ 1+\frac{\alpha\tilde{\varphi}}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+\tilde{\varphi} & =\varphi(1-\tilde{\tau}/\lambda)\\
+\tilde{\tau} & =(1-\alpha)MC
+\end{align*}
+\begin{align*}
+c_{t}^{H} & =\{1+\tilde{\varphi}\}\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+c_{t}^{S} & =\frac{c_{t}-\lambda c_{t}^{H}}{1-\lambda}=\frac{1-\lambda\{1+\tilde{\varphi}\}\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} }{1-\lambda}y_{t}=\left\{ 1-\frac{\lambda\tilde{\varphi}}{1-\lambda}-\frac{\lambda\{1+\tilde{\varphi}\}}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+n_{t}^{H} & =(1-\tilde{\gamma})\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+n_{t}^{S} & =\frac{n_{t}-\lambda n_{t}^{H}}{1-\lambda}=\frac{\frac{1}{1-\alpha}y_{t}-\lambda n_{t}^{H}}{1-\lambda}\\
+ & =\frac{1+\frac{\alpha}{1-\alpha}-\lambda(1-\gamma\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} }{1-\lambda}y_{t}=\left\{ 1+\frac{\lambda\tilde{\gamma}}{1-\lambda}+\frac{\alpha}{1-\alpha}\frac{1}{1-\lambda}-\frac{\lambda(1-\tilde{\gamma})}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}
+\end{align*}
+\begin{align*}
+mu_{t}^{S} & =-(\gamma+\kappa)c_{t}^{S}+\kappa(1-\alpha)n_{t}^{S}\\
+ & =-\gamma c_{t}^{S}-\kappa(c_{t}^{S}-(1-\alpha)n_{t}^{S})\\
+ & =-\gamma\left\{ 1-\frac{\lambda\tilde{\varphi}}{1-\lambda}-\frac{\lambda(1+\tilde{\varphi})}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+ & -\kappa(\left\{ 1-\frac{\lambda\tilde{\varphi}}{1-\lambda}-\frac{\lambda(1+\tilde{\varphi})}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+ & +(1-\alpha)\kappa\left\{ 1+\frac{\alpha}{1-\alpha}\frac{1}{1-\lambda}+\frac{\lambda\tilde{\gamma}}{1-\lambda}-\frac{\lambda(1-\tilde{\gamma})}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} )y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\tilde{\varphi}}{1-\lambda}-\frac{\lambda(1+\tilde{\varphi})}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}-\kappa\left\{ 1-(1-\alpha)-\frac{\alpha}{1-\lambda}\right\} y_{t}\\
+ & +\frac{\lambda\kappa}{1-\lambda}(\tilde{\varphi}+(1-\alpha)\tilde{\gamma})y_{t}+\kappa(1+\tilde{\varphi}-(1-\tilde{\gamma})(1-\alpha\tilde{)})\frac{\lambda}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\tilde{\varphi}}{1-\lambda}-\frac{\lambda(1+\tilde{\varphi})}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}+\kappa\frac{\alpha\lambda}{1-\lambda}y_{t}\\
+ & +\frac{\lambda\kappa}{1-\lambda}(\tilde{\varphi}+(1-\alpha)\tilde{\gamma})y_{t}+\kappa(1+\tilde{\varphi}-(1-\tilde{\gamma})(1-\alpha))\frac{\lambda}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\tilde{\varphi}}{1-\lambda}-\frac{\lambda(1+\tilde{\varphi})}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+ & +\frac{\lambda\kappa}{1-\lambda}\left\{ \tilde{\varphi}+((1-\alpha)\tilde{\gamma}+\alpha)\right\} y_{t}+\frac{\lambda\kappa}{1-\lambda}\left\{ 1+\tilde{\varphi}-(1-\tilde{\gamma})(1-\alpha)\right\} \frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\tilde{\varphi}}{1-\lambda}-\frac{\lambda(1+\tilde{\varphi})}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+ & +\frac{\lambda\kappa}{1-\lambda}\left\{ 1+\tilde{\varphi}-(1-\tilde{\gamma})(1-\alpha)\right\} \left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+ & =-\gamma\left\{ \frac{1}{1-\lambda}-\frac{\lambda(1+\tilde{\varphi})}{1-\lambda}\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} \right\} y_{t}\\
+ & +\frac{\lambda\kappa}{1-\lambda}\left\{ 1+\tilde{\varphi}-(1-\tilde{\gamma})(1-\alpha)\right\} \left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+ & =-\gamma\left\{ \frac{1}{1-\lambda}-\frac{\tilde{\lambda}(1+\tilde{\varphi})}{1-\lambda}\right\} y_{t}+\frac{\tilde{\lambda}\kappa}{1-\lambda}\left\{ 1+\tilde{\varphi}-(1-\tilde{\gamma})(1-\alpha)\right\} y_{t}\\
+\tilde{\lambda} & =\lambda\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} \\
+\tilde{\varphi} & =\varphi(1-\tilde{\tau}/\lambda)\\
+\tilde{\gamma} & =\gamma(1-\tilde{\tau}/\lambda)\\
+\tilde{\tau} & =(1-\alpha)MC
+\end{align*}
+\item $\tau=0$
+\begin{align*}
+c_{t}^{H} & =(1+\varphi)\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+c_{t}^{S} & =\frac{c_{t}-\lambda c_{t}^{H}}{1-\lambda}=\frac{1-\lambda(1+\varphi)\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} }{1-\lambda}y_{t}=\left\{ 1-\frac{\lambda\varphi}{1-\lambda}-\frac{\lambda(1+\varphi)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+n_{t}^{H} & =(1-\gamma)\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+n_{t}^{S} & =\frac{n_{t}-\lambda n_{t}^{H}}{1-\lambda}=\frac{\frac{1}{1-\alpha}y_{t}-\lambda n_{t}^{H}}{1-\lambda}\\
+ & =\frac{1+\frac{\alpha}{1-\alpha}-\lambda(1-\gamma)\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} }{1-\lambda}y_{t}=\left\{ 1+\frac{\lambda\gamma}{1-\lambda}+\frac{\alpha}{1-\alpha}\frac{1}{1-\lambda}-\frac{\lambda(1-\gamma)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}
+\end{align*}
+\begin{align*}
+mu_{t}^{S} & =-(\gamma+\kappa)c_{t}^{S}+\kappa(1-\alpha)MC_{SS}n_{t}^{S}\\
+ & =-\gamma c_{t}^{S}-\kappa(c_{t}^{S}-(1-\alpha)MC_{SS}n_{t}^{S})\\
+ & =-\gamma\left\{ 1-\frac{\lambda\varphi}{1-\lambda}-\frac{\lambda(1+\varphi)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+ & -\kappa(\left\{ 1-\frac{\lambda\varphi}{1-\lambda}-\frac{\lambda(1+\varphi)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+ & +(1-\alpha)MC\kappa\left\{ 1+\frac{\alpha}{1-\alpha}\frac{1}{1-\lambda}+\frac{\lambda\gamma}{1-\lambda}-\frac{\lambda(1-\gamma)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} )y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\varphi}{1-\lambda}-\frac{\lambda(1+\varphi)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}-\kappa\left\{ 1-(1-\alpha)MC-\frac{\alpha}{1-\lambda}MC\right\} y_{t}\\
+ & +\frac{\lambda\kappa}{1-\lambda}(\varphi+(1-\alpha)MC\gamma)y_{t}+\kappa(1+\varphi-(1-\gamma)(1-\alpha)MC)\frac{\lambda}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\varphi}{1-\lambda}-\frac{\lambda(1+\varphi)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}-\kappa\left\{ 1-MC-\frac{\alpha\lambda}{1-\lambda}MC\right\} y_{t}\\
+ & +\frac{\lambda\kappa}{1-\lambda}(\varphi+(1-\alpha)MC\gamma)y_{t}+\kappa(1+\varphi-(1-\gamma)(1-\alpha)MC)\frac{\lambda}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\varphi}{1-\lambda}-\frac{\lambda(1+\varphi)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}-\kappa(1-MC)y_{t}\\
+ & +\frac{\lambda\kappa}{1-\lambda}\left\{ \varphi+((1-\alpha)\gamma+\alpha)MC\right\} y_{t}+\frac{\lambda\kappa}{1-\lambda}\left\{ 1+\varphi-(1-\gamma)(1-\alpha)MC\right\} \frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}y_{t}\\
+ & =-\gamma\left\{ 1-\frac{\lambda\varphi}{1-\lambda}-\frac{\lambda(1+\varphi)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}-\kappa(1-MC)y_{t}\\
+ & +\frac{\lambda\kappa}{1-\lambda}\left\{ 1+\varphi+MC-1+((1-\alpha)\gamma+\alpha-1)MC\right\} y_{t}+\frac{\lambda\kappa}{1-\lambda}\left\{ 1+\varphi-(1-\gamma)(1-\alpha)MC\right\} \frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}y_{t}\\
+ & =-\gamma\left\{ \frac{1}{1-\lambda}-\frac{\lambda(1+\varphi)}{1-\lambda}\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} \right\} y_{t}-\kappa(1-MC)y_{t}-\frac{\lambda\kappa}{1-\lambda}(1-MC)\\
+ & +\frac{\lambda\kappa}{1-\lambda}\left\{ 1+\varphi-(1-\gamma)(1-\alpha)MC\right\} \left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+ & =-\gamma\left\{ \frac{1}{1-\lambda}-\frac{\lambda(1+\varphi)}{1-\lambda}\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} \right\} y_{t}-\frac{\kappa}{1-\lambda}(1-MC)\\
+ & +\frac{\lambda\kappa}{1-\lambda}\left\{ 1+\varphi-(1-\gamma)(1-\alpha)MC\right\} \left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}
+\end{align*}
+\end{itemize}
+
+\end{document}

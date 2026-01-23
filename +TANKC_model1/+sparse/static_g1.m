@@ -1,0 +1,66 @@
+function [g1, T_order, T] = static_g1(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T_order, T)
+if nargin < 8
+    T_order = -1;
+    T = NaN(10, 1);
+end
+[T_order, T] = TANKC_model1.sparse.static_g1_tt(y, x, params, T_order, T);
+g1_v = NaN(53, 1);
+g1_v(1)=(-(params(10)/params(11)));
+g1_v(2)=1;
+g1_v(3)=1;
+g1_v(4)=(-y(4));
+g1_v(5)=1;
+g1_v(6)=1;
+g1_v(7)=y(3);
+g1_v(8)=(-(((y(2))-y(2))/((y(2))*(y(2)))/(y(2)/(y(2)))));
+g1_v(9)=(-((1-params(12))*y(6)*exp(y(16))*getPowerDeriv(y(3),(-params(12)),1)));
+g1_v(10)=y(2);
+g1_v(11)=1;
+g1_v(12)=(-(exp(y(16))*getPowerDeriv(y(3),1-params(12),1)));
+g1_v(13)=(-(((y(3))-y(3))/((y(3))*(y(3)))/(y(3)/(y(3)))));
+g1_v(14)=(-(T(1)*getPowerDeriv(y(4),params(4),1)));
+g1_v(15)=(-y(2));
+g1_v(16)=(-params(11));
+g1_v(17)=(-(T(3)*getPowerDeriv(y(5),params(4),1)));
+g1_v(18)=(-(T(5)*T(6)*params(5)*params(2)*getPowerDeriv(y(5),1+params(4),1)/(1+params(4))));
+g1_v(19)=(-(1-params(11)));
+g1_v(20)=(-(T(7)*(1-params(12))*exp(y(16))));
+g1_v(21)=(-params(7));
+g1_v(22)=1;
+g1_v(23)=1;
+g1_v(24)=(-1);
+g1_v(25)=(-(((y(8))-y(8))/((y(8))*(y(8)))/(y(8)/(y(8)))));
+g1_v(26)=(-(T(2)*getPowerDeriv(y(9),params(3),1)));
+g1_v(27)=1;
+g1_v(28)=(-params(11));
+g1_v(29)=(-(T(4)*getPowerDeriv(y(10),params(3),1)));
+g1_v(30)=(-(T(6)*getPowerDeriv(y(10),(-params(5))-1,1)));
+g1_v(31)=(-(1-params(11)));
+g1_v(32)=(-(1-T(8)));
+g1_v(33)=1;
+g1_v(34)=1;
+g1_v(35)=(-((-(y(1)-(y(1))))/((y(11))*(y(11)))));
+g1_v(36)=(-(params(1)/y(14)));
+g1_v(37)=1;
+g1_v(38)=(-(1/y(14)));
+g1_v(39)=1;
+g1_v(40)=(-((-(params(1)*y(12)))/(y(14)*y(14))));
+g1_v(41)=y(11)*0.5*params(8)*2*(y(14)-1);
+g1_v(42)=params(8)*(y(14)-1)+y(14)*params(8)-((y(14)-1)*params(1)*params(8)+y(14)*params(1)*params(8));
+g1_v(43)=(-(exp((-y(15)))*1/params(1)*getPowerDeriv(y(14),params(6),1)));
+g1_v(44)=(-((-y(12))/(y(14)*y(14))));
+g1_v(45)=(-(T(9)*1/params(1)*(-exp((-y(15))))));
+g1_v(46)=1-params(14);
+g1_v(47)=(-((1-params(12))*y(6)*exp(y(16))*T(7)));
+g1_v(48)=(-T(10));
+g1_v(49)=1-params(13);
+g1_v(50)=1;
+g1_v(51)=1;
+g1_v(52)=1;
+g1_v(53)=1;
+if ~isoctave && matlab_ver_less_than('9.8')
+    sparse_rowval = double(sparse_rowval);
+    sparse_colval = double(sparse_colval);
+end
+g1 = sparse(sparse_rowval, sparse_colval, g1_v, 20, 20);
+end

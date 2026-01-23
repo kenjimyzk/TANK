@@ -1,0 +1,98 @@
+%% LyX 2.4.4 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english,autodetect-engine, dvi=dvipdfmx, ja=standard]{bxjsarticle}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{babel}
+\begin{document}
+\begin{itemize}
+\item 12変数 ($D_{t},W_{t},N_{t},N_{t}^{H},N_{t}^{S},MC_{t},C_{t},C_{t}^{H},C_{t}^{S},Y_{t},R_{t}^{N}$,
+$\Pi_{t}$):
+\begin{align*}
+W_{t} & =\Xi(N_{t}^{H})^{\varphi}(C_{t}^{H})^{\sigma}\\
+C_{t}^{H} & =W_{t}N_{t}^{H}+\frac{\tau^{D}}{\lambda}D_{t}\\
+W_{t} & =\Xi(N_{t}^{S})^{\varphi}(C_{t}^{S})^{\sigma}\\
+1 & =\mathbb{E}_{t}\left[\beta\left(\frac{C_{t+1}^{S}}{C_{t}^{S}}\right)^{-\sigma}\frac{R_{t}^{N}}{\Pi_{t+1}}\right]
+\end{align*}
+\begin{align*}
+W_{t} & =(1-\alpha)MC_{t}N_{t}^{-\alpha}\\
+D_{t}= & Y_{t}-\frac{\eta_{P}}{2}\left(\frac{\Pi_{t}}{\Pi}-1\right)^{2}Y_{t}-W_{t}N_{t}
+\end{align*}
+\begin{align*}
+\eta_{P}\frac{\Pi_{t}}{\Pi}\left(\frac{\Pi_{t}}{\Pi}-1\right)=\psi_{P}\left(MC_{t}-(1+\tau^{S})(1-1/\psi_{P})\right)\\
++\beta\eta_{P}\mathbb{E}_{t}\left[\left(\frac{C_{t+1}^{S}}{C_{t}^{S}}\right)^{-\sigma}\frac{Y_{t+1}}{Y_{t}}\frac{\Pi_{t+1}}{\Pi}\left(\frac{\Pi_{t+1}}{\Pi}-1\right)\right]
+\end{align*}
+\end{itemize}
+\begin{align*}
+C_{t} & =\lambda C_{t}^{H}+(1-\lambda)C_{t}^{S}\\
+N_{t} & =\lambda N_{t}^{S}+(1-\lambda)N_{t}^{S}\\
+Y_{t} & =C_{t}+\frac{\eta_{P}}{2}\left(\frac{\Pi_{t}}{\Pi}-1\right)^{2}Y_{t}\\
+Y_{t} & =N_{t}^{1-\alpha}\\
+\frac{R_{t}^{N}}{R^{N}} & =\left(\frac{\Pi_{t}}{\Pi}\right)^{\phi}\exp(-m_{t})\\
+m_{t} & =\rho_{m}m_{t-1}+e_{t}^{m}
+\end{align*}
+
+\begin{itemize}
+\item 定常状態
+\begin{align*}
+W & =\Xi(N^{H})^{\varphi}(C^{H})^{\gamma}\\
+C^{H} & =WN^{H}+\frac{\tau^{D}}{\lambda}D\\
+W & =\Xi(N^{S})^{\varphi}(C^{S})^{\gamma}\\
+1 & =\mathbb{E}_{t}\left[\beta\frac{R^{N}}{\Pi}\right]
+\end{align*}
+\begin{align*}
+W & =(1-\alpha)MCN^{-\alpha}\\
+D=Y & -WN
+\end{align*}
+\[
+MC=(1+\tau^{S})(1-1/\psi_{P})
+\]
+\end{itemize}
+\begin{align*}
+C & =\lambda C^{H}+(1-\lambda)C^{S}\\
+N & =\lambda N^{H}+(1-\lambda)N^{S}\\
+Y & =C\\
+Y & =N^{1-\alpha}
+\end{align*}
+
+\begin{itemize}
+\item 対数線形近は以下である $d_{t}=(D_{t}-D)/Y$:
+\begin{align*}
+w_{t} & =\varphi n_{t}^{H}+\gamma c_{t}^{H}\\
+\frac{C^{H}}{Y}c_{t}^{H} & =\frac{WN^{H}}{Y}(w_{t}+n_{t}^{H})+\frac{\tau^{D}}{\lambda}d_{t}\\
+w_{t} & =\varphi n_{t}^{S}+\gamma c_{t}^{S}\\
+r_{t}^{N} & =\mathbb{E}_{t}\left[\pi_{t+1}\right]+(\gamma+\kappa)\mathbb{E}_{t}\left[\Delta c_{t+1}^{S}\right]-\kappa\mathbb{E}_{t}\left[\Delta n_{t+1}^{S}\right]
+\end{align*}
+\begin{align*}
+\kappa & =\xi\left[1-\frac{1-\gamma}{1+\varphi}\frac{WN^{S}}{C^{S}}\right]^{-1}(1-\alpha)MC\frac{N^{S}/N}{C^{S}/Y}\xi\\
+ & =\xi\left[1-\frac{1-\gamma}{1+\varphi}(1-\alpha)MC\frac{N^{S}/N}{C^{S}/Y}\xi\right]^{-1}
+\end{align*}
+\begin{align*}
+w_{t}= & mc_{t}+a_{t}-\alpha n_{t}=mc_{t}+y_{t}-n_{t}\\
+d_{t}\equiv & \frac{D_{t}-D}{Y_{t}}=\frac{Y_{t}}{Y}\{1-\frac{\eta_{P}}{2}\left(\frac{\Pi_{t}}{\Pi}-1\right)^{2}\}-\frac{W_{t}N_{t}}{Y}-\frac{D}{Y}\\
+ & =\frac{Y_{t}}{Y}\{1-\frac{\eta_{P}}{2}\left(\frac{\Pi_{t}}{\Pi}-1\right)^{2}\}-\frac{(1-\alpha)MC_{t}Y_{t}}{Y}-\frac{D}{Y}\\
+ & =\frac{Y_{t}}{Y}\left\{ 1-\left(\pi_{t}\right)^{2}-(1-\alpha)MC_{t}\right\} -\frac{D}{Y}\\
+= & (1+y_{t})\left\{ 1-(1-\alpha)MC(1+mc_{t})\right\} -\frac{D}{Y}\\
+= & (1+y_{t})\left\{ 1-(1-\alpha)MC-(1-\alpha)MCmc_{t}\right\} -\frac{D}{Y}\\
+= & -(1-\alpha)MCmc_{t}+(1+y_{t})\left\{ 1-(1-\alpha)MC\right\} -(1-(1-\alpha)MC)\\
+= & -(1-\alpha)MCmc_{t}+(1-(1-\alpha)MC)y_{t}\\
+= & y_{t}-(1-\alpha)MC(mc_{t}+y_{t})\\
+= & y_{t}-(1-\alpha)MC(w_{t}+n_{t})\\
+= & (1-MC)y_{t}-(1-\alpha)MCw_{t}\\
+\pi_{t}= & \frac{\psi_{p}(\varphi+\gamma)MC}{\eta_{p}}mc_{t}+\beta\mathbb{E}_{t}\left[\pi_{t+1}\right]
+\end{align*}
+\[
+d_{t}=-(1-\alpha)MCw_{t}+(1-MC)y_{t}
+\]
+\end{itemize}
+\begin{align*}
+c_{t} & =\lambda\frac{C^{H}}{C}c_{t}^{H}+(1-\lambda)\frac{C^{S}}{C}c_{t}^{S}\\
+n_{t} & =\lambda\frac{N^{H}}{N}n_{t}^{H}+(1-\lambda)\frac{N^{S}}{N}n_{t}^{S}\\
+y_{t} & =c_{t}\\
+y_{t} & =(1-\alpha)n_{t}\\
+r_{t}^{N} & =\phi\pi_{t}-m_{t}\\
+m_{t} & =\rho_{m}m_{t-1}+e_{t}^{m}
+\end{align*}
+\end{document}

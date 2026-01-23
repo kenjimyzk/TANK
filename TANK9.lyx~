@@ -1,0 +1,525 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass bxjsarticle
+\use_default_options true
+\maintain_unincluded_children no
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+mu_{t}^{S} & =-\gamma y_{t}-\kappa\Phi+\frac{\lambda}{1-\lambda}\left\{ \gamma\tilde{\tilde{\varphi}}+\kappa\left\{ \tilde{\tilde{\varphi}}+(1-\Phi)\{(1-\alpha)\tilde{\tilde{\gamma}}+\alpha\}\right\} \right\} y_{t}\\
+ & =-\gamma\left\{ \frac{1-\lambda(\tilde{\tilde{\varphi}}+1)}{1-\lambda}\right\} y_{t}+\frac{\kappa}{1-\lambda}\left\{ \lambda\left\{ \tilde{\tilde{\varphi}}+1+(1-\Phi)(1-\alpha)(\tilde{\tilde{\gamma}}-1)\right\} -\Phi\right\} y_{t}\\
+ & =-\gamma\left\{ \frac{1-\lambda(\tilde{\tilde{\varphi}}+1)}{1-\lambda}\right\} y_{t}+\frac{\xi(\varphi+1)}{1-\lambda}\frac{\left\{ \lambda\left\{ \tilde{\tilde{\varphi}}+1-(1-\Phi)(1-\alpha)(1-\tilde{\tilde{\gamma}})\right\} -\Phi\right\} }{\varphi+1-(1-\Phi)(1-\alpha)(1-\gamma)}y_{t}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\tilde{\tilde{\gamma}} & =\tilde{\gamma}-\{1-\tilde{\gamma}\}\tilde{\alpha}+\frac{\gamma(\tau/\lambda)}{\varphi+\gamma}\Phi\\
+\tilde{\tilde{\varphi}} & =\tilde{\varphi}+\{1+\tilde{\varphi}\}\tilde{\alpha}+\frac{\varphi(\tau/\lambda)}{\varphi+\gamma}\Phi
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\tilde{\gamma} & =\gamma(1-(1-\alpha)(1-\Phi)\tau/\lambda)\\
+\tilde{\varphi} & =\varphi(1-(1-\alpha)(1-\Phi)\tau/\lambda)\\
+\tilde{\alpha} & =\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula $\tilde{\tilde{\varphi}}$
+\end_inset
+
+ is positive iff
+\begin_inset Formula 
+\begin{align*}
+\tilde{\tilde{\varphi}} & =(1+\tilde{\alpha})\tilde{\varphi}+\tilde{\alpha}+\frac{\varphi(\tau/\lambda)}{\varphi+\gamma}\Phi\\
+ & =\frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)(\gamma+\varphi)}\tilde{\varphi}+\tilde{\alpha}+\frac{\varphi(\tau/\lambda)}{\varphi+\gamma}\Phi\\
+ & =\frac{\gamma+\varphi/(1-\alpha)}{\gamma+\varphi}\tilde{\varphi}+\frac{\alpha\varphi/(1-\alpha)+\varphi(\tau/\lambda)\Phi}{\gamma+\varphi}>0\\
+\Leftrightarrow & \varphi(1-(1-\alpha)(1-\Phi)\tau/\lambda)+\frac{\alpha\varphi/(1-\alpha)+\varphi(\tau/\lambda)\Phi}{\gamma+\varphi/(1-\alpha)}>0\\
+\Leftrightarrow & \varphi(\lambda-(1-\alpha)(1-\Phi)\tau)+\frac{\lambda\alpha\varphi/(1-\alpha)+\varphi\tau\Phi}{\gamma+\varphi/(1-\alpha)}>0\\
+\Leftrightarrow & (1+\frac{\alpha}{(1-\alpha)\gamma+\varphi})\lambda\varphi>\varphi(1-\alpha)(1-\Phi)\tau-\frac{\varphi\tau\Phi}{\gamma+\varphi/(1-\alpha)}\\
+\Leftrightarrow & \lambda>\tau(1-\alpha)\frac{1-\Phi-\frac{1}{(1-\alpha)\gamma+\varphi}\Phi}{1+\frac{\alpha}{(1-\alpha)\gamma+\varphi}}=\tau(1-\alpha)\frac{\{(1-\alpha)\gamma+\varphi\}(1-\Phi)-\Phi}{(1-\alpha)\gamma+\varphi+\alpha}\\
+ & =\tau(1-\alpha)\frac{\{(1-\alpha)\gamma+\varphi\}(1-\Phi)-\Phi}{(1+\varphi)+(1-\alpha)(\gamma-1)}
+\end{align*}
+
+\end_inset
+
+When 
+\begin_inset Formula $\alpha=0$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lambda>\tau\left\{ 1-\frac{\gamma+\varphi+1}{\gamma+\varphi}\Phi\right\} 
+\]
+
+\end_inset
+
+When 
+\begin_inset Formula $\Phi=0$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\lambda & >\tau(1-\alpha)\frac{1}{1+\frac{\alpha}{(1-\alpha)\gamma+\varphi}}\\
+ & =\frac{\tau(1-\alpha)\{(1-\alpha)\gamma+\varphi\}}{(1-\alpha)\gamma+\varphi+\alpha}\\
+ & =\frac{(1-\alpha)\{\varphi+\gamma(1-\alpha)\}}{(1+\varphi)+(1-\alpha)(\gamma-1)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $mu_{t}$
+\end_inset
+
+ is positive iff
+\begin_inset Formula 
+\[
+\lambda\left\{ \gamma(\tilde{\tilde{\varphi}}+1)+\kappa\left\{ \tilde{\tilde{\varphi}}+1-(1-\Phi)(1-\alpha)(1-\tilde{\tilde{\gamma}})-\Phi\}\right\} \right\} <\gamma+\kappa\Phi
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lambda\left\{ \gamma(1+\tilde{\varphi})(1+\tilde{\alpha})+\gamma\frac{\varphi}{\varphi+\gamma}\tilde{\Phi}+\kappa\left\{ (1+\tilde{\varphi})(1+\tilde{\alpha})+\frac{\varphi}{\varphi+\gamma}\tilde{\Phi}+(1-\Phi)(1-\alpha)\{(\tilde{\gamma}-1)(1+\tilde{\alpha})+\frac{\gamma}{\varphi+\gamma}\tilde{\Phi}\}-\Phi\}\right\} \right\} <\gamma+\kappa\Phi
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lambda\left\{ \gamma(1+\tilde{\varphi})(1+\tilde{\alpha})+\gamma\frac{\varphi}{\varphi+\gamma}\tilde{\Phi}+\kappa\left\{ (1+\tilde{\alpha})(1+\tilde{\varphi}+(1-\Phi)(1-\alpha)(\tilde{\gamma}-1))+\frac{\varphi}{\varphi+\gamma}\tilde{\Phi}+(1-\Phi)(1-\alpha)\frac{\gamma}{\varphi+\gamma}\tilde{\Phi}-\Phi\}\right\} \right\} <\gamma+\kappa\Phi
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\gamma(\lambda(1+\varphi)-\tilde{\tau}\varphi)(1+\tilde{\alpha})+\gamma\frac{\varphi}{\varphi+\gamma}\tau\Phi+\kappa\left\{ (1+\tilde{\alpha})(\lambda(1+\varphi)-\tilde{\tau}\varphi+(1-\Phi)(1-\alpha)\{\lambda(\gamma-1)-\tilde{\tau}\gamma\})+\frac{\tau\Phi}{\varphi+\gamma}\{\varphi+\gamma(1-\Phi)(1-\alpha)\}-\lambda\Phi\right\} <\gamma+\kappa\Phi
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\gamma(\lambda(1+\varphi)-\tilde{\tau}\varphi)(1+\tilde{\alpha})+\gamma\frac{\varphi}{\varphi+\gamma}\tau\Phi+\kappa\left\{ (1+\tilde{\alpha})\lambda\{(1+\varphi)+(1-\Phi)(1-\alpha)(\gamma-1)\}-(1+\tilde{\alpha})(\varphi+\gamma(1-\Phi)(1-\alpha)))\tilde{\tau}+\frac{\tau\Phi}{\varphi+\gamma}\{\varphi+\gamma(1-\Phi)(1-\alpha)\}-\lambda\Phi\right\} <\gamma+\kappa\Phi
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+ & \lambda[\gamma(1+\varphi)-\kappa\Phi+\kappa(1+\tilde{\alpha})\{(1+\varphi)+(1-\Phi)(1-\alpha)(\gamma-1)\}]\\
+ & <\kappa\{\varphi+\gamma(1-\Phi)(1-\alpha)\}\left\{ (1+\tilde{\alpha})(1-\alpha)(1-\Phi)-\frac{\Phi}{\varphi+\gamma}\right\} \tau\\
+ & +\gamma+\kappa\Phi+\gamma\varphi\left\{ (1+\tilde{\alpha})(1-\alpha)(1-\Phi)-\frac{\Phi}{\varphi+\gamma}\right\} \tau
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\lambda(1+\tilde{\varphi}) & =\lambda(1+\varphi)-\tilde{\tau}\\
+\lambda(\tilde{\gamma}-1) & =\lambda(\gamma-1)-\tilde{\tau}
+\end{align*}
+
+\end_inset
+
+if 
+\begin_inset Formula $\lambda(\tilde{\tilde{\varphi}}+1)<1$
+\end_inset
+
+ and 
+\begin_inset Formula $\tilde{\tilde{\varphi}}+1>(1-\Phi)(1-\alpha)(1-\tilde{\tilde{\gamma}})+\Phi$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $mu_{t}$
+\end_inset
+
+ increase with 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ iff
+\begin_inset Formula 
+\[
+\gamma\tilde{\tilde{\varphi}}+\kappa\left\{ \tilde{\tilde{\varphi}}+1-(1-\Phi)(1-\alpha)(1-\tilde{\tilde{\gamma}})-\Phi\right\} >0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\gamma(\tilde{\tilde{\varphi}}+1)+\kappa\left\{ \tilde{\tilde{\varphi}}+1-(1-\Phi)(1-\alpha)(1-\tilde{\tilde{\gamma}})-\Phi\right\} >\gamma
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lambda\gamma(\tilde{\tilde{\varphi}}+1)+\lambda\kappa\left\{ \tilde{\tilde{\varphi}}+1-(1-\Phi)(1-\alpha)(1-\tilde{\tilde{\gamma}})-\Phi\right\} >\lambda\gamma
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+ & \lambda[\gamma\varphi-\kappa\Phi+\kappa(1+\tilde{\alpha})\{(1+\varphi)+(1-\Phi)(1-\alpha)(\gamma-1)\}]\\
+ & >\kappa\{\varphi+\gamma(1-\Phi)(1-\alpha)\}\left\{ (1+\tilde{\alpha})(1-\alpha)(1-\Phi)-\frac{\Phi}{\varphi+\gamma}\right\} \tau\\
+ & +\gamma\varphi(1+\tilde{\alpha})(1-\alpha)(1-\Phi)\tau-\frac{\gamma\varphi}{\varphi+\gamma}\tau\Phi
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $mu_{t}$
+\end_inset
+
+ increase with 
+\begin_inset Formula $\xi$
+\end_inset
+
+ iff
+\begin_inset Formula 
+\[
+\lambda\left\{ \tilde{\tilde{\varphi}}+1-(1-\Phi)(1-\alpha)(1-\tilde{\tilde{\gamma}})\right\} >\Phi
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+ & \lambda(1+\tilde{\alpha})\{(1+\varphi)+(1-\Phi)(1-\alpha)(\gamma-1)\}\\
+ & >\Phi+\{\varphi+\gamma(1-\Phi)(1-\alpha)\}\left\{ (1+\tilde{\alpha})(1-\alpha)(1-\Phi)-\frac{\Phi}{\varphi+\gamma}\right\} \tau
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula 
+\begin{align*}
+\Xi_{1} & =\frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)(\gamma+\varphi)}\{(1+\varphi)+(1-\Phi)(1-\alpha)(\gamma-1)\}\\
+\Xi_{2} & =\{\varphi+\gamma(1-\Phi)(1-\alpha)\}\left\{ \frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)(\gamma+\varphi)}(1-\alpha)(1-\Phi)-\frac{\Phi}{\varphi+\gamma}\right\} \\
+\Xi_{3} & =\gamma\varphi\left\{ \frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)(\gamma+\varphi)}(1-\alpha)(1-\Phi)-\frac{\Phi}{\varphi+\gamma}\right\} \\
+\kappa & =\frac{\varphi+1}{(1+\varphi)+(1-\Phi)(1-\alpha)(\gamma-1)}\xi\\
+\kappa\Xi_{1} & =\frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)(\gamma+\varphi)}\xi
+\end{align*}
+
+\end_inset
+
+mu is positive iff
+\begin_inset Formula 
+\[
+\lambda^{+}=\frac{\gamma+\kappa\Phi+\tau(\kappa\Xi_{2}+\Xi_{3})}{\gamma(1+\varphi)-\kappa\Phi+\kappa\Xi_{1}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula $mu$
+\end_inset
+
+ is increasing with 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ iff
+\begin_inset Formula 
+\[
+\lambda^{\lambda}=\frac{\tau(\kappa\Xi_{2}+\Xi_{3})}{\gamma\varphi-\kappa\Phi+\kappa\Xi_{1}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula $mu$
+\end_inset
+
+ is increasing with 
+\begin_inset Formula $\xi$
+\end_inset
+
+ iff
+\begin_inset Formula 
+\[
+\lambda^{\xi}=(\Phi+\tau\Xi_{2})/\Xi_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When 
+\begin_inset Formula $\alpha=\Phi=0$
+\end_inset
+
+,
+\begin_inset Formula 
+\begin{align*}
+\Xi_{1} & =\varphi+\gamma\\
+\Xi_{2} & =(\varphi+\gamma)\\
+\Xi_{3} & =\varphi\gamma\\
+\kappa & =\frac{\varphi+1}{(1+\varphi)+(1-\Phi)(\gamma-1)}\xi
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\kappa\Xi_{1}=(\varphi+1)\xi
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\lambda^{+} & =\frac{\gamma+\tau(\varphi+1)\xi+\varphi\gamma\tau}{(1+\varphi)(\gamma+\xi)}\\
+\lambda^{\lambda} & =\tau\\
+\lambda^{\xi} & =\tau
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When 
+\begin_inset Formula $\alpha=0$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\Xi_{1} & =(1+\varphi)+(1-\Phi)(\gamma-1)=\varphi+(1-\Phi)\gamma+\Phi\\
+\Xi_{2} & =\{\varphi+\gamma(1-\Phi)\}\left\{ 1-\Phi-\frac{\Phi}{\varphi+\gamma}\right\} \\
+\Xi_{3} & =\gamma\varphi-\frac{\gamma\varphi}{\varphi+\gamma}\Phi=\gamma\varphi(1-\Phi-\frac{\Phi}{\varphi+\gamma})\\
+\kappa & =\frac{\varphi+1}{(1+\varphi)+(1-\Phi)(\gamma-1)}\xi
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\kappa\Xi_{1}=(\varphi+1)\xi
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\lambda^{+} & =\frac{\gamma+\kappa\Phi+\tau(\kappa\Xi_{2}+\Xi_{3})}{\gamma(1+\varphi)-\kappa\Phi+\kappa\Xi_{1}}\\
+ & =\frac{\gamma+\kappa\Phi+\tau(\kappa\{\varphi+\gamma(1-\Phi)\}+\gamma\varphi)\left\{ 1-\Phi-\frac{\Phi}{\varphi+\gamma}\right\} }{\gamma(1+\varphi)+\kappa\{\varphi+(1-\Phi)\gamma\}}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\lambda^{\lambda} & =\frac{\tau(\kappa\Xi_{2}+\Xi_{3})}{\gamma\varphi-\kappa\Phi+\kappa\Xi_{1}}\\
+ & =\frac{\tau(\kappa\{\varphi+\gamma(1-\Phi)\}+\gamma\varphi)\left\{ 1-\Phi-\frac{\Phi}{\varphi+\gamma}\right\} }{\gamma\varphi+(1-\Phi)\gamma}\\
+ & =\tau\left\{ 1-\frac{\varphi+\gamma+1}{\varphi+\gamma}\Phi\right\} 
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\lambda^{\xi} & =(\Phi+\tau\Xi_{2})/\Xi_{1}\\
+ & =\frac{\Phi+\tau\left\{ 1-\Phi-\frac{\Phi}{\varphi+\gamma}\right\} \{\varphi+(1-\Phi)\gamma+\Phi\}}{\varphi+(1-\Phi)\gamma+\Phi}\\
+ & =\tau\left\{ 1-\frac{\varphi+\gamma+1}{\varphi+\gamma}\Phi\right\} +\frac{\Phi}{\varphi+\gamma+\Phi(1-\gamma)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When 
+\begin_inset Formula $\Phi=0$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\Xi_{1} & =\frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)(\gamma+\varphi)}\{(1+\varphi)+(1-\alpha)(\gamma-1)\}\\
+\Xi_{2} & =\{\varphi+\gamma(1-\alpha)\}\left\{ \frac{(1-\alpha)\gamma+\varphi}{\gamma+\varphi}\right\} \\
+\Xi_{3} & =\gamma\varphi\frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)(\gamma+\varphi)}\tau\\
+\kappa & =\frac{\varphi+1}{(1+\varphi)+(1-\alpha)(\gamma-1)}\xi\\
+ & =\frac{\varphi+1}{(1+\varphi)+(1-\alpha)(\gamma-1)}\xi
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\kappa\Xi_{1}=\frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)(\gamma+\varphi)}(\varphi+1)\xi
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\lambda^{+} & =\frac{\gamma+\tau(\kappa\Xi_{2}+\Xi_{3})}{\gamma(1+\varphi)+\kappa\Xi_{1}}\\
+ & =\frac{\gamma+\tau\frac{\varphi+\gamma(1-\alpha)}{\gamma+\varphi}(\kappa\left\{ (1-\alpha)\gamma+\varphi\right\} +\gamma\varphi)}{\gamma(1+\varphi)+\frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)(\gamma+\varphi)}(\varphi+1)\xi}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\lambda^{\lambda} & =\frac{\tau(\kappa\Xi_{2}+\Xi_{3})}{\gamma\varphi+\kappa\Xi_{1}}\\
+ & =\frac{\tau\frac{\varphi+\gamma(1-\alpha)}{\gamma+\varphi}(\kappa\left\{ (1-\alpha)\gamma+\varphi\right\} +\gamma\varphi)}{\gamma\varphi+\frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)(\gamma+\varphi)}(\varphi+1)\xi}\\
+ & =\tau\frac{\varphi+\gamma(1-\alpha)}{\gamma+\varphi}\frac{\gamma\varphi+\frac{(1-\alpha)\gamma+\varphi}{(1+\varphi)+(1-\alpha)(\gamma-1)}(\varphi+1)\xi}{\gamma\varphi+\frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)(\gamma+\varphi)}(\varphi+1)\xi}\\
+ & =\tau\frac{\varphi+\gamma(1-\alpha)}{\gamma+\varphi}\frac{\gamma\varphi+\frac{(1-\alpha)\gamma+\varphi}{(1+\varphi)+(1-\alpha)(\gamma-1)}(\varphi+1)\xi}{\gamma\varphi+\frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)(\gamma+\varphi)}(\varphi+1)\xi}\\
+ & =\tau\frac{\varphi+\gamma(1-\alpha)}{\gamma+\varphi}\frac{\{(1-\alpha)(1+\varphi)+\alpha(1+\varphi)+(1-\alpha)(\gamma-1)\}\gamma\varphi+((1-\alpha)\gamma+\varphi)(\varphi+1)\xi}{(1-\alpha)(\gamma+\varphi)\gamma\varphi+((1-\alpha)\gamma+\varphi)(\varphi+1)\xi}\\
+ & =\tau\frac{\varphi+\gamma(1-\alpha)}{\gamma+\varphi}\left\{ 1+\frac{\alpha(1+\varphi)\gamma\varphi}{(1-\alpha)(\gamma+\varphi)\gamma\varphi+((1-\alpha)\gamma+\varphi)(\varphi+1)\xi}\right\} 
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\lambda^{\xi} & =\tau\Xi_{2}/\Xi_{1}\\
+ & =\tau\frac{(1-\alpha)\{\varphi+\gamma(1-\alpha)\}}{(1+\varphi)+(1-\alpha)(\gamma-1)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

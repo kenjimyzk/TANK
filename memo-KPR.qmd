@@ -1,0 +1,111 @@
+---
+title: "memo-KPR"
+format: html
+---
+
+Proposition:
+
+For the utility function
+$$
+U = \frac{1}{1-\gamma-\xi}\left[ C^{1-\gamma} - \frac{1-\gamma}{1+\varphi} N^{1+\varphi} \right]^{1 - \xi/(1-\gamma)},
+$$
+as $\gamma \to 1$, the limit is:
+$$
+U \to -\frac{1}{\xi}\left[ C \exp\left( -\frac{1}{1+\varphi} N^{1+\varphi} \right) \right]^{-\xi}.
+$$
+---
+
+**Proof:**
+
+Let $\varepsilon = 1 - \gamma$ and consider the limit $\varepsilon \to 0$.
+
+---
+
+### 1. Expansion of the inner term
+
+$$
+C^{1-\gamma} = C^{\varepsilon} = e^{\varepsilon \ln C} = 1 + \varepsilon \ln C + O(\varepsilon^2).
+$$
+$$
+\frac{1-\gamma}{1+\varphi} N^{1+\varphi} = \frac{\varepsilon}{1+\varphi} N^{1+\varphi}.
+$$
+
+Therefore,
+$$
+A \equiv C^{\varepsilon} - \frac{\varepsilon}{1+\varphi} N^{1+\varphi}
+= 1 + \varepsilon \left( \ln C - \frac{N^{1+\varphi}}{1+\varphi} \right) + O(\varepsilon^2).
+$$
+
+---
+
+### 2. Taking logs
+
+$$
+\ln A = \varepsilon B + O(\varepsilon^2), \quad 
+B = \ln C - \frac{N^{1+\varphi}}{1+\varphi}.
+$$
+
+---
+
+### 3. Log of the power term
+
+Since the outer exponent is $1 - \frac{\xi}{\varepsilon}$,
+
+$$
+\ln \left(A^{1 - \frac{\xi}{\varepsilon}}\right) = \left(1 - \frac{\xi}{\varepsilon} \right) \ln A
+= \left(1 - \frac{\xi}{\varepsilon} \right) \left[ \varepsilon B + O(\varepsilon^2) \right]
+$$
+
+$$
+= \varepsilon B - \xi B + O(\varepsilon).
+$$
+
+As $\varepsilon \to 0$, the $O(\varepsilon)$ term vanishes, and
+
+$$
+\ln \left(A^{1 - \frac{\xi}{\varepsilon}}\right) \to -\xi B.
+$$
+
+---
+
+### 4. Exponentiating the power term
+
+$$
+\begin{aligned}
+A^{1 - \frac{\xi}{\varepsilon}} &\to e^{-\xi B} 
+= e^{-\xi \left( \ln C - \frac{N^{1+\varphi}}{1+\varphi} \right)}\\
+&= C^{-\xi} \cdot \exp\left( \frac{\xi}{1+\varphi} N^{1+\varphi} \right).
+\end{aligned}
+$$
+
+The prefactor satisfies
+$$
+\frac{1}{1-\gamma-\xi} = \frac{1}{\varepsilon - \xi} \to -\frac{1}{\xi}.
+$$
+
+---
+
+### 5. Alternative expression of the result
+
+On the other hand, the target expression
+$$
+-\frac{1}{\xi}\left[ C \exp\left( -\frac{1}{1+\varphi} N^{1+\varphi} \right) \right]^{-\xi}
+$$
+is
+$$
+= -\frac{1}{\xi} C^{-\xi} \cdot \exp\left( -\xi \cdot \left[ -\frac{N^{1+\varphi}}{1+\varphi} \right] \right)
+= -\frac{1}{\xi} C^{-\xi} \cdot \exp\left( \frac{\xi}{1+\varphi} N^{1+\varphi} \right).
+$$
+which matches the limit obtained above exactly.
+
+---
+
+Therefore, as $\gamma \to 1$,
+$$
+\frac{1}{1-\gamma-\xi}\left[ C^{1-\gamma} - \frac{1-\gamma}{1+\varphi} N^{1+\varphi} \right]^{1 - \xi/(1-\gamma)}
+\longrightarrow
+-\frac{1}{\xi}\left[ C \exp\left( -\frac{1}{1+\varphi} N^{1+\varphi} \right) \right]^{-\xi}
+$$
+is established.
+
+QED.
