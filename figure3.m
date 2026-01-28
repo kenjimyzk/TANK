@@ -6,7 +6,7 @@ Phi = 0.2;
 alpha = 0.3;
 
 % xi range
-xi_min = 0;
+xi_min = -gamma * varphi / (varphi + 1);
 xi_max = 5;
 xi = linspace(xi_min, xi_max, 500);
 

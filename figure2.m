@@ -92,5 +92,5 @@ end
 
 function lambda = calc_lambda(kappa, Xi1, Xi2, Xi3, gamma, varphi, Phi, tau)
 lambda = (gamma + kappa .* Phi + tau .* (kappa .* Xi2 + Xi3)) ./ ...
-  (gamma * (1 + varphi) - kappa .* Phi + kappa .* Xi1);
+  (gamma * (1 + varphi) + kappa .* Xi1);
 end
