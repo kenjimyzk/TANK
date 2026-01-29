@@ -2,8 +2,8 @@
 gamma = 1;
 tau = 0.2;
 varphi = 1;
-alpha = 0.3;
-Phi = 0.2;
+alpha = 0.;
+Phi = 0.;
 
 % xi range (adjust as needed; avoid xi = -gamma to prevent division by zero)
 xi_min = -gamma * varphi / (varphi + 1);

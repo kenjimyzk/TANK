@@ -1,7 +1,7 @@
 % figure2.m の2ケースのみ: (Phi=0, alpha=0) と (Phi=0.2, alpha=0.3)
 
 % parameters
-gamma = 1;
+gamma = 1.5;
 tau = 0.2;
 varphi = 1;
 
@@ -10,8 +10,8 @@ alpha_a = 0;
 Phi_a = 0;
 
 % case B: Phi=0.2, alpha=0.3
-alpha_b = 0.;
-Phi_b = 0.2;
+alpha_b = 0.2;
+Phi_b = 0.1;
 
 % xi range
 xi_min = -gamma * varphi / (varphi + 1);
@@ -100,9 +100,8 @@ end
 
 function lambda = calc_lambda_alt(kappa, Xi1, Xi2, Xi3, gamma, varphi, Phi, alpha, tau)
 tilde_alpha = (alpha * varphi) / ((1 - alpha) * (gamma + varphi));
-lambda = (tau .* (kappa .* Xi2 + Xi3));
-%  ./ ...
-%   (gamma * varphi * (1 + (1 + varphi) * tilde_alpha) - kappa .* Phi + kappa .* Xi1);
+lambda = (tau .* (kappa .* Xi2 + Xi3)) ./ ...
+  (gamma * varphi * (1 + (1 + varphi) * tilde_alpha) - kappa .* Phi + kappa .* Xi1);
 end
 
 function lambda = calc_lambda_simple(Xi1, Xi2, Phi, tau)
