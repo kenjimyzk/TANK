@@ -91,9 +91,12 @@
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-mu_{t}^{S} & =-\gamma y_{t}-\kappa\Phi+\frac{\lambda}{1-\lambda}\left\{ \gamma\tilde{\tilde{\varphi}}+\kappa\left\{ \tilde{\tilde{\varphi}}+(1-\Phi)\{(1-\alpha)\tilde{\tilde{\gamma}}+\alpha\}\right\} \right\} y_{t}\\
- & =-\gamma\left\{ \frac{1-\lambda(\tilde{\tilde{\varphi}}+1)}{1-\lambda}\right\} y_{t}+\frac{\kappa}{1-\lambda}\left\{ \lambda\left\{ \tilde{\tilde{\varphi}}+1+(1-\Phi)(1-\alpha)(\tilde{\tilde{\gamma}}-1)\right\} -\Phi\right\} y_{t}\\
- & =-\gamma\left\{ \frac{1-\lambda(\tilde{\tilde{\varphi}}+1)}{1-\lambda}\right\} y_{t}+\frac{\xi(\varphi+1)}{1-\lambda}\frac{\left\{ \lambda\left\{ \tilde{\tilde{\varphi}}+1-(1-\Phi)(1-\alpha)(1-\tilde{\tilde{\gamma}})\right\} -\Phi\right\} }{\varphi+1-(1-\Phi)(1-\alpha)(1-\gamma)}y_{t}
+c_{t}^{H} & =(1+\tilde{\tilde{\varphi}})y_{t}=\chi y_{t}\\
+c_{t}^{S} & =\left\{ 1-\frac{\lambda(\chi-1)}{1-\lambda}\right\} y_{t}=\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}\\
+ & =\left\{ \frac{1-\lambda(1+\tilde{\tilde{\varphi}})}{1-\lambda}\right\} y_{t}\\
+n_{t}^{H} & =(1-\tilde{\tilde{\gamma}})y_{t}\\
+n_{t}^{S} & =\frac{n_{t}-\lambda n_{t}^{H}}{1-\lambda}=\frac{1}{1-\alpha}\left\{ \frac{1-\lambda(1-\alpha)(1-\tilde{\tilde{\gamma}})}{1-\lambda}\right\} y_{t}\\
+ & =\frac{1}{1-\alpha}\left\{ 1+\frac{\alpha+\lambda(1-\alpha)\tilde{\tilde{\gamma}}}{1-\lambda}\right\} y_{t}
 \end{align*}
 
 \end_inset
@@ -113,6 +116,28 @@ mu_{t}^{S} & =-\gamma y_{t}-\kappa\Phi+\frac{\lambda}{1-\lambda}\left\{ \gamma\t
 \tilde{\gamma} & =\gamma(1-(1-\alpha)(1-\Phi)\tau/\lambda)\\
 \tilde{\varphi} & =\varphi(1-(1-\alpha)(1-\Phi)\tau/\lambda)\\
 \tilde{\alpha} & =\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\tilde{\tilde{\varphi}}+\tilde{\tilde{\gamma}} & =(\tilde{\varphi}+\tilde{\gamma})(1+\tilde{\alpha})+(\tau/\lambda)\Phi\\
+ & =(\tilde{\varphi}+\tilde{\gamma})\frac{(1-\alpha)\gamma+\varphi}{(1-\alpha)(\gamma+\varphi)}+(\tau/\lambda)\Phi\\
+ & =(1-(1-\alpha)(1-\Phi)\tau/\lambda)\frac{(1-\alpha)\gamma+\varphi}{1-\alpha}+(\tau/\lambda)\Phi
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+mu_{t}^{S} & =-(\gamma+\kappa)c_{t}^{S}+\kappa(1-\Phi)(1-\alpha)n_{t}^{S}\\
+ & =-(\gamma+\kappa)\left\{ 1-\frac{\lambda\tilde{\tilde{\varphi}}}{1-\lambda}\right\} y_{t}+\kappa(1-\Phi)\left\{ 1+\frac{\lambda(1-\alpha)\tilde{\tilde{\gamma}}+\alpha}{1-\lambda}\right\} y_{t}\\
+ & =-\gamma y_{t}-\kappa\Phi+\frac{\lambda}{1-\lambda}\left\{ \gamma\tilde{\tilde{\varphi}}+\kappa\left\{ \tilde{\tilde{\varphi}}+(1-\Phi)\{(1-\alpha)\tilde{\tilde{\gamma}}+\alpha\}\right\} \right\} y_{t}\\
+ & =-\gamma\left\{ \frac{1-\lambda(\tilde{\tilde{\varphi}}+1)}{1-\lambda}\right\} y_{t}+\frac{\kappa}{1-\lambda}\left\{ \lambda\left\{ \tilde{\tilde{\varphi}}+1+(1-\Phi)(1-\alpha)(\tilde{\tilde{\gamma}}-1)\right\} -\Phi\right\} y_{t}\\
+ & =-\gamma\left\{ \frac{1-\lambda(\tilde{\tilde{\varphi}}+1)}{1-\lambda}\right\} y_{t}+\frac{\xi(\varphi+1)}{1-\lambda}\frac{\left\{ \lambda\left\{ \tilde{\tilde{\varphi}}+1-(1-\Phi)(1-\alpha)(1-\tilde{\tilde{\gamma}})\right\} -\Phi\right\} }{\varphi+1-(1-\Phi)(1-\alpha)(1-\gamma)}y_{t}
 \end{align*}
 
 \end_inset
@@ -157,7 +182,7 @@ When
 \begin{align*}
 \lambda & >\tau(1-\alpha)\frac{1}{1+\frac{\alpha}{(1-\alpha)\gamma+\varphi}}\\
  & =\frac{\tau(1-\alpha)\{(1-\alpha)\gamma+\varphi\}}{(1-\alpha)\gamma+\varphi+\alpha}\\
- & =\frac{(1-\alpha)\{\varphi+\gamma(1-\alpha)\}}{(1+\varphi)+(1-\alpha)(\gamma-1)}
+ & =\tau\frac{(1-\alpha)\{\varphi+\gamma(1-\alpha)\}}{(1+\varphi)+(1-\alpha)(\gamma-1)}
 \end{align*}
 
 \end_inset
@@ -195,17 +220,11 @@ When
 
 
 \begin_inset Formula 
-\[
-\gamma(\lambda(1+\varphi)-\tilde{\tau}\varphi)(1+\tilde{\alpha})+\gamma\frac{\varphi}{\varphi+\gamma}\tau\Phi+\kappa\left\{ (1+\tilde{\alpha})(\lambda(1+\varphi)-\tilde{\tau}\varphi+(1-\Phi)(1-\alpha)\{\lambda(\gamma-1)-\tilde{\tau}\gamma\})+\frac{\tau\Phi}{\varphi+\gamma}\{\varphi+\gamma(1-\Phi)(1-\alpha)\}-\lambda\Phi\right\} <\gamma+\kappa\Phi
-\]
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-\gamma(\lambda(1+\varphi)-\tilde{\tau}\varphi)(1+\tilde{\alpha})+\gamma\frac{\varphi}{\varphi+\gamma}\tau\Phi+\kappa\left\{ (1+\tilde{\alpha})\lambda\{(1+\varphi)+(1-\Phi)(1-\alpha)(\gamma-1)\}-(1+\tilde{\alpha})(\varphi+\gamma(1-\Phi)(1-\alpha)))\tilde{\tau}+\frac{\tau\Phi}{\varphi+\gamma}\{\varphi+\gamma(1-\Phi)(1-\alpha)\}-\lambda\Phi\right\} <\gamma+\kappa\Phi
-\]
+\begin{align*}
+ & \gamma(\lambda(1+\varphi)-\tilde{\tau}\varphi)(1+\tilde{\alpha})+\gamma\frac{\varphi}{\varphi+\gamma}\tau\Phi\\
+ & +\kappa\left\{ (1+\tilde{\alpha})(\lambda(1+\varphi)-\tilde{\tau}\varphi+(1-\Phi)(1-\alpha)\{\lambda(\gamma-1)-\tilde{\tau}\gamma\})+\frac{\tau\Phi}{\varphi+\gamma}\{\varphi+\gamma(1-\Phi)(1-\alpha)\}-\lambda\Phi\right\} \\
+ & <\gamma+\kappa\Phi
+\end{align*}
 
 \end_inset
 
@@ -222,8 +241,8 @@ When
 
 \begin_inset Formula 
 \begin{align*}
-\lambda(1+\tilde{\varphi}) & =\lambda(1+\varphi)-\tilde{\tau}\\
-\lambda(\tilde{\gamma}-1) & =\lambda(\gamma-1)-\tilde{\tau}
+\lambda(1+\tilde{\varphi}) & =\lambda(1+\varphi)-\tilde{\tau}\varphi\\
+\lambda(\tilde{\gamma}-1) & =\lambda(\gamma-1)-\tilde{\tau}\gamma
 \end{align*}
 
 \end_inset

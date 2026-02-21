@@ -1056,7 +1056,7 @@ Phillips curve
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\pi_{t}=(\psi_{p}/\eta_{p})(1-\Phi)mc_{t}+\beta E_{t}\pi_{t+1}$
+\begin_inset Formula $\pi_{t}=(1-\Phi)(\psi_{p}/\eta_{p})mc_{t}+\beta E_{t}\pi_{t+1}$
 \end_inset
 
 
@@ -1317,7 +1317,7 @@ D_{t}= & Y_{t}-\frac{\eta_{P}}{2}\left(\frac{\Pi_{t}}{\Pi}-1\right)^{2}Y_{t}-W_{
 \begin_inset Formula 
 \begin{align*}
 C_{t} & =\lambda C_{t}^{H}+(1-\lambda)C_{t}^{S}\\
-N_{t} & =\lambda N_{t}^{S}+(1-\lambda)N_{t}^{S}\\
+N_{t} & =\lambda N_{t}^{H}+(1-\lambda)N_{t}^{S}\\
 Y_{t} & =C_{t}+\frac{\eta_{P}}{2}\left(\frac{\Pi_{t}}{\Pi}-1\right)^{2}Y_{t}\\
 Y_{t} & =N_{t}^{1-\alpha}\\
 \frac{R_{t}^{N}}{R^{N}} & =\left(\frac{\Pi_{t}}{\Pi}\right)^{\phi}\exp(-m_{t})\\
@@ -1701,7 +1701,7 @@ mu_{t}^{S} & =-(\gamma+\kappa)c_{t}^{S}+\kappa(1-\alpha)MCn_{t}^{S}\\
  is positive iff
 \begin_inset Formula 
 \[
-\lambda\left\{ \gamma(\tilde{\tilde{\varphi}}+1)+\kappa\left\{ \tilde{\tilde{\varphi}}+1-(1-\Phi)(1-\alpha)(1-\tilde{\tilde{\gamma}})-\Phi\}\right\} \right\} y_{t}>\gamma-\kappa\Phi
+\lambda\left\{ \gamma(\tilde{\tilde{\varphi}}+1)+\kappa\left\{ \tilde{\tilde{\varphi}}+1-(1-\Phi)(1-\alpha)(1-\tilde{\tilde{\gamma}})-\Phi\}\right\} \right\} y_{t}>\gamma+\kappa\Phi
 \]
 
 \end_inset
@@ -1814,7 +1814,8 @@ GE-EIS is positive iff
 \begin_inset Formula 
 \begin{align*}
 \gamma\lambda+\lambda\left\{ \gamma\varphi+\xi(\varphi+1)\right\}  & <\gamma+\tau\left\{ \gamma\varphi+\xi(\varphi+1)\right\} \\
-\lambda & <\frac{\gamma(1+\tau\varphi)+\tau\xi(\varphi+1)}{(\gamma+\xi)(\varphi+1)}
+\lambda & <\frac{\gamma(1+\tau\varphi)+\tau\xi(\varphi+1)}{(\gamma+\xi)(\varphi+1)}\\
+ & =\frac{\gamma(1-\tau)}{(\gamma+\xi)(\varphi+1)}+\tau
 \end{align*}
 
 \end_inset

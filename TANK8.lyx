@@ -154,7 +154,7 @@ Marginal utility,
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $mu_{t}^{S}=-(\gamma+\kappa^{S})c_{t}^{S}+\kappa^{S}(1-\alpha)(1-\Phi)\frac{Y}{C^{S}}n_{t}^{S}$
+\begin_inset Formula $mu_{t}^{S}=-(\gamma+\kappa^{S})c_{t}^{S}+\kappa^{S}(1-\alpha)(1-\Phi)\frac{C}{C^{S}}n_{t}$
 \end_inset
 
 
@@ -202,7 +202,7 @@ Budget constraint,
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{C^{H}}{Y}c_{t}^{H}=(1-\alpha)(w_{t}+n_{t})+\frac{\tau^{D}}{\lambda}d_{t}$
+\begin_inset Formula $\frac{C^{H}}{Y}c_{t}^{H}=(1-\alpha)(1-\Phi)(w_{t}+n_{t})+\frac{\tau^{D}}{\lambda}d_{t}$
 \end_inset
 
 
@@ -248,7 +248,7 @@ Phillips curve
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\pi_{t}=(\psi_{p}/\eta_{p})(\gamma+\varphi)(1-\Phi)mc_{t}+\beta E_{t}\pi_{t+1}$
+\begin_inset Formula $\pi_{t}=(1-\Phi)(\psi_{p}/\eta_{p})(\gamma+\varphi)mc_{t}+\beta E_{t}\pi_{t+1}$
 \end_inset
 
 
@@ -497,7 +497,7 @@ Marginal utility,
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $mu_{t}^{S}=-(\gamma+\kappa^{S})c_{t}^{S}+\kappa^{S}(1-\alpha)(1-\Phi)n_{t}$
+\begin_inset Formula $mu_{t}^{S}=-(\gamma+\kappa^{S})c_{t}^{S}+\kappa^{S}(1-\alpha)(1-\Phi)\frac{}{}n_{t}$
 \end_inset
 
 
@@ -766,6 +766,86 @@ Fischer equation
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\begin{align*}
+c_{t}^{H} & =(1-\alpha)(1-\Phi)\frac{\lambda}{\lambda^{c}}(w_{t}+n_{t})+\frac{\tau^{D}}{\lambda^{c}}d_{t}\\
+ & =(1-\alpha)(1-\Phi)\frac{\lambda}{\lambda^{c}}w_{t}+(1-\Phi)\frac{\lambda}{\lambda^{c}}y_{t}+\frac{\tau^{D}}{\lambda}d_{t}\\
+ & =\left(1+\frac{\tau^{D}}{\lambda}\Phi\right)y_{t}+(1-\alpha)(1-\Phi)\frac{\lambda}{\lambda^{c}}\{1-\frac{\tau^{D}}{\lambda}\}w_{t}\\
+ & =\left(1+\frac{\tau^{D}}{\lambda}\Phi\right)y_{t}+(1-\alpha)(1-\Phi)\frac{\lambda}{\lambda^{c}}\{1-\frac{\tau^{D}}{\lambda}\}\{\gamma+\frac{\varphi}{1-\alpha}\}y_{t}\\
+ & =\left(1+\frac{\tau^{D}}{\lambda}\Phi\right)y_{t}+(1-\Phi)\{1-\frac{\tau^{D}}{\lambda}\}\frac{\lambda}{\lambda^{c}}\{(1-\alpha)\gamma+\varphi\}y_{t}\\
+ & =\chi^{c}y_{t}\\
+\chi^{c} & =1+\frac{\tau^{D}}{\lambda}\Phi+(1-\Phi)\{1-\frac{\tau^{D}}{\lambda}\}\frac{\lambda}{\lambda^{c}}\{(1-\alpha)\gamma+\varphi\}\\
+ & =1+\frac{\tau^{D}}{\lambda}\Phi+(1-\Phi)\frac{\lambda-\tau^{D}}{\lambda^{c}}\{(1-\alpha)\gamma+\varphi\}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+c_{t}^{S} & =\frac{1-\lambda\chi^{c}}{1-\lambda}y_{t}\\
+c_{t}^{S}-c_{t}^{H} & =\frac{1-\chi^{c}}{1-\lambda}y_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+When 
+\begin_inset Formula $\alpha=0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\chi^{c}=1+\frac{\tau^{D}}{\lambda}\Phi+(1-\Phi)\{1-\frac{\tau^{D}}{\lambda}\}\frac{\lambda}{\lambda^{c}}\{\gamma+\varphi\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+When 
+\begin_inset Formula $\Phi=0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\chi^{c}=1+\{1-\frac{\tau^{D}}{\lambda}\}\frac{\lambda}{\lambda^{c}}\{(1-\alpha)\gamma+\varphi\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+When 
+\begin_inset Formula $\alpha=\Phi=0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\chi^{c}=1+\{1-\frac{\tau^{D}}{\lambda}\}\frac{\lambda}{\lambda^{c}}\{\gamma+\varphi\}$
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{align*}
+mu_{t}^{S} & =-\gamma c_{t}^{S}-\kappa^{S}c_{t}^{S}+\kappa^{S}(1-\alpha)(1-\Phi)\frac{1-\lambda}{1-\lambda^{S}}n_{t}\\
+ & =-(\gamma+\kappa^{S})\frac{1-\lambda\chi^{c}}{1-\lambda}y_{t}+\kappa^{S}(1-\Phi)\frac{1-\lambda}{1-\lambda^{S}}y_{t}\\
+ & =-(\gamma+\kappa^{S})y_{t}+(\gamma+\kappa^{S})\frac{\lambda}{1-\lambda}(\chi^{c}-1)y_{t}-\kappa^{S}(1-\Phi)\frac{1-\lambda}{1-\lambda^{S}}y_{t}\\
+ & =-\gamma y_{t}+(\gamma+\kappa^{S})\frac{\lambda}{1-\lambda}(\chi^{c}-1)y_{t}+\kappa^{S}\left\{ 1-(1-\Phi)\frac{1-\lambda}{1-\lambda^{S}}\right\} y_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
 \begin_inset Formula 
 \begin{align*}
 c_{t}^{H} & =(1-\alpha)w_{t}+y_{t}+\frac{\tau^{D}}{\lambda}d_{t}\\
@@ -855,7 +935,7 @@ c_{t}^{S}=\frac{1-\lambda\chi}{1-\lambda}y_{t}
 
 \end_inset
 
-
+ 
 \begin_inset Formula 
 \begin{align*}
 mu_{t}^{S} & =-\gamma c_{t}^{S}-\kappa^{S}(c_{t}^{S}-n_{t})\\

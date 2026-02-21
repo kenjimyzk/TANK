@@ -114,7 +114,7 @@ TANK
 \begin{align*}
 r_{t}^{n} & =E_{t}\pi_{t+1}+\gamma E_{t}\Delta c_{t+1}^{S}+\kappa E_{t}\left[\Delta c_{t+1}^{S}-E_{t}\Delta n_{t+1}^{S}\right]\\
 w_{t} & =\gamma c_{t}^{S}+\varphi n_{t}^{S}\\
-\frac{C^{H}}{Y}c_{t}^{H} & =(1-\Phi)(w_{t}+n_{t}^{H})+(\tau/\lambda)d_{t}\\
+\frac{C^{H}}{Y}c_{t}^{H} & =(1-\Phi)(1-\alpha)(w_{t}+n_{t}^{H})+(\tau/\lambda)d_{t}\\
 w_{t} & =\gamma c_{t}^{H}+\varphi n_{t}^{H}\\
 w_{t} & =mc_{t}+y_{t}-n_{t}\\
 d_{t} & =y_{t}-(1-\Phi)(1-\alpha)(w_{t}+n_{t})\\
@@ -137,7 +137,7 @@ TANK
 \begin_inset Formula 
 \begin{align*}
 r_{t}^{n} & =E_{t}\pi_{t+1}+(\gamma+\kappa)E_{t}\Delta c_{t+1}^{S}\\
-\frac{C^{H}}{C}c_{t}^{H} & =(1-\Phi)(w_{t}+n_{t})+(\tau/\lambda)d_{t}\\
+\frac{C^{H}}{C}c_{t}^{H} & =(1-\Phi)(1-\alpha)(w_{t}+n_{t})+(\tau/\lambda)d_{t}\\
 w_{t} & =\gamma c_{t}+\varphi n_{t}\\
 w_{t} & =mc_{t}+y_{t}-n_{t}\\
 d_{t} & =y_{t}-(1-\Phi)(1-\alpha)(w_{t}+n_{t})\\
@@ -204,7 +204,8 @@ d_{t} & =y_{t}-(1-\Phi)(1-\alpha)(w_{t}+n_{t})\\
 
 \begin_inset Formula 
 \begin{align*}
-c_{t}^{H} & =(1-\Phi)(w_{t}+n_{t})+(\tau/\lambda)\{y_{t}-(1-\Phi)(1-\alpha)(w_{t}+n_{t})\}\\
+c_{t}^{H} & =(1-\Phi)(1-\alpha)(w_{t}+n_{t})+(\tau/\lambda)\{y_{t}-(1-\Phi)(1-\alpha)(w_{t}+n_{t})\}\\
+ & =(1-\Phi)(1-\alpha)(1-\tau/\lambda)(w_{t}+n_{t})+(\tau/\lambda)y_{t}\\
  & =(1-\Phi)\{(1-\tau/\lambda)+(\tau/\lambda)\alpha\}(w_{t}+n_{t})+(\tau/\lambda)y_{t}+(1-\Phi)\alpha(w_{t}+n_{t})\}
 \end{align*}
 
