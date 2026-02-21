@@ -5,8 +5,14 @@
 
 // マクロスイッチ: CRRA=1 で CRRA 効用、KPR=1 で King-Plosser-Rebelo 型
 @#define CRRA = 0
-@#define KPR  = 1
-var D W N N_H N_S MC MU_S C C_H C_S Y R_N R PI m a c n d w;
+@#define KPR  = 0
+
+@#if FLAG==1
+    var D W N MC MU_S C C_H C_S Y R_N R PI m a c n d w;
+@#else
+    var D W N N_H N_S MC MU_S C C_H C_S Y R_N R PI m a c n d w;
+@#endif
+
 varexo eps_a eps_m;
 
 parameters P_beta P_gamma_0 P_gamma P_varphi P_xi P_phi
@@ -17,7 +23,7 @@ parameters P_beta P_gamma_0 P_gamma P_varphi P_xi P_phi
 // -------------------------------------------------------------------------
 P_beta    = 0.95;       // 割引因子 (Saver)
 P_gamma_0 = 1.0;        // 労働の不効用レベル項
-P_gamma   = 1.0;        // 消費の曲率
+P_gamma   = 2.0;        // 消費の曲率
 P_varphi  = 1.0;        // 労働の曲率
 P_xi      = 0.5;        // フリッシュ弾力性の逆数
 @#if CRRA==1
@@ -27,7 +33,7 @@ P_xi      = 0.5;        // フリッシュ弾力性の逆数
     P_gamma = 1.0;      // KPR スイッチで消費曲率を1に
 @#endif
 
-P_alpha   = 0.4;        // 生産における労働シェア (資本なしケース)
+P_alpha   = 0.;        // 生産における労働シェア (資本なしケース)
 P_eta     = 1.0;        // 価格調整コストのスケール
 P_psi     = 5.0;        // マークアップ弾力性 (カルボ型)
 P_lambda  = 0.25;       // Hand-to-Mouth 家計のシェア
@@ -50,33 +56,47 @@ P_rho_m = 0.8;          // 金融政策ショック持続性
 model;
 // =========================================================================
 
-// -------------------------------------------------------------------------
-// Hand-to-Mouth 家計
-// -------------------------------------------------------------------------
-// 賃金条件
-W = C_H^P_gamma * N_H^P_varphi;
+// FLAG条件
+@#if FLAG==1
+    C_H = W * N + (P_tau_d / P_lambda) * D;
+    W = C^P_gamma * N^P_varphi;
+@#else
+    C_H = W * N_H + (P_tau_d / P_lambda) * D;
+    W = C_H^P_gamma * N_H^P_varphi;
+    W = C_S^P_gamma * N_S^P_varphi;
+    N = P_lambda * N_H + (1 - P_lambda) * N_S;
+@#endif
+
+// Hand-to-Mouth 家計 
 // 予算制約
-C_H = W * N_H + (P_tau_d / P_lambda) * D;
 
-// -------------------------------------------------------------------------
 // Saver 家計
-// -------------------------------------------------------------------------
-// 賃金条件
-W = C_S^P_gamma * N_S^P_varphi;
-
 // 限界効用（CRRAまたはGHH/KPRで切替）
 @#if CRRA==1
     MU_S = C_S^(-P_gamma);
 @#else
-    @#if KPR==1
-        // King-Plosser-Rebelo 型: GHH 近似
-        MU_S = C_S^(-P_xi-1) * exp(P_gamma_0 * P_xi * N_S^(1+P_varphi) / (1+P_varphi));
+    @#if FLAG==1
+        @#if KPR==1
+            // King-Plosser-Rebelo 型: GHH 近似
+            MU_S = C_S^(-P_xi-1) * exp(P_gamma_0 * P_xi * N^(1+P_varphi) / (1+P_varphi));
+        @#else
+            // GHH 型 (Greenwood-Hercowitz-Huffman)
+            MU_S = - C_S^(-P_gamma) * (
+                - C_S^(1-P_gamma) / (1-P_gamma)
+                + P_gamma_0 * N^(1+P_varphi) / (1+P_varphi)
+            )^(-P_xi/(1-P_gamma));
+        @#endif
     @#else
-        // GHH 型 (Greenwood-Hercowitz-Huffman)
-        MU_S = - C_S^(-P_gamma) * (
-            - C_S^(1-P_gamma) / (1-P_gamma)
-            + P_gamma_0 * N_S^(1+P_varphi) / (1+P_varphi)
-        )^(-P_xi/(1-P_gamma));
+        @#if KPR==1
+            // King-Plosser-Rebelo 型: GHH 近似
+            MU_S = C_S^(-P_xi-1) * exp(P_gamma_0 * P_xi * N_S^(1+P_varphi) / (1+P_varphi));
+        @#else
+            // GHH 型 (Greenwood-Hercowitz-Huffman)
+            MU_S = - C_S^(-P_gamma) * (
+                - C_S^(1-P_gamma) / (1-P_gamma)
+                + P_gamma_0 * N_S^(1+P_varphi) / (1+P_varphi)
+            )^(-P_xi/(1-P_gamma));
+        @#endif
     @#endif
 @#endif
 
@@ -104,9 +124,10 @@ R = R_N / PI(+1);
 // 集計
 // -------------------------------------------------------------------------
 C = P_lambda * C_H + (1 - P_lambda) * C_S;
-N = P_lambda * N_H + (1 - P_lambda) * N_S;
 Y = exp(a) * N^(1 - P_alpha);
 Y = C;
+
+
 
 // -------------------------------------------------------------------------
 // ショック過程
@@ -131,8 +152,10 @@ initval;
 D   = 0;
 W   = 1;
 N   = 1;
-N_H = 1;
-N_S = 1;
+@#if FLAG==0
+    N_H = 1;
+    N_S = 1;
+@#endif
 C   = 1;
 C_H = 1;
 C_S = 1;
@@ -163,4 +186,4 @@ check;
 // パラメータと定常状態をテキストファイルに保存
 save_params_and_steady_state('TANKC_model1_steady.txt');
 
-stoch_simul(order=1, irf=20) c n d w;
+stoch_simul(order=1, irf=20, nograph) c n d w;

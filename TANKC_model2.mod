@@ -8,7 +8,12 @@
 //----------------------
 // 変数とショック
 //----------------------
-var d w n n_H n_S mc mu_S c c_H c_S y r_N r pi m a;
+@#if FLAG==1
+    var d w n mc mu_S c c_H c_S y r_N r pi m a;
+@#else
+    var d w n n_H n_S mc mu_S c c_H c_S y r_N r pi m a;
+@#endif
+
 varexo eps_a eps_m;
 
 //----------------------
@@ -29,24 +34,41 @@ P_kappa = P_xi /
 
 model(linear);
 
+
+// FLAG条件
+@#if FLAG==1
+    w = P_gamma * c + P_varphi * n; 
+@#else
+    w = P_gamma * c_H + P_varphi * n_H;
+    w = P_gamma * c_S + P_varphi * n_S;
+    n = P_lambda * (N_H / N) * n_H + (1 - P_lambda) * (N_S / N) * n_S;
+@#endif
+
 //----------------------
 // Hand-to-mouth household (H)
 //----------------------
-// 効率賃金（シーソー条件）
-w = P_gamma * c_H + P_varphi * n_H;
 // 予算制約（賃金所得＋配当の取り分）
-(C_H / Y) * c_H = (W * N_H / Y) * (w + n_H) + (P_tau_d / P_lambda) * d;
+@#if FLAG==1
+    (C_H / C) * c_H = (1-P_alpha) * MC * (w + n) + (P_tau_d / P_lambda) * d;
+@#else
+    (C_H / C) * c_H = (1-P_alpha) * MC * N_H / N * (w + n_H) + (P_tau_d / P_lambda) * d;
+@#endif
 
 //----------------------
 // Saver household (S)
 //----------------------
 // 効率賃金（労働供給条件）
-w = P_gamma * c_S + P_varphi * n_S;
 // オイラー方程式（実質金利 = 期待インフレ＋効用差分）
 r_N = pi(+1) + mu_S - mu_S(+1);
 // 限界効用（労働 disutility と賃金スプレッド）
-mu_S = - (P_gamma + P_kappa) * c_S
-    + P_kappa * (1 - P_alpha) * MC * ((N_S / N) / (C_S / Y)) * n_S;
+@#if FLAG==1
+    mu_S = - (P_gamma + P_kappa) * c_S
+        + P_kappa * (1 - P_alpha) * MC * (Y/C_S) * n;
+@#else
+    mu_S = - (P_gamma + P_kappa) * c_S
+        + P_kappa * (1 - P_alpha) * MC * ((N_S / N) / (C_S / Y)) * n_S;
+@#endif
+
 
 //----------------------
 // Firms
@@ -54,7 +76,8 @@ mu_S = - (P_gamma + P_kappa) * c_S
 // リアルマージン = 賃金 - 生産性 + αn
 w = mc + a - P_alpha * n;
 // 利潤配当（線形化）
-d = (P_alpha - 1) * MC * mc - (1 + (P_alpha - 1) * MC) * y;
+//d = (P_alpha - 1) * MC * mc - (1 + (P_alpha - 1) * MC) * y;
+d = (1 - MC) * y + (P_alpha - 1) * MC * w;
 
 //----------------------
 // New Keynesian Phillips Curve
@@ -71,7 +94,6 @@ r = r_N - pi(+1);
 // Aggregation and resource constraints
 //----------------------
 c = P_lambda * (C_H / C) * c_H + (1 - P_lambda) * (C_S / C) * c_S;
-n = P_lambda * (N_H / N) * n_H + (1 - P_lambda) * (N_S / N) * n_S;
 y = a + (1 - P_alpha) * n;   // 線形化された生産関数
 y = c;                        // 閉鎖条件（財市場均衡）
 
@@ -91,4 +113,4 @@ end;
 steady;
 check;
 
-stoch_simul(order=1, irf=20) c n d w;
+stoch_simul(order=1, irf=20,nograph) c n d w;
