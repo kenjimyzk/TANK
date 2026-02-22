@@ -27,10 +27,25 @@ parameters W N N_H N_S MC C C_H C_S Y D;
 
 // 保存済みのパラメータと定常値を読み込む
 load_params_and_steady_state('TANKC_model1_steady.txt');
-N_H=N;
-N_S=N;
-C_H=C;
-C_S=C;
+@#if FLAG==1
+    @#if LUMPSUM==1
+    C_H=C;
+    C_S=C;
+    N_H=N;
+    N_S=N;
+    @#else
+    N_H=N;
+    N_S=N;
+    @#endif
+    @#else
+    @#if LUMPSUM==1
+    C_H=C;
+    C_S=C;
+    N_H=N;
+    N_S=N;
+    @#endif
+@#endif
+
 
 // 均衡での κ を固定（価格調整コストの線形近似値）
 P_kappa = P_xi /
