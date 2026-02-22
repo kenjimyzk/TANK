@@ -18,7 +18,7 @@ check_val =(MC-1)+ MC *(P_varphi + (1-P_alpha) * P_gamma);
 coef_c_H = 1+(1-P_tau_d/P_lambda) *check_val;
 coef_c_S = (1-coef_c_H*P_lambda)/(1-P_lambda);
 
-coef_mu_S = -(P_gamma+P_kappa) * coef_c_S+ P_kappa * (1-P_alpha) * MC;
+coef_mu_S = -(P_gamma+P_kappa) * coef_c_S+ P_kappa * MC;
 
 [oo_.dr.ghu(6), coef_c_H]
 [oo_.dr.ghu(7), coef_c_S]
