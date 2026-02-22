@@ -1,10 +1,22 @@
 clear all
 
 dynare TANKC_model1.mod -DFLAG=1 
-dynare TANKC_model2_mini.mod -DFLAG=1
+dynare TANKC_model2_mini.mod -DFLAG=1 -DLUMPSUM=0
 
 oo_.dr.order_var
 oo_.dr.ghu
+coef1_c_H= oo_.dr.ghu(5);
+coef1_c_S= oo_.dr.ghu(7);
+coef1_mu_S=oo_.dr.ghu(4);
+
+
+dynare TANKC_model2_mini.mod -DFLAG=1 -DLUMPSUM=1
+
+oo_.dr.order_var
+oo_.dr.ghu
+coef2_c_H= oo_.dr.ghu(5);
+coef2_c_S= oo_.dr.ghu(7);
+coef2_mu_S=oo_.dr.ghu(4);
 
 P_gamma = get_param_by_name('P_gamma');
 P_varphi = get_param_by_name('P_varphi');
@@ -20,6 +32,6 @@ coef_c_S = (1-coef_c_H*P_lambda)/(1-P_lambda);
 
 coef_mu_S = -(P_gamma+P_kappa) * coef_c_S+ P_kappa * MC;
 
-[oo_.dr.ghu(6), coef_c_H]
-[oo_.dr.ghu(7), coef_c_S]
-[oo_.dr.ghu(4), coef_mu_S]
+[coef1_c_H, coef2_c_H, coef_c_H]
+[coef1_c_S, coef2_c_S, coef_c_S]
+[coef1_mu_S, coef2_mu_S, coef_mu_S]

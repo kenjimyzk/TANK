@@ -28,36 +28,24 @@ alpha4 = 0.3;
 Phi4 = 0;
 kappa4 = calc_kappa(xi, varphi, Phi4, alpha4, gamma);
 
-% Xi terms
-Xi1 = calc_Xi1(alpha, Phi, gamma, varphi);
-Xi2 = calc_Xi2(alpha, Phi, gamma, varphi);
-Xi3 = calc_Xi3(alpha, Phi, gamma, varphi);
-
-Xi1_2 = calc_Xi1(alpha2, Phi2, gamma, varphi);
-Xi2_2 = calc_Xi2(alpha2, Phi2, gamma, varphi);
-Xi3_2 = calc_Xi3(alpha2, Phi2, gamma, varphi);
-
-Xi1_3 = calc_Xi1(alpha3, Phi3, gamma, varphi);
-Xi2_3 = calc_Xi2(alpha3, Phi3, gamma, varphi);
-Xi3_3 = calc_Xi3(alpha3, Phi3, gamma, varphi);
-
-Xi1_4 = calc_Xi1(alpha4, Phi4, gamma, varphi);
-Xi2_4 = calc_Xi2(alpha4, Phi4, gamma, varphi);
-Xi3_4 = calc_Xi3(alpha4, Phi4, gamma, varphi);
+cases = struct( ...
+  'name', {'benchmark', 'case_alpha00_phi02', 'case_alpha03_phi00', 'case_alpha03_phi02'}, ...
+  'alpha', {alpha2, alpha3, alpha4, alpha}, ...
+  'Phi', {Phi2, Phi3, Phi4, Phi});
 
 % lambda formula
-lambda = calc_lambda(kappa, Xi1, Xi2, Xi3, gamma, varphi, Phi, tau);
-lambda2 = calc_lambda(kappa2, Xi1_2, Xi2_2, Xi3_2, gamma, varphi, Phi2, tau);
-lambda3 = calc_lambda(kappa3, Xi1_3, Xi2_3, Xi3_3, gamma, varphi, Phi3, tau);
-lambda4 = calc_lambda(kappa4, Xi1_4, Xi2_4, Xi3_4, gamma, varphi, Phi4, tau);
+lambda = calc_lambda(kappa, gamma, varphi, Phi, alpha, tau);
+lambda2 = calc_lambda(kappa2, gamma, varphi, Phi2, alpha2, tau);
+lambda3 = calc_lambda(kappa3, gamma, varphi, Phi3, alpha3, tau);
+lambda4 = calc_lambda(kappa4, gamma, varphi, Phi4, alpha4, tau);
 
 % plot
 figure;
-plot(xi, lambda, '-', 'LineWidth', 1.5);
+plot(xi, lambda2, '-', 'LineWidth', 1.5);
 hold on;
-plot(xi, lambda2, '--', 'LineWidth', 1.5);
-plot(xi, lambda3, ':', 'LineWidth', 1.5);
+plot(xi, lambda3, '--', 'LineWidth', 1.5);
 plot(xi, lambda4, '-.', 'LineWidth', 1.5);
+plot(xi, lambda, ':', 'LineWidth', 1.5);
 xlabel('\xi');
 ylabel('\lambda');
 grid on;
@@ -65,32 +53,32 @@ xlim([xi_min xi_max]);
 ylim([0 1]);
 yline(tau, '--', '\lambda=\tau', 'LabelHorizontalAlignment', 'left');
 xline(0, '--', '\xi=0', 'LabelHorizontalAlignment', 'left');
-legend('\alpha=0.3,\Phi=0.2', '\alpha=0,\Phi=0', '\alpha=0,\Phi=0.2', '\alpha=0.3,\Phi=0', ...
-  'Location', 'best');
+legend(make_legend_labels(cases), 'Location', 'best');
 
 function kappa = calc_kappa(xi, varphi, Phi, alpha, gamma)
 denom = (1 + varphi) + (1 - Phi) * (1 - alpha) * (gamma - 1);
 kappa = xi * (varphi + 1) ./ denom;
 end
 
-function Xi1 = calc_Xi1(alpha, Phi, gamma, varphi)
-Xi1 = ((1 - alpha) * gamma + varphi) ./ ((1 - alpha) * (gamma + varphi)) .* ...
-  ((1 + varphi) + (1 - Phi) * (1 - alpha) * (gamma - 1));
+function lambda = calc_lambda(kappa_s, gamma, varphi, Phi, alpha, tau)
+Phi_tilde = Phi * (varphi + 1) ./ (varphi + (1 - Phi) * (1 - alpha) * gamma);
+
+common_term = kappa_s .* (varphi + (1 - Phi) * (1 - alpha) * gamma) + gamma * varphi;
+
+lambda = (gamma + kappa_s .* Phi + tau .* (1 - Phi_tilde) .* common_term) ./ ...
+  (gamma + kappa_s .* Phi + (1 - Phi_tilde) .* common_term);
 end
 
-function Xi2 = calc_Xi2(alpha, Phi, gamma, varphi)
-Xi2 = (varphi + gamma * (1 - Phi) * (1 - alpha)) .* ...
-  (((((1 - alpha) * gamma + varphi) ./ ((1 - alpha) * (gamma + varphi))) * (1 - alpha) * (1 - Phi)) ...
-  - Phi / (varphi + gamma));
+function labels = make_legend_labels(cases)
+labels = arrayfun(@(c) make_case_label(c), cases, 'UniformOutput', false);
 end
 
-function Xi3 = calc_Xi3(alpha, Phi, gamma, varphi)
-Xi3 = gamma * varphi * ...
-  (((((1 - alpha) * gamma + varphi) ./ ((1 - alpha) * (gamma + varphi))) * (1 - alpha) * (1 - Phi)) ...
-  - Phi / (varphi + gamma));
+function label = make_case_label(case_params)
+if strcmp(case_params.name, 'benchmark')
+  prefix = 'benchmark';
+else
+  prefix = 'case';
 end
-
-function lambda = calc_lambda(kappa, Xi1, Xi2, Xi3, gamma, varphi, Phi, tau)
-lambda = (gamma + kappa .* Phi + tau .* (kappa .* Xi2 + Xi3)) ./ ...
-  (gamma * (1 + varphi) + kappa .* Xi1);
+label = sprintf('%s (\\alpha=%.2g,\\Phi=%.2g)', ...
+  prefix, case_params.alpha, case_params.Phi);
 end
