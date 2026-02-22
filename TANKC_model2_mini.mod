@@ -83,4 +83,4 @@ end;
 steady;
 check;
 
-stoch_simul(order=1, irf=20, nograph) c_S c_H n_S n_H mu_S;
+stoch_simul(order=1, irf=20, nograph);
