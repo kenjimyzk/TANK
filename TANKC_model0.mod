@@ -9,7 +9,7 @@
 @#if FLAG==1
     var D W N MC MU_S C C_H C_S Y R_N R PI m a c n d w gap;
 @#else
-    var D W N N_H N_S MC MU_S C C_H C_S Y R_N R PI m a c n d w gap;
+    var D W N N_H N_S MC MU_S C C_H C_S Y R_N R PI m a c n d w;
 @#endif
 
 varexo eps_a eps_m;
@@ -32,13 +32,13 @@ P_xi      = 0.5;        // フリッシュ弾力性の逆数
     P_gamma = 1.0;      // KPR スイッチで消費曲率を1に
 @#endif
 
-P_alpha   = 0.3;       // 生産における労働シェア (資本なしケース)
+P_alpha   = 0.0;       // 生産における労働シェア (資本なしケース)
 P_eta     = 1.0;        // 価格調整コストのスケール
 P_psi     = 5.0;        // マークアップ弾力性 (カルボ型)
 P_lambda  = 0.25;       // Hand-to-Mouth 家計のシェア
 P_tau_s = 1/(1-1/P_psi)-1; // 定常状態補助金ゼロの売上税率
 //P_tau_s   = 0.0;        // 売上税率
-P_tau_d   = 0.25;        // 配当税率
+P_tau_d   = 0.2;        // 配当税率
 
 // -------------------------------------------------------------------------
 // 政策パラメータ
@@ -183,7 +183,6 @@ steady;
 check;
 
 // パラメータと定常状態をテキストファイルに保存
-save_params_and_steady_state('TANKC_model1_steady.txt');
+//save_params_and_steady_state('TANKC_model1_steady.txt');
 
-stoch_simul(order=1, irf=20, nograph) c n d w gap;
-//stoch_simul(order=1, irf=20) c n d w gap;
+stoch_simul(order=1, irf=20) c n d w;

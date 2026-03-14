@@ -23,14 +23,34 @@ varexo eps_a eps_m;
 parameters P_beta P_gamma_0 P_gamma P_varphi P_xi P_kappa P_phi
            P_psi P_eta P_tau_s P_tau_d P_lambda P_alpha P_rho_a P_rho_m;
 
-// 定常状態をパラメータとして保持（TANKC_model1 から読込）
-@#if FLAG==1
-    parameters W N MC C C_H C_S Y D;
-@#else
-    parameters W N N_H N_S MC C C_H C_S Y D;
-@#endif
+parameters W N N_H N_S MC C C_H C_S Y D;
+
+// // 定常状態をパラメータとして保持（TANKC_model1 から読込）
+// @#if FLAG==1
+//     parameters W N MC C C_H C_S Y D;
+// @#else
+//     parameters W N N_H N_S MC C C_H C_S Y D;
+// @#endif
 
 load_params_and_steady_state('TANKC_model1_steady.txt');
+@#if FLAG==1
+    @#if LUMPSUM==1
+    C_H=C;
+    C_S=C;
+    N_H=N;
+    N_S=N;
+    @#else
+    N_H=N;
+    N_S=N;
+    @#endif
+    @#else
+    @#if LUMPSUM==1
+    C_H=C;
+    C_S=C;
+    N_H=N;
+    N_S=N;
+    @#endif
+@#endif
 
 // 均衡での κ: 価格調整コストの線形近似係数
 @#if FLAG==1
@@ -116,11 +136,10 @@ end;
 // ショック
 // =========================================================================
 shocks;
-var eps_a = 0.01;   // TFP ショック分散
-var eps_m = 0.01;   // 金融政策ショック分散
+var eps_m = 1;   // 金融政策ショック分散
 end;
 
 steady;
 check;
 
-stoch_simul(order=1, irf=20, nograph) c n d w;
+stoch_simul(order=1, irf=20, nograph);

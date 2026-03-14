@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -54,11 +54,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 1
+\justification default
+\crossref_package refstyle
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -84,13 +92,14 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
 
 \begin_layout Itemize
 12変数 (
-\begin_inset Formula $D_{t},W_{t},N_{t},N_{t}^{H},N_{t}^{S},MC_{t},C_{t},C_{t}^{H},C_{t}^{S},Y_{t},R_{t}^{N}$
+\begin_inset Formula $D_{t},W_{t},N_{t},N^{H}_{t},N^{S}_{t},MC_{t},C_{t},C^{H}_{t},C^{S}_{t},Y_{t},R^{N}_{t}$
 \end_inset
 
 ,
@@ -101,10 +110,10 @@
 ):
 \begin_inset Formula 
 \begin{align*}
-W_{t} & =\Xi(N_{t}^{H})^{\varphi}(C_{t}^{H})^{\sigma}\\
-C_{t}^{H} & =W_{t}N_{t}^{H}+\frac{\tau^{D}}{\lambda}D_{t}\\
-W_{t} & =\Xi(N_{t}^{S})^{\varphi}(C_{t}^{S})^{\sigma}\\
-1 & =\mathbb{E}_{t}\left[\beta\left(\frac{C_{t+1}^{S}}{C_{t}^{S}}\right)^{-\sigma}\frac{R_{t}^{N}}{\Pi_{t+1}}\right]
+W_{t} & =\Xi(N^{H}_{t})^{\varphi}(C^{H}_{t})^{\sigma}\\
+C^{H}_{t} & =W_{t}N^{H}_{t}+\frac{\tau^{D}}{\lambda}D_{t}\\
+W_{t} & =\Xi(N^{S}_{t})^{\varphi}(C^{S}_{t})^{\sigma}\\
+1 & =\mathbb{E}_{t}\left[\beta\left(\frac{C^{S}_{t+1}}{C^{S}_{t}}\right)^{-\sigma}\frac{R^{N}_{t}}{\Pi_{t+1}}\right]
 \end{align*}
 
 \end_inset
@@ -112,7 +121,7 @@ W_{t} & =\Xi(N_{t}^{S})^{\varphi}(C_{t}^{S})^{\sigma}\\
 
 \begin_inset Formula 
 \begin{align*}
-W_{t} & =(1-\alpha)MC_{t}N_{t}^{-\alpha}\\
+W_{t} & =(1-\alpha)MC_{t}N^{-\alpha}_{t}\\
 D_{t}= & Y_{t}-\frac{\eta_{P}}{2}\left(\frac{\Pi_{t}}{\Pi}-1\right)^{2}Y_{t}-W_{t}N_{t}
 \end{align*}
 
@@ -122,7 +131,7 @@ D_{t}= & Y_{t}-\frac{\eta_{P}}{2}\left(\frac{\Pi_{t}}{\Pi}-1\right)^{2}Y_{t}-W_{
 \begin_inset Formula 
 \begin{align*}
 \eta_{P}\frac{\Pi_{t}}{\Pi}\left(\frac{\Pi_{t}}{\Pi}-1\right)=\psi_{P}\left(MC_{t}-(1+\tau^{S})(1-1/\psi_{P})\right)\\
-+\beta\eta_{P}\mathbb{E}_{t}\left[\left(\frac{C_{t+1}^{S}}{C_{t}^{S}}\right)^{-\sigma}\frac{Y_{t+1}}{Y_{t}}\frac{\Pi_{t+1}}{\Pi}\left(\frac{\Pi_{t+1}}{\Pi}-1\right)\right]
++\beta\eta_{P}\mathbb{E}_{t}\left[\left(\frac{C^{S}_{t+1}}{C^{S}_{t}}\right)^{-\sigma}\frac{Y_{t+1}}{Y_{t}}\frac{\Pi_{t+1}}{\Pi}\left(\frac{\Pi_{t+1}}{\Pi}-1\right)\right]
 \end{align*}
 
 \end_inset
@@ -133,12 +142,12 @@ D_{t}= & Y_{t}-\frac{\eta_{P}}{2}\left(\frac{\Pi_{t}}{\Pi}-1\right)^{2}Y_{t}-W_{
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-C_{t} & =\lambda C_{t}^{H}+(1-\lambda)C_{t}^{S}\\
-N_{t} & =\lambda N_{t}^{S}+(1-\lambda)N_{t}^{S}\\
+C_{t} & =\lambda C^{H}_{t}+(1-\lambda)C^{S}_{t}\\
+N_{t} & =\lambda N^{S}_{t}+(1-\lambda)N^{S}_{t}\\
 Y_{t} & =C_{t}+\frac{\eta_{P}}{2}\left(\frac{\Pi_{t}}{\Pi}-1\right)^{2}Y_{t}\\
-Y_{t} & =N_{t}^{1-\alpha}\\
-\frac{R_{t}^{N}}{R^{N}} & =\left(\frac{\Pi_{t}}{\Pi}\right)^{\phi}\exp(-m_{t})\\
-m_{t} & =\rho_{m}m_{t-1}+e_{t}^{m}
+Y_{t} & =N^{1-\alpha}_{t}\\
+\frac{R^{N}_{t}}{R^{N}} & =\left(\frac{\Pi_{t}}{\Pi}\right)^{\phi}\exp(-m_{t})\\
+m_{t} & =\rho_{m}m_{t-1}+e^{m}_{t}
 \end{align*}
 
 \end_inset
@@ -176,6 +185,14 @@ MC=(1+\tau^{S})(1-1/\psi_{P})
 \end_inset
 
 
+\begin_inset Formula 
+\[
+C^{H}=W(N^{H}-H)+Y
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -200,10 +217,10 @@ Y & =N^{1-\alpha}
 :
 \begin_inset Formula 
 \begin{align*}
-w_{t} & =\varphi n_{t}^{H}+\gamma c_{t}^{H}\\
-\frac{C^{H}}{Y}c_{t}^{H} & =\frac{WN^{H}}{Y}(w_{t}+n_{t}^{H})+\frac{\tau^{D}}{\lambda}d_{t}\\
-w_{t} & =\varphi n_{t}^{S}+\gamma c_{t}^{S}\\
-r_{t}^{N} & =\mathbb{E}_{t}\left[\pi_{t+1}\right]+(\gamma+\kappa)\mathbb{E}_{t}\left[\Delta c_{t+1}^{S}\right]-\kappa\mathbb{E}_{t}\left[\Delta n_{t+1}^{S}\right]
+w_{t} & =\varphi n^{H}_{t}+\gamma c^{H}_{t}\\
+\frac{C^{H}}{C}c^{H}_{t} & =\frac{WN}{Y}\frac{N^{H}}{N}(w_{t}+n^{H}_{t})+\frac{\tau^{D}}{\lambda}d_{t}\\
+w_{t} & =\varphi n^{S}_{t}+\gamma c^{S}_{t}\\
+r^{N}_{t} & =\mathbb{E}_{t}\left[\pi_{t+1}\right]+(\gamma+\kappa)\mathbb{E}_{t}\left[\Delta c^{S}_{t+1}\right]-\kappa\mathbb{E}_{t}\left[\Delta n^{S}_{t+1}\right]
 \end{align*}
 
 \end_inset
@@ -250,12 +267,12 @@ d_{t}=-(1-\alpha)MCw_{t}+(1-MC)y_{t}
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-c_{t} & =\lambda\frac{C^{H}}{C}c_{t}^{H}+(1-\lambda)\frac{C^{S}}{C}c_{t}^{S}\\
-n_{t} & =\lambda\frac{N^{H}}{N}n_{t}^{H}+(1-\lambda)\frac{N^{S}}{N}n_{t}^{S}\\
+c_{t} & =\lambda\frac{C^{H}}{C}c^{H}_{t}+(1-\lambda)\frac{C^{S}}{C}c^{S}_{t}\\
+n_{t} & =\lambda\frac{N^{H}}{N}n^{H}_{t}+(1-\lambda)\frac{N^{S}}{N}n^{S}_{t}\\
 y_{t} & =c_{t}\\
 y_{t} & =(1-\alpha)n_{t}\\
-r_{t}^{N} & =\phi\pi_{t}-m_{t}\\
-m_{t} & =\rho_{m}m_{t-1}+e_{t}^{m}
+r^{N}_{t} & =\phi\pi_{t}-m_{t}\\
+m_{t} & =\rho_{m}m_{t-1}+e^{m}_{t}
 \end{align*}
 
 \end_inset
@@ -271,7 +288,7 @@ GHH-CRRA
 GHH-CRRA:
 \begin_inset Formula 
 \begin{align*}
-U^{S}\equiv U(C^{S},N^{S}) & =\frac{1}{1-\xi/(1-\gamma)}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{1-\xi/(1-\gamma)}
+U^{S}\equiv U(C^{S},N^{S}) & =\frac{1}{1-\gamma-\xi}\left((C^{S})^{1-\gamma}-\chi\frac{1-\gamma}{1+\varphi}(N^{S})^{1+\varphi}\right)^{1-\xi/(1-\gamma)}
 \end{align*}
 
 \end_inset
@@ -284,8 +301,8 @@ U^{S}\equiv U(C^{S},N^{S}) & =\frac{1}{1-\xi/(1-\gamma)}\left(\frac{(C^{S})^{1-\
 
 \begin_inset Formula 
 \begin{align*}
-U_{C}^{S}\equiv U_{C}(C^{S},N^{S}) & =(C^{S})^{-\gamma}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-\xi/(1-\gamma)}\\
-U_{N}^{S}\equiv U_{N}(C^{S},N^{S}) & =-\chi(N^{S})^{\varphi}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-\xi/(1-\gamma)}
+U^{S}_{C}\equiv U_{C}(C^{S},N^{S}) & =(C^{S})^{-\gamma}\left((C^{S})^{1-\gamma}-\chi\frac{1-\gamma}{1+\varphi}(N^{S})^{1+\varphi}\right)^{-\xi/(1-\gamma)}\\
+U^{S}_{N}\equiv U_{N}(C^{S},N^{S}) & =-\chi(N^{S})^{\varphi}\left((C^{S})^{1-\gamma}-\chi\frac{1-\gamma}{1+\varphi}(N^{S})^{1+\varphi}\right)^{-\xi/(1-\gamma)}
 \end{align*}
 
 \end_inset
@@ -297,7 +314,7 @@ U_{N}^{S}\equiv U_{N}(C^{S},N^{S}) & =-\chi(N^{S})^{\varphi}\left(\frac{(C^{S})^
 一階条件より
 \begin_inset Formula 
 \begin{align*}
--\frac{U_{N}^{S}}{U_{C}^{S}} & =\chi(C^{S})^{\gamma}(N^{S})^{\varphi}=W\\
+-\frac{U^{S}_{N}}{U^{S}_{C}} & =\chi(C^{S})^{\gamma}(N^{S})^{\varphi}=W\\
  & =(1-\alpha)MC\frac{Y}{N}\\
 \chi\frac{(N^{S})^{1+\varphi}}{(C^{S})^{1-\gamma}} & =(1-\alpha)MC\frac{N^{S}/N}{C^{S}/Y}
 \end{align*}
@@ -315,8 +332,8 @@ U_{N}^{S}\equiv U_{N}(C^{S},N^{S}) & =-\chi(N^{S})^{\varphi}\left(\frac{(C^{S})^
 
 \begin_inset Formula 
 \begin{align*}
-U_{CN}^{S}\equiv U_{CN}(C^{S},N^{S}) & =-\frac{\xi}{1-\gamma}\chi(C^{S})^{-\gamma}(N^{S})^{\varphi}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-\xi/(1-\gamma)-1}\\
-\kappa & \equiv-\frac{U_{CN}^{S}C^{S}}{U_{N}^{S}}=\frac{\xi}{1-\gamma}(C^{S})^{1-\gamma}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-1}\\
+U^{S}_{CN}\equiv U_{CN}(C^{S},N^{S}) & =-\xi\chi(C^{S})^{-\gamma}(N^{S})^{\varphi}\left((C^{S})^{1-\gamma}-\chi\frac{1-\gamma}{1+\varphi}(N^{S})^{1+\varphi}\right)^{-\xi/(1-\gamma)-1}\\
+\kappa & \equiv-\frac{U^{S}_{CN}C^{S}}{U^{S}_{N}}=\xi(C^{S})^{1-\gamma}\left((C^{S})^{1-\gamma}-\chi\frac{1-\gamma}{1+\varphi}(N^{S})^{1+\varphi}\right)^{-1}\\
  & =\xi\left(1-\chi\frac{1-\gamma}{1+\varphi}\frac{(N^{S})^{1+\varphi}}{(C^{S})^{1-\gamma}}\right)^{-1}\\
  & =\xi\left(1-\frac{1-\gamma}{1+\varphi}(1-\alpha)MC\frac{N^{S}/N}{C^{S}/Y}\right)^{-1}
 \end{align*}
@@ -333,9 +350,9 @@ U_{CN}^{S}\equiv U_{CN}(C^{S},N^{S}) & =-\frac{\xi}{1-\gamma}\chi(C^{S})^{-\gamm
 
 \begin_inset Formula 
 \begin{align*}
-U_{CC}^{S}\equiv U_{CC}(C^{S},N^{S})= & -\gamma C^{-\gamma-1}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-\xi/(1-\gamma)}\\
+U^{S}_{CC}\equiv U_{CC}(C^{S},N^{S})= & -\gamma C^{-\gamma-1}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-\xi/(1-\gamma)}\\
  & -\frac{\xi}{1-\gamma}C^{-2\gamma}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-\xi/(1-\gamma)-1}\\
-\frac{U_{CC}^{S}C^{S}}{U_{C}^{S}}= & -\gamma-\frac{\xi}{1-\gamma}C^{1-\gamma}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-1}\\
+\frac{U^{S}_{CC}C^{S}}{U^{S}_{C}}= & -\gamma-\frac{\xi}{1-\gamma}C^{1-\gamma}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-1}\\
 = & -\gamma-\kappa
 \end{align*}
 
@@ -351,9 +368,9 @@ U_{CC}^{S}\equiv U_{CC}(C^{S},N^{S})= & -\gamma C^{-\gamma-1}\left(\frac{(C^{S})
 
 \begin_inset Formula 
 \begin{align*}
-U_{NN}^{S}\equiv U_{NN}(C^{S},N^{S})= & -\chi\varphi(N^{S})^{\varphi-1}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-\xi/(1-\gamma)}\\
+U^{S}_{NN}\equiv U_{NN}(C^{S},N^{S})= & -\chi\varphi(N^{S})^{\varphi-1}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-\xi/(1-\gamma)}\\
  & -\frac{\xi}{1-\gamma}\chi^{2}(N^{S})^{2\varphi}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-\xi/(1-\gamma)-1}\\
-\frac{U_{NN}^{S}N^{S}}{U_{N}^{S}}= & \varphi+\frac{\xi}{1-\gamma}\chi(N^{S})^{\varphi+1}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-1}\\
+\frac{U^{S}_{NN}N^{S}}{U^{S}_{N}}= & \varphi+\frac{\xi}{1-\gamma}\chi(N^{S})^{\varphi+1}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-1}\\
 = & \varphi+(1-\alpha)(1-\Phi)\frac{N^{S}/N}{C^{S}/C}\frac{\xi}{1-\gamma}(C^{S})^{1-\gamma}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-1}\\
 = & \varphi+\kappa(1-\alpha)(1-\Phi)\frac{N^{S}/N}{C^{S}/C}
 \end{align*}
@@ -367,12 +384,12 @@ U_{NN}^{S}\equiv U_{NN}(C^{S},N^{S})= & -\chi\varphi(N^{S})^{\varphi-1}\left(\fr
 MU
 \begin_inset Formula 
 \begin{align*}
-mu_{t}^{S} & =\frac{C^{S}U_{CC}^{S}}{U_{C}^{S}}c_{t}^{S}+\frac{N^{S}U_{CN}^{S}}{U_{C}^{S}}n_{t}^{S}\\
- & =\frac{C^{S}U_{CC}^{S}}{U_{C}^{S}}c_{t}^{S}-\kappa\frac{N^{S}U_{N}^{S}}{C^{S}U_{C}^{S}}n_{t}^{S}\\
- & =\frac{C^{S}U_{CC}^{S}}{U_{C}^{S}}c_{t}^{S}+\kappa\frac{N^{S}}{C^{S}}\chi(C^{S})^{\gamma}(N^{S})^{\varphi}n_{t}^{S}\\
- & =\frac{C^{S}U_{CC}^{S}}{U_{C}^{S}}c_{t}^{S}+\kappa\frac{N^{S}}{C^{S}}Wn_{t}^{S}\\
- & =\frac{C^{S}U_{CC}^{S}}{U_{C}^{S}}c_{t}^{S}+\kappa\frac{N^{S}}{C^{S}}(1-\alpha)MC_{SS}\frac{Y}{N}n_{t}^{S}\\
- & =-(\gamma+\kappa)c_{t}^{S}+\kappa(1-\alpha)MC_{SS}\frac{N^{S}/N}{C^{S}/Y}n_{t}^{S}
+mu^{S}_{t} & =\frac{C^{S}U^{S}_{CC}}{U^{S}_{C}}c^{S}_{t}+\frac{N^{S}U^{S}_{CN}}{U^{S}_{C}}n^{S}_{t}\\
+ & =\frac{C^{S}U^{S}_{CC}}{U^{S}_{C}}c^{S}_{t}-\kappa\frac{N^{S}U^{S}_{N}}{C^{S}U^{S}_{C}}n^{S}_{t}\\
+ & =\frac{C^{S}U^{S}_{CC}}{U^{S}_{C}}c^{S}_{t}+\kappa\frac{N^{S}}{C^{S}}\chi(C^{S})^{\gamma}(N^{S})^{\varphi}n^{S}_{t}\\
+ & =\frac{C^{S}U^{S}_{CC}}{U^{S}_{C}}c^{S}_{t}+\kappa\frac{N^{S}}{C^{S}}Wn^{S}_{t}\\
+ & =\frac{C^{S}U^{S}_{CC}}{U^{S}_{C}}c^{S}_{t}+\kappa\frac{N^{S}}{C^{S}}(1-\alpha)MC_{SS}\frac{Y}{N}n^{S}_{t}\\
+ & =-(\gamma+\kappa)c^{S}_{t}+\kappa(1-\alpha)MC_{SS}\frac{N^{S}/N}{C^{S}/Y}n^{S}_{t}
 \end{align*}
 
 \end_inset
@@ -380,8 +397,8 @@ mu_{t}^{S} & =\frac{C^{S}U_{CC}^{S}}{U_{C}^{S}}c_{t}^{S}+\frac{N^{S}U_{CN}^{S}}{
 
 \begin_inset Formula 
 \begin{align*}
-mu_{t}^{S} & =-(\gamma+\kappa)c_{t}^{S}+\kappa\chi(C^{S})^{\gamma-1}(N^{S})^{\varphi+1}n_{t}^{S}\\
- & =-(\gamma+\kappa)c_{t}^{S}+\frac{\xi\chi(C^{S})^{\gamma-1}(N^{S})^{\varphi+1}}{1-\frac{1-\gamma}{1+\varphi}\chi(C^{S})^{\gamma-1}(N^{S})^{\varphi+1}}n_{t}^{S}
+mu^{S}_{t} & =-(\gamma+\kappa)c^{S}_{t}+\kappa\chi(C^{S})^{\gamma-1}(N^{S})^{\varphi+1}n^{S}_{t}\\
+ & =-(\gamma+\kappa)c^{S}_{t}+\frac{\xi\chi(C^{S})^{\gamma-1}(N^{S})^{\varphi+1}}{1-\frac{1-\gamma}{1+\varphi}\chi(C^{S})^{\gamma-1}(N^{S})^{\varphi+1}}n^{S}_{t}
 \end{align*}
 
 \end_inset
@@ -389,7 +406,7 @@ mu_{t}^{S} & =-(\gamma+\kappa)c_{t}^{S}+\kappa\chi(C^{S})^{\gamma-1}(N^{S})^{\va
 
 \begin_inset Formula 
 \[
-\kappa\equiv-\frac{U_{CN}^{S}C^{S}}{U_{N}^{S}}=\frac{\xi}{1-\gamma}(C^{S})^{1-\gamma}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-1}
+\kappa\equiv-\frac{U^{S}_{CN}C^{S}}{U^{S}_{N}}=\frac{\xi}{1-\gamma}(C^{S})^{1-\gamma}\left(\frac{(C^{S})^{1-\gamma}}{1-\gamma}-\chi\frac{(N^{S})^{1+\varphi}}{1+\varphi}\right)^{-1}
 \]
 
 \end_inset
@@ -403,7 +420,7 @@ Solution:
 
 \begin_layout Itemize
 Substituting 
-\begin_inset Formula $n_{t}^{H}=(w_{t}-\gamma c_{t}^{H})/\varphi$
+\begin_inset Formula $n^{H}_{t}=(w_{t}-\gamma c^{H}_{t})/\varphi$
 \end_inset
 
  and 
@@ -411,13 +428,13 @@ Substituting
 \end_inset
 
  into 
-\begin_inset Formula $c_{t}^{H}=w_{t}+n_{t}^{H}+\frac{\tau}{\lambda}d_{t}$
+\begin_inset Formula $c^{H}_{t}=w_{t}+n^{H}_{t}+\frac{\tau}{\lambda}d_{t}$
 \end_inset
 
  leads to 
 \begin_inset Formula 
 \begin{align*}
-c_{t}^{H} & =w_{t}+(w_{t}-\gamma c_{t}^{H})/\varphi-\frac{\tau}{\lambda}(1-\alpha)MCw_{t}+\frac{\tau}{\lambda}(1-MC)y_{t}\\
+c^{H}_{t} & =w_{t}+(w_{t}-\gamma c^{H}_{t})/\varphi-\frac{\tau}{\lambda}(1-\alpha)MCw_{t}+\frac{\tau}{\lambda}(1-MC)y_{t}\\
  & =\frac{1+\varphi(1-(1-\alpha)MC\tau/\lambda)}{1+\gamma/\varphi}\frac{w_{t}}{\varphi}+\frac{\tau}{\lambda}\frac{1-MC}{1+\gamma/\varphi}y_{t}\\
  & =\frac{1+\varphi(1-(1-\alpha)MC\tau/\lambda)}{\varphi+\gamma}w_{t}+\frac{\tau}{\lambda}\frac{\varphi(1-MC)}{\varphi+\gamma}y_{t}
 \end{align*}
@@ -435,7 +452,7 @@ Substituting
  into the above leads to
 \begin_inset Formula 
 \begin{align*}
-c_{t}^{H} & =\frac{1+\varphi(1-(1-\alpha)MC\tau/\lambda)}{\varphi+\gamma}(\gamma c_{t}+\varphi n_{t})+\frac{\tau}{\lambda}\frac{\varphi(1-MC)}{\varphi+\gamma}y_{t}\\
+c^{H}_{t} & =\frac{1+\varphi(1-(1-\alpha)MC\tau/\lambda)}{\varphi+\gamma}(\gamma c_{t}+\varphi n_{t})+\frac{\tau}{\lambda}\frac{\varphi(1-MC)}{\varphi+\gamma}y_{t}\\
  & =\frac{1+\varphi(1-(1-\alpha)MC\tau/\lambda)}{\varphi+\gamma}\{\gamma y_{t}+\frac{\varphi}{1-\alpha}y_{t}\}+\frac{\tau}{\lambda}\frac{\varphi(1-MC)}{\varphi+\gamma}y_{t}\\
  & =\frac{1+\varphi(1-(1-\alpha)MC\tau/\lambda)}{\varphi+\gamma}\{(\gamma+\varphi)y_{t}+\frac{\alpha\varphi}{1-\alpha}y_{t}\}+\frac{\tau}{\lambda}\frac{\varphi(1-MC)}{\varphi+\gamma}y_{t}\\
  & =\{1+\varphi(1-(1-\alpha)MC\tau/\lambda)\}\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}+\frac{\varphi(\tau/\lambda)(1-MC)}{\varphi+\gamma}y_{t}\\
@@ -449,14 +466,14 @@ c_{t}^{H} & =\frac{1+\varphi(1-(1-\alpha)MC\tau/\lambda)}{\varphi+\gamma}(\gamma
 \end_inset
 
 Since 
-\begin_inset Formula $c_{t}=\lambda c_{t}^{H}+(1-\lambda)c_{t}^{S}$
+\begin_inset Formula $c_{t}=\lambda c^{H}_{t}+(1-\lambda)c^{S}_{t}$
 \end_inset
 
 ,
  
 \begin_inset Formula 
 \begin{align*}
-c_{t}^{S} & =\frac{c_{t}-\lambda c_{t}^{H}}{1-\lambda}=\frac{1-\lambda\chi^{C}}{1-\lambda}y_{t}.\\
+c^{S}_{t} & =\frac{c_{t}-\lambda c^{H}_{t}}{1-\lambda}=\frac{1-\lambda\chi^{C}}{1-\lambda}y_{t}.\\
  & =\frac{1-\lambda\{1+\varphi(1-\tilde{\tilde{\tau}}/\lambda)\}+\tilde{\lambda\frac{\alpha\varphi\{1+\varphi(1-\tilde{\tau}/\lambda)\}}{(1-\alpha)(\gamma+\varphi)}}}{1-\lambda}y_{t}\\
  & =y_{t}-\frac{\lambda}{1-\lambda}\varphi(1-\tilde{\tilde{\tau}}/\lambda)y_{t}+\frac{\lambda}{1-\lambda}\frac{\alpha\varphi\{1+\varphi(1-\tilde{\tau}/\lambda)\}}{(1-\alpha)(\gamma+\varphi)}
 \end{align*}
@@ -469,7 +486,7 @@ c_{t}^{S} & =\frac{c_{t}-\lambda c_{t}^{H}}{1-\lambda}=\frac{1-\lambda\chi^{C}}{
 \begin_layout Standard
 Similarly,
  substituting 
-\begin_inset Formula $c_{t}^{H}=(w_{t}-\varphi n_{t}^{H})/\gamma$
+\begin_inset Formula $c^{H}_{t}=(w_{t}-\varphi n^{H}_{t})/\gamma$
 \end_inset
 
  and 
@@ -477,13 +494,13 @@ Similarly,
 \end_inset
 
  into 
-\begin_inset Formula $n_{t}^{H}=-w_{t}+c_{t}^{H}-\frac{\tau}{\lambda}d_{t}$
+\begin_inset Formula $n^{H}_{t}=-w_{t}+c^{H}_{t}-\frac{\tau}{\lambda}d_{t}$
 \end_inset
 
  leads to 
 \begin_inset Formula 
 \begin{align*}
-n_{t}^{H} & =-w_{t}+(w_{t}-\varphi n_{t}^{H})/\gamma+\frac{\tau}{\lambda}(1-\alpha)MCw_{t}-\frac{\tau}{\lambda}\{y_{t}-(1-\alpha)MCn_{t}\}\\
+n^{H}_{t} & =-w_{t}+(w_{t}-\varphi n^{H}_{t})/\gamma+\frac{\tau}{\lambda}(1-\alpha)MCw_{t}-\frac{\tau}{\lambda}\{y_{t}-(1-\alpha)MCn_{t}\}\\
  & =\frac{1-\gamma(1-(1-\alpha)MC\tau/\lambda)}{1+\varphi/\gamma}\frac{w_{t}}{\gamma}-\frac{\tau}{\lambda}\frac{1-MC}{1+\varphi/\gamma}y_{t}\\
  & =\frac{1-\gamma(1-(1-\alpha)MC\tau/\lambda)}{\gamma+\varphi}w_{t}-\frac{\gamma(\tau/\lambda)(1-MC)}{\varphi+\gamma}y_{t}
 \end{align*}
@@ -501,7 +518,7 @@ Substituting
  into the above leads to
 \begin_inset Formula 
 \begin{align*}
-n_{t}^{H} & =\frac{1-\gamma(1-(1-\alpha)MC\tau/\lambda)}{\gamma+\varphi}(\gamma c_{t}+\varphi n_{t})-\frac{\gamma(\tau/\lambda)(1-MC)}{\varphi+\gamma}y_{t}\\
+n^{H}_{t} & =\frac{1-\gamma(1-(1-\alpha)MC\tau/\lambda)}{\gamma+\varphi}(\gamma c_{t}+\varphi n_{t})-\frac{\gamma(\tau/\lambda)(1-MC)}{\varphi+\gamma}y_{t}\\
  & =\frac{1-\gamma(1-(1-\alpha)MC\tau/\lambda)}{\gamma+\varphi}(\gamma+\varphi+\varphi\alpha/(1-\alpha))y_{t}-\frac{\gamma(\tau/\lambda)(1-MC)}{\varphi+\gamma}y_{t}\\
  & =\{1-\gamma(1-(1-\alpha)MC\tau/\lambda))\}\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}-\frac{\gamma(\tau/\lambda)(1-MC)}{\varphi+\gamma}y_{t}\\
  & =\{1-\gamma(1-\tilde{\tilde{\tau}}/\lambda\}y_{t}-\{1-\gamma(1-\tilde{\tau}/\lambda)\}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}y_{t}
@@ -518,14 +535,14 @@ n_{t}^{H} & =\frac{1-\gamma(1-(1-\alpha)MC\tau/\lambda)}{\gamma+\varphi}(\gamma 
 \end_inset
 
 Since 
-\begin_inset Formula $n_{t}=\lambda n_{t}^{H}+(1-\lambda)n_{t}^{S}$
+\begin_inset Formula $n_{t}=\lambda n^{H}_{t}+(1-\lambda)n^{S}_{t}$
 \end_inset
 
 ,
  
 \begin_inset Formula 
 \begin{align*}
-n_{t}^{S} & =\frac{n_{t}-\lambda n_{t}^{H}}{1-\lambda}=\frac{1/(1-\alpha)-\lambda\chi^{N}}{1-\lambda}y_{t}.\\
+n^{S}_{t} & =\frac{n_{t}-\lambda n^{H}_{t}}{1-\lambda}=\frac{1/(1-\alpha)-\lambda\chi^{N}}{1-\lambda}y_{t}.\\
  & =\frac{y_{t}}{1-\alpha}-\frac{\lambda}{1-\lambda}\gamma(1-\tilde{\tilde{\tau}}/\lambda)y_{t}+\frac{\lambda}{1-\lambda}\frac{\alpha\varphi\{1+\gamma(1-\tilde{\tau}/\lambda)\}}{(1-\alpha)(\gamma+\varphi)}
 \end{align*}
 
@@ -543,7 +560,7 @@ Assume
  
 \begin_inset Formula 
 \begin{align*}
-c_{t}^{H} & =\{1+\varphi(1-MC\tau/\lambda)\}y_{t}+\frac{\varphi(\tau/\lambda)(1-MC)}{\varphi+\gamma}y_{t}\\
+c^{H}_{t} & =\{1+\varphi(1-MC\tau/\lambda)\}y_{t}+\frac{\varphi(\tau/\lambda)(1-MC)}{\varphi+\gamma}y_{t}\\
  & =\{1+\varphi(1-\tau/\lambda)\}y_{t}+\varphi MC(\tau/\lambda)y_{t}+\frac{\varphi(\tau/\lambda)(1-MC)}{\varphi+\gamma}y_{t}
 \end{align*}
 
@@ -552,7 +569,7 @@ c_{t}^{H} & =\{1+\varphi(1-MC\tau/\lambda)\}y_{t}+\frac{\varphi(\tau/\lambda)(1-
 
 \begin_inset Formula 
 \begin{align*}
-n_{t}^{H} & =\{1-\gamma(1-MC\tau/\lambda))\}y_{t}-\frac{\gamma(\tau/\lambda)(1-MC)}{\varphi+\gamma}y_{t}
+n^{H}_{t} & =\{1-\gamma(1-MC\tau/\lambda))\}y_{t}-\frac{\gamma(\tau/\lambda)(1-MC)}{\varphi+\gamma}y_{t}
 \end{align*}
 
 \end_inset
@@ -573,10 +590,10 @@ Assume
  
 \begin_inset Formula 
 \begin{align*}
-c_{t}^{H} & =(1+\varphi)y_{t}\\
-c_{t}^{S} & =\frac{c_{t}-\lambda c_{t}^{H}}{1-\lambda}=\frac{1-\lambda(1+\varphi)}{1-\lambda}y_{y}=\left\{ 1-\frac{\lambda\varphi}{1-\lambda}\right\} y_{t}\\
-n_{t}^{H} & =(1-\gamma)y_{t}\\
-n_{t}^{S} & =\frac{n_{t}-\lambda n_{t}^{H}}{1-\lambda}=\frac{1-\lambda(1-\gamma)}{1-\lambda}y_{y}=\left\{ 1+\frac{\lambda\gamma}{1-\lambda}\right\} y_{t}
+c^{H}_{t} & =(1+\varphi)y_{t}\\
+c^{S}_{t} & =\frac{c_{t}-\lambda c^{H}_{t}}{1-\lambda}=\frac{1-\lambda(1+\varphi)}{1-\lambda}y_{y}=\left\{ 1-\frac{\lambda\varphi}{1-\lambda}\right\} y_{t}\\
+n^{H}_{t} & =(1-\gamma)y_{t}\\
+n^{S}_{t} & =\frac{n_{t}-\lambda n^{H}_{t}}{1-\lambda}=\frac{1-\lambda(1-\gamma)}{1-\lambda}y_{y}=\left\{ 1+\frac{\lambda\gamma}{1-\lambda}\right\} y_{t}
 \end{align*}
 
 \end_inset
@@ -584,8 +601,8 @@ n_{t}^{S} & =\frac{n_{t}-\lambda n_{t}^{H}}{1-\lambda}=\frac{1-\lambda(1-\gamma)
 
 \begin_inset Formula 
 \begin{align*}
-mu_{t}^{S} & =-(\gamma+\kappa)c_{t}^{S}+\kappa MC_{SS}n_{t}^{S}\\
- & =-\gamma c_{t}^{S}-\kappa(c_{t}^{S}-MC_{SS}n_{t}^{S})\\
+mu^{S}_{t} & =-(\gamma+\kappa)c^{S}_{t}+\kappa MC_{SS}n^{S}_{t}\\
+ & =-\gamma c^{S}_{t}-\kappa(c^{S}_{t}-MC_{SS}n^{S}_{t})\\
  & =-\gamma\left\{ 1-\frac{\lambda\varphi}{1-\lambda}\right\} y_{t}-\kappa\left\{ 1-\frac{\lambda\varphi}{1-\lambda}\right\} y_{t}+MC\kappa\left\{ 1+\frac{\lambda\gamma}{1-\lambda}\right\} y_{t}\\
  & =-\gamma\left\{ 1-\frac{\lambda\varphi}{1-\lambda}\right\} y_{t}-\kappa(1-MC)y_{t}+\frac{\lambda\kappa}{1-\lambda}(\varphi+\gamma+(MC-1)\gamma)y_{t}\\
  & =-\gamma\left\{ 1-\frac{\lambda\varphi}{1-\lambda}\right\} y_{t}-\kappa(1-MC)y_{t}+\frac{\lambda\kappa}{1-\lambda}(\varphi+\gamma)y_{t}-\frac{\lambda\kappa}{1-\lambda}\gamma(1-MC)y_{t}\\
@@ -601,10 +618,10 @@ Assume
  
 \begin_inset Formula 
 \begin{align*}
-c_{t}^{H} & =(1+\varphi)\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
-c_{t}^{S} & =\frac{c_{t}-\lambda c_{t}^{H}}{1-\lambda}=\frac{1-\lambda(1+\varphi)\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} }{1-\lambda}y_{t}=\left\{ 1-\frac{\lambda\varphi}{1-\lambda}-\frac{\lambda(1+\varphi)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
-n_{t}^{H} & =(1-\gamma)\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
-n_{t}^{S} & =\frac{n_{t}-\lambda n_{t}^{H}}{1-\lambda}=\frac{\frac{1}{1-\alpha}y_{t}-\lambda n_{t}^{H}}{1-\lambda}\\
+c^{H}_{t} & =(1+\varphi)\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+c^{S}_{t} & =\frac{c_{t}-\lambda c^{H}_{t}}{1-\lambda}=\frac{1-\lambda(1+\varphi)\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} }{1-\lambda}y_{t}=\left\{ 1-\frac{\lambda\varphi}{1-\lambda}-\frac{\lambda(1+\varphi)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+n^{H}_{t} & =(1-\gamma)\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+n^{S}_{t} & =\frac{n_{t}-\lambda n^{H}_{t}}{1-\lambda}=\frac{\frac{1}{1-\alpha}y_{t}-\lambda n^{H}_{t}}{1-\lambda}\\
  & =\frac{1+\frac{\alpha}{1-\alpha}-\lambda(1-\gamma)\left\{ 1+\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} }{1-\lambda}y_{t}=\left\{ 1+\frac{\lambda\gamma}{1-\lambda}+\frac{\alpha}{1-\alpha}\frac{1}{1-\lambda}-\frac{\lambda(1-\gamma)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}
 \end{align*}
 
@@ -613,8 +630,8 @@ n_{t}^{S} & =\frac{n_{t}-\lambda n_{t}^{H}}{1-\lambda}=\frac{\frac{1}{1-\alpha}y
 
 \begin_inset Formula 
 \begin{align*}
-mu_{t}^{S} & =-(\gamma+\kappa)c_{t}^{S}+\kappa(1-\alpha)MC_{SS}n_{t}^{S}\\
- & =-\gamma c_{t}^{S}-\kappa(c_{t}^{S}-(1-\alpha)MC_{SS}n_{t}^{S})\\
+mu^{S}_{t} & =-(\gamma+\kappa)c^{S}_{t}+\kappa(1-\alpha)MC_{SS}n^{S}_{t}\\
+ & =-\gamma c^{S}_{t}-\kappa(c^{S}_{t}-(1-\alpha)MC_{SS}n^{S}_{t})\\
  & =-\gamma\left\{ 1-\frac{\lambda\varphi}{1-\lambda}-\frac{\lambda(1+\varphi)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
  & -\kappa(\left\{ 1-\frac{\lambda\varphi}{1-\lambda}-\frac{\lambda(1+\varphi)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
  & +(1-\alpha)MC\kappa\left\{ 1+\frac{\alpha}{1-\alpha}\frac{1}{1-\lambda}+\frac{\lambda\gamma}{1-\lambda}-\frac{\lambda(1-\gamma)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} )y_{t}\\
@@ -635,7 +652,7 @@ mu_{t}^{S} & =-(\gamma+\kappa)c_{t}^{S}+\kappa(1-\alpha)MC_{SS}n_{t}^{S}\\
 
 \begin_inset Formula 
 \begin{align*}
-mu_{t}^{S} & =-\gamma\left\{ 1-\frac{\lambda\varphi}{1-\lambda}-\frac{\lambda(1+\varphi)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
+mu^{S}_{t} & =-\gamma\left\{ 1-\frac{\lambda\varphi}{1-\lambda}-\frac{\lambda(1+\varphi)}{1-\lambda}\frac{\alpha\varphi}{(1-\alpha)(\gamma+\varphi)}\right\} y_{t}\\
  & +\frac{\lambda\kappa}{1-\lambda}\frac{\varphi+(1-\alpha)\gamma}{(1-\alpha)(\gamma+\varphi)}\left\{ \varphi+(1-\alpha)\gamma+\alpha\right\} y_{t}
 \end{align*}
 

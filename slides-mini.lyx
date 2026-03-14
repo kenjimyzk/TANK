@@ -1,0 +1,3877 @@
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usepackage{xltxtra}
+\usepackage{zxjatype}
+\usepackage[ipaex]{zxjafont}
+\usefonttheme{professionalfonts} 
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children no
+\language english
+\language_package default
+\inputencoding utf8-plain
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style jecon
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification default
+\crossref_package refstyle
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
+\end_header
+
+\begin_body
+
+\begin_layout Title
+TANK with Non-Separable Preferences
+\end_layout
+
+\begin_layout Author
+Kenji MIYAZAKI
+\end_layout
+
+\begin_layout Institute
+Hosei University
+\end_layout
+
+\begin_layout Date
+March 16,
+ 2026
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Outline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+ 
+\backslash
+frame{
+\backslash
+tableofcontents[currentsection]}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+研究背景
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+実証上、限界効用は労働投入量の増加関数が示唆されている（Hall,
+ 2009）
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+退職や失業により消費水準が大幅に減少（退職消費パズル）
+\end_layout
+
+\begin_layout Itemize
+効用関数の消費の労働の交差微分が負のとき
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+補完的
+\end_layout
+
+\end_inset
+
+とよぶ
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+ミクロ実証では、所得が増えても労働時間を減らす効果は限定的である
+\end_layout
+
+\begin_layout Itemize
+補完性がない
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+RANK
+\end_layout
+
+\end_inset
+
+（Representative Agent New Keynesian）モデルにおいて消費の財政乗数はゼロ、補完性を導入すると正になる (Bilbiie,
+ 2007;
+ 2010)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ただ金融政策への影響は補完性を導入しても歪みの無い経済では無関係である (Bilbiie,
+ 2020) 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+補完性がない
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+TANK
+\end_layout
+
+\end_inset
+
+（Two-Agent New Keynesian）モデルにおいて、Bilbiie (2008) はIS曲線の傾きや金融政策の乗数や最適金融政策の目的関数がRANKモデルと異なることを解析的に明らかにした
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+さらにBilbiie (2021,
+ Best Paper in JME) は恒常所得仮説よりNK 消費関数を導出し、限界消費性向MPCがRANKとTANKモデルが大きく異なることを示した
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+しかしながら、補完性は導入したTANKモデルはGHHモデルを使った数値計算以外存在しない
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+前報告の目的
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+非分離型効用関数のもとTANK（Two-Agent New Keynesian）モデルを解析的に考察
+\end_layout
+
+\begin_layout Itemize
+結論：
+補完性はRANK（Representative Agent New Keynesian）モデルでは重要でないが、TANKモデルでは重要である。
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+歪みのない経済でもDynamic Euler IS Curve の形状、GE-EIS（一般均衡異時点間代替弾力性）が変化する。
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+不平等指標が反循環的のとき、補完的なほど乗数効果は大きくなる
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+New Keynesian Cross (新45度分析) でのMPC（限界消費性向）が変化する
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+不平等指標が反循環的のとき、補完的なほどMPCは大きくなる
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+最適金融政策での目的関数の形状が変化する。
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+不平等指標が大きく、補完的なほどインフレより産出量を重視する
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+前論文の貢献
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+RANK (
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+),
+ TANK with CRRA (
+\begin_inset Formula $\xi=0$
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Itemize
+Euler IS曲線 (GE-EIS)：
+
+\begin_inset Formula 
+\[
+y_{t}=\mathbb{E}_{t}\left[y_{t+1}\right]-\frac{1}{\gamma+\frac{{\color{blue}\lambda}(1-\chi)}{1-{\color{blue}\lambda}}\left\{ \gamma+{\color{red}\xi}\frac{\varphi+1}{\varphi}\right\} }r_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+消費関数の傾き（限界消費性向MPC）：
+
+\begin_inset Formula 
+\[
+\frac{\gamma(1-\beta(1-{\color{blue}\lambda}\chi))+{\color{red}\xi}\left\{ \frac{\varphi+1}{\varphi+\gamma}-\beta\frac{\varphi+1}{\varphi}{\color{blue}\lambda}(1-\chi)\right\} }{\gamma(1-\beta(1-{\color{blue}\lambda}\chi)\rho)+{\color{red}\xi}\left\{ \frac{\varphi+1}{\varphi+\gamma}-\beta\frac{\varphi+1}{\varphi}{\color{blue}\lambda}(1-\chi)\rho\right\} }
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+最適金融政策の目的関数：
+
+\begin_inset Formula 
+\[
+-\frac{\eta}{2}inf^{2}_{t}-\frac{\gamma+\varphi}{2}\left(y^{2}_{t}+\frac{1}{\varphi}\left\{ \gamma+{\color{red}\xi}\frac{\varphi+1}{\varphi}\right\} {\color{blue}\lambda}(1-{\color{blue}\lambda})gap^{2}_{t}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+その後
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+某雑誌に投稿し、レフェリーからメジャーアップデート要求：
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+英語がひどい、直観的説明がない
+\end_layout
+
+\begin_layout Itemize
+efficient & linear economy しか考察していないので、以外も検討せよ
+\end_layout
+
+\begin_layout Itemize
+laborを固定して、消費のみの効果がどのようなものか明らかにせよ
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+改訂中にBilbiieが2022年の論文を2025年にバージョンアップして、RANKだけでなくTHANKも考察していた
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ただ、efficient & linear economy しか考察していない
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+GE-EISに絞り、inefficient & concave economyに一般化した
+\end_layout
+
+\begin_layout Itemize
+ほぼ解析的導出は済んだが経済学的解釈はまだ。
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+allowframebreaks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+経済変数
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+時間を通じて変化する経済変数は大文字で添字
+\begin_inset Formula $t$
+\end_inset
+
+をつける
+\end_layout
+
+\begin_layout Itemize
+経済変数の定常状態は添字をつけない
+\end_layout
+
+\begin_layout Itemize
+経済変数の定常状態からの乖離率を小文字で表す（例外：
+配当
+\begin_inset Formula $d_{t}=(D_{t}-D)/Y$
+\end_inset
+
+）
+\end_layout
+
+\begin_layout Itemize
+時間を通じて変化しないパラメータは（インフレを除き）ギリシア文字
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C_{t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $C^{S}_{t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $C^{H}_{t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $c_{t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $c^{S}_{t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $c^{H}_{t}$
+\end_inset
+
+:
+ 消費量
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $D_{t},\;d_{t}=(D_{t}-D)/Y$
+\end_inset
+
+:
+ 配当
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $gap^{c}_{t}:=c^{S}_{t}-c^{H}_{t}$
+\end_inset
+
+:
+ 不平等指標
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $gap^{n}_{t}:=n^{S}_{t}-n^{H}_{t}$
+\end_inset
+
+:
+ 不平等指標
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Pi_{t},\pi_{t}$
+\end_inset
+
+:
+ 物価上昇率（インフレ）
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R^{N}_{t},\;r^{N}_{t}$
+\end_inset
+
+:
+ 名目利子率
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $m_{t}$
+\end_inset
+
+:
+ 金融緩和ショック
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $MC_{t},mc_{t}$
+\end_inset
+
+:
+ 限界費用
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $MU_{t},mu_{t}$
+\end_inset
+
+:
+ 限界効用
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N_{t}$
+\end_inset
+
+,
+\begin_inset Formula $N^{S}_{t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $N^{H}_{t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $n_{t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $n^{S}_{t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $n^{H}_{t}$
+\end_inset
+
+:
+ 労働投入量
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $P_{t}$
+\end_inset
+
+:
+ 物価水準
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $r_{t}:=r^{N}_{t}-E_{t}\pi_{t+1}$
+\end_inset
+
+:
+ 実質利子率
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $W_{t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $w_{t}$
+\end_inset
+
+:
+ 賃金率
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Y_{t}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+:
+ 産出量
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+allowframebreaks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+パラメータ
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\gamma\geq0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+:
+ (EISの逆数でなく) 所得効果
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\varphi\geq0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+:
+ 労働の賃金弾力性の逆数
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\xi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+:
+ 不可分性の程度
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\kappa:=-U_{CN}C/U_{N}=\left[1+\frac{1-\gamma}{1+\varphi}\frac{N}{C}\frac{U_{N}}{U_{C}}\right]^{-1}\xi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+:
+ 補完性の指標
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $1/\beta-1$
+\end_inset
+
+:
+ 時間選好率 
+\begin_inset Formula $(0<\beta<1$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\psi$
+\end_inset
+
+:
+ 中間財の価格弾力性 (
+\begin_inset Formula $\psi>1$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\eta$
+\end_inset
+
+:
+ 価格調整費用パラメータ (
+\begin_inset Formula $\eta\ge0$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\phi$
+\end_inset
+
+:
+ テーラールールパラメータ (
+\begin_inset Formula $\phi>1$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\rho$
+\end_inset
+
+:
+ 金融緩和ショックの持続性 (
+\begin_inset Formula $0\leq\rho<1$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $1-\alpha$
+\end_inset
+
+:
+ 所得分配率
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\lambda$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+:
+ タイプHの割合 (
+\begin_inset Formula $0\leq\lambda<1$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\tau$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+:
+ 配当税率 (
+\begin_inset Formula $0\leq\tau<1$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Phi=1-MC$
+\end_inset
+
+:
+ 非効率性の程度（
+\begin_inset Formula $0\leq\Phi<1$
+\end_inset
+
+）
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Psi$
+\end_inset
+
+:
+ Phillips曲線の傾き
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Omega$
+\end_inset
+
+:
+ 乗数効果
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Gamma$
+\end_inset
+
+:
+ 一括移転モデルでのGE-EISの逆数（IS曲線の傾き）
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Upsilon$
+\end_inset
+
+:労働組合モデルでのGE-EISの逆数（IS曲線の傾き）
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Non-Separable Utility Function
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+ 
+\backslash
+frame{
+\backslash
+tableofcontents[currentsection]}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+allowframebreaks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bilbiie-Type Utility Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bilbiie (2020) は以下の効用関数を提案 (
+\begin_inset Formula $\varphi>0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\gamma\geq0$
+\end_inset
+
+)：
+
+\begin_inset Formula 
+\[
+U^{j}_{t}=U(C^{j}_{t},N^{j}_{t})=\frac{1}{1-\gamma-\xi}\left([C^{j}_{t}]^{1-\gamma}-\frac{1-\gamma}{1+\varphi}[N_{t}]^{1+\varphi}\right)^{1-\xi/(1-\gamma)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\xi=0$
+\end_inset
+
+のときCRRA型:
+\begin_inset Formula 
+\[
+U^{j}_{t}=[C^{j}_{t}]^{1-\gamma}-\frac{1-\gamma}{1+\varphi}[N^{j}_{t}]^{1+\varphi}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\gamma=0$
+\end_inset
+
+のときGHH型:
+\begin_inset Formula 
+\[
+U^{j}_{t}=\frac{1}{1-\xi}\left(C^{j}_{t}-\frac{1}{1+\varphi}[N^{j}_{t}]^{1+\varphi}\right)^{1-\xi}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\gamma\to1$
+\end_inset
+
+のときKPR型:
+ 
+\begin_inset Formula 
+\[
+U^{j}_{t}=-\frac{1}{\xi}\left[C^{j}_{t}\exp\left\{ -\frac{[N^{j}_{t}]^{1+\varphi}}{1+\varphi}\right\} \right]^{-\xi}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+以下の関係が成立：
+
+\begin_inset Formula 
+\begin{align*}
+\gamma & =-\frac{U^{j}_{CC}C^{j}}{U_{C}}+\frac{U^{j}_{CN}C^{j}}{U_{N}}\\
+\varphi & =\frac{U^{j}_{NN}N^{j}}{U_{N}}-\frac{U^{j}_{CN}N^{j}}{U_{C}}\\
+\xi & =-\frac{U_{CN}C}{U_{N}}\left(1+\frac{1-\gamma}{1+\varphi}\frac{N^{j}}{C^{j}}\frac{U^{j}_{N}}{U^{j}_{C}}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $U^{j}_{C}:=\partial U(C^{j},N^{j})/\partial C^{j}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $U^{j}_{N}:=\partial U(C^{j},N^{j})/\partial N^{j}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $U^{j}_{CC}:=\partial^{2}U(C^{j},N^{j})/\partial(C^{j})^{2}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $U^{j}_{NN}:=\partial^{2}U(C^{j},N^{j})/\partial(N^{j})^{2}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $U^{j}_{CN}:=\partial^{2}U(C^{j},N^{j})/\partial(C^{j})\partial(N^{j})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\gamma$
+\end_inset
+
+:
+ 消費が1％増加した際に、限界代替率
+\begin_inset Formula $MRS^{j}_{t}=-U^{j}_{C,t}/U^{j}_{N,t}$
+\end_inset
+
+がどれだけ変化するかを示すパラメータ
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\varphi$
+\end_inset
+
+:
+ 労働が1％増加した際に、限界代替率
+\begin_inset Formula $MRS^{j}_{t}=-U^{j}_{C,t}/U^{j}_{N,t}$
+\end_inset
+
+がどれだけ変化するかを示すパラメータ
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+補完性 (complementarity)：
+
+\begin_inset Formula 
+\begin{align*}
+\kappa^{j} & :=-\frac{U^{j}_{CN}C^{j}}{U^{j}_{N}}\\
+ & =\xi\left(1+\frac{1-\gamma}{1+\varphi}\frac{N^{j}}{C^{j}}\frac{U^{j}_{N}}{U^{j}_{C}}\right)^{-1}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\kappa^{j}$
+\end_inset
+
+:
+ 消費が1％増加した際に、労働の限界不効用（
+\begin_inset Formula $U^{j}_{N}$
+\end_inset
+
+）がどれだけ変化するかを示す（消費と労働が補完的な財である度合い）
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\kappa>0$
+\end_inset
+
+のとき補完的、
+\begin_inset Formula $\kappa<0$
+\end_inset
+
+のとき代替的という
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\xi$
+\end_inset
+
+と
+\begin_inset Formula $\kappa$
+\end_inset
+
+は比例関係で、
+\begin_inset Formula $\xi$
+\end_inset
+
+を非分離性のパラメータとよぶ
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+賃金が限界代替率に等しいとき（
+\begin_inset Formula $W_{t}=MRS^{j}_{t}$
+\end_inset
+
+）の対数線形近似：
+
+\begin_inset Formula 
+\[
+w_{t}=\gamma c^{j}_{t}+\varphi n^{j}_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\varphi$
+\end_inset
+
+の逆数は（消費一定のもとの）賃金弾力性である。
+ただしフリッシュ弾力性（限界効用一定のもとの賃金弾力性）でない
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\gamma$
+\end_inset
+
+は所得効果と呼ぶ。
+必ずしも異時点間の代替の弾力性の逆数や相対的危険回避度にならない
+\end_layout
+
+\begin_layout Itemize
+労働の所得弾力性は
+\begin_inset Formula $-\gamma/\varphi$
+\end_inset
+
+で、ミクロの実証を再現しようとすると
+\begin_inset Formula $\gamma$
+\end_inset
+
+を限りなくゼロにするか、
+\begin_inset Formula $\varphi$
+\end_inset
+
+巨大にする必要がある。
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+消費についての限界効用 (
+\begin_inset Formula $MU^{j}_{t}:=U^{j}_{C}$
+\end_inset
+
+) の対数線形近似：
+
+\begin_inset Formula 
+\begin{align*}
+mu^{j}_{t} & =\frac{U^{j}_{CC}C^{j}}{U_{C}}c_{t}+\frac{U^{j}_{CN}N^{j}}{U^{j}_{C}}n^{j}_{t}\\
+ & =-(\gamma+\kappa^{j})c_{t}-\kappa^{j}\frac{N^{j}}{C^{j}}\frac{U^{j}_{N}}{U^{j}_{C}}n_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+消費の限界効用が、消費が増えると減少する。
+消費と労働が補完関係があるならが増えるとさらに加速する
+\end_layout
+
+\begin_layout Itemize
+消費の限界効用は、消費と労働が補完関係があるなら労働供給が増えるほど高まる。
+（忙しいほど消費の価値が上がる）
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+凹性（concavity）の条件
+\begin_inset Formula 
+\begin{align*}
+\kappa & \geq-\gamma\varphi\left(\varphi-\frac{N^{j}}{C^{j}}\frac{U^{j}_{N}}{U^{j}_{C}}\gamma\right)^{-1}\\
+\Leftrightarrow\xi & \geq-\gamma\varphi\left(\varphi-\frac{N^{j}}{C^{j}}\frac{U^{j}_{N}}{U^{j}_{C}}\gamma\right)^{-1}\left(1+\frac{1-\gamma}{1+\varphi}\frac{N^{j}}{C^{j}}\frac{U^{j}_{N}}{U^{j}_{C}}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Outline of TANK model
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+ 
+\backslash
+frame{
+\backslash
+tableofcontents[currentsection]}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+家計
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+家計
+\begin_inset Formula $j\in[0,1]$
+\end_inset
+
+は (非可算) 無限に存在する
+\end_layout
+
+\begin_layout Itemize
+2つのタイプ
+\begin_inset Formula $\{S,H\}$
+\end_inset
+
+がいる。
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+タイプ
+\begin_inset Formula $S\in[\lambda,1]$
+\end_inset
+
+:
+ 債券市場にアクセスできる家計（Saver）
+\end_layout
+
+\begin_layout Itemize
+タイプ
+\begin_inset Formula $H\in[0,\lambda]$
+\end_inset
+
+:
+ 所得をそのまま消費する家計（Hand-to-mouse）
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+タイプ
+\begin_inset Formula $S$
+\end_inset
+
+は企業を保有し、企業から配当を受け取るが、配当に対して税率
+\begin_inset Formula $\tau$
+\end_inset
+
+の比例税がかかる
+\end_layout
+
+\begin_layout Itemize
+徴収された税金はタイプHにそのまま移転される
+\end_layout
+
+\begin_layout Itemize
+共通の選好パラメータを持つ
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+効用関数は前述のBilbiie-Type Utility Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 3
+status collapsed
+
+\begin_layout Plain Layout
+allowframebreaks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+企業
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+財市場は最終財市場と中間財市場にわかれている.
+\end_layout
+
+\begin_layout Itemize
+最終財市場は
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+完全競争市場
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Price Taker
+\end_layout
+
+\begin_layout Itemize
+企業は
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+生産水準
+\end_layout
+
+\end_inset
+
+を毎期毎期調整できるので,
+ 各期の利潤を最大化をおこなえば企業価値を最大化することができる.
+\end_layout
+
+\begin_layout Itemize
+最大化条件から中間財への需要関数が導出
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+中間財市場は
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+独占的競争市場
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Price Maker
+\end_layout
+
+\begin_layout Itemize
+企業は
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+価格水準
+\end_layout
+
+\end_inset
+
+を毎期毎期調整できるが
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+調整費用
+\end_layout
+
+\end_inset
+
+が存在する (単純化した Rotemberg-Typeの価格硬直性)
+\end_layout
+
+\begin_layout Itemize
+生産関数は
+\begin_inset Formula $Y^{j}_{t}=(N^{j}_{t})^{1-\alpha}$
+\end_inset
+
+で集計ショックはなし
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+政府
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+財政政策
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+補助金政策：
+定額税を課し、産出量に応じて定率
+\begin_inset Formula $\sigma$
+\end_inset
+
+の補助金（
+\begin_inset Formula $\Phi=1-(1+\sigma)(1-1/\psi)$
+\end_inset
+
+,
+ 
+\begin_inset Formula $0\leq\Phi<1$
+\end_inset
+
+）
+\end_layout
+
+\begin_layout Itemize
+再配分政策：
+タイプHの配当収入に税率 
+\begin_inset Formula $\tau$
+\end_inset
+
+で課税して、定額移転としてタイプHの家計に支給
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+金融政策
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+テーラールール：
+
+\begin_inset Formula 
+\begin{align*}
+R^{N}_{t} & =\frac{\exp(-m_{t})}{\beta}\mathbb{E}_{t}\Pi^{\phi}_{t+1},\;\phi>1\\
+m_{t} & =\rho m_{t-1}+e^{m}_{t},\;0<\rho<1,
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 3
+status collapsed
+
+\begin_layout Plain Layout
+allowframebreaks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+TANK Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let:
+\begin_inset Formula 
+\begin{align*}
+\kappa^{S} & =\frac{\varphi+1}{\varphi+1-(1-\gamma)(1-\alpha)(1-\Phi)(N^{S}/N)/(C^{S}/C)}\xi\\
+ & =\frac{\varphi+1}{\varphi+1-(1-\gamma)(1-\alpha)(1-\Phi)\frac{1-\lambda^{n}}{1-\lambda^{c}}}\xi\\
+\lambda^{c} & =(C^{H}/C)\lambda=1-(C^{S}/C)\lambda,\\
+\lambda^{n} & =(N^{H}/N)\lambda=1-(N^{S}/N)\lambda
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Type S Household:
+\begin_inset Formula 
+\begin{align*}
+mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+{\color{red}\kappa^{S}}(1-\Phi)(1-\alpha)\frac{1-{\color{red}\lambda^{n}}}{1-{\color{red}\lambda^{c}}}n^{S}_{t}\\
+r_{t} & :=r^{N}_{t}-E_{t}\pi_{t+1}\\
+ & =mu^{S}_{t}-\mathbb{E}_{t}\left[mu^{S}_{t+1}\right]\\
+w_{t} & =\gamma c^{S}_{t}+\varphi n^{S}_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Type H Household:
+\begin_inset Formula 
+\begin{align*}
+{\color{red}\lambda^{c}}c^{H}_{t} & =(1-\alpha)(1-\Phi){\color{red}\lambda^{n}}(w_{t}+n^{H}_{t})+\tau^{D}d_{t}\\
+w_{t} & =\gamma c^{H}_{t}+\varphi n^{H}_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Firm:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\pi_{t} & =(1-\Phi)(\psi/\eta)mc_{t}+\beta E_{t}\pi_{t+1}\\
+w_{t} & =mc_{t}+y_{t}-n_{t}\\
+d_{t} & =\Phi y_{t}-(1-\alpha)(1-\Phi)w_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Market Clearing Conditions
+\begin_inset Formula 
+\begin{align*}
+c_{t} & ={\color{red}\lambda^{c}}c^{H}_{t}+(1-{\color{red}\lambda^{c}})c^{S}_{t}\\
+n_{t} & ={\color{red}\lambda^{n}}n^{H}_{t}+(1-{\color{red}\lambda^{n}})n^{S}_{t}\\
+y_{t} & =c_{t}=(1-\alpha)n_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Monetary Policy
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+r^{N}_{t} & =\phi\pi_{t}-m_{t}\\
+m_{t} & =\rho m_{t-1}+e_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Lump-sum Transfer model
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+ 
+\backslash
+frame{
+\backslash
+tableofcontents[currentsection]}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 3
+status collapsed
+
+\begin_layout Plain Layout
+allowframebreaks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Solution with given 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Efficient & Linear economy (
+\begin_inset Formula $\Phi=\alpha=0$
+\end_inset
+
+) の時、
+\begin_inset Formula $C^{H}=C^{S}=C=N^{H}=N^{S}=N=1$
+\end_inset
+
+となり、解析的に解ける。
+
+\end_layout
+
+\begin_layout Itemize
+また、
+\begin_inset Formula $\tau=\lambda$
+\end_inset
+
+の時、
+\begin_inset Formula $C^{H}=C^{S}=C$
+\end_inset
+
+,
+ 
+\begin_inset Formula $N^{H}=N^{S}=N$
+\end_inset
+
+となる。
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tau\neq\lambda$
+\end_inset
+
+の時、解析的に解けないので、
+\begin_inset Formula $C^{H}=C^{S}=C$
+\end_inset
+
+,
+ 
+\begin_inset Formula $N^{H}=N^{S}=N$
+\end_inset
+
+になるように政府が一括に税と移転を実施する。
+
+\end_layout
+
+\begin_layout Itemize
+この時、
+\begin_inset Formula $y_{t}$
+\end_inset
+
+が所与のもと以下のように解ける
+\end_layout
+
+\begin_layout Itemize
+Consumption:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+c^{H}_{t} & =(1+\tilde{\varphi})y_{t}\\
+c^{S}_{t} & =\left(1-\frac{\lambda\tilde{\varphi}}{1-\lambda}\right)y_{t}\\
+\tilde{\varphi} & =\varphi(1-\tau/\lambda)\frac{(1-\Phi)(\varphi+(1-\alpha)\gamma)-\Phi}{\varphi+(1-\Phi)(1-\alpha)\gamma}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tilde{\varphi}>0$
+\end_inset
+
+の時、タイプHの消費が弾力的で、タイプSより非弾力的
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tilde{\varphi}>0$
+\end_inset
+
+ iff 
+\begin_inset Formula $\varphi(\lambda-\tau)\{(1-\Phi)\{\varphi+(1-\alpha)\gamma\}-\Phi\}>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\lambda=\tau$
+\end_inset
+
+の時、
+\begin_inset Formula $\tilde{\varphi}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(1-\Phi)\{\varphi+(1-\alpha)\gamma\}-\Phi>0$
+\end_inset
+
+ iff 
+\begin_inset Formula $\Phi<\{\varphi+(1-\alpha)\gamma\}/\{1+\varphi+(1-\alpha)\gamma\}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Labor inputs:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+n^{H}_{t} & =\left(\frac{1}{1-\alpha}-\tilde{\gamma}\right)y_{t}\\
+n^{S}_{t} & =\left(\frac{1}{1-\alpha}+\frac{\lambda\tilde{\gamma}}{1-\lambda}\right)y_{t}\\
+\tilde{\gamma} & =\gamma(1-\tau/\lambda)\frac{(1-\Phi)(\varphi+(1-\alpha)\gamma)-\Phi}{\varphi+(1-\Phi)(1-\alpha)\gamma}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tilde{\gamma}>0$
+\end_inset
+
+の時、タイプSの労働がタイプHより弾力的に
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tilde{\gamma}>0$
+\end_inset
+
+ iff 
+\begin_inset Formula $\gamma(\lambda-\tau)\{(1-\Phi)\{\varphi+(1-\alpha)\gamma\}-\Phi\}>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\gamma=0$
+\end_inset
+
+ (GHH) の時,
+ 
+\begin_inset Formula $n^{H}_{t}=n^{S}_{t}=(1-\alpha)^{-1}y_{t}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Others:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+w_{t} & =(\gamma+\varphi/(1-\alpha))y_{t}\\
+d_{t} & =[\Phi-(1-\Phi)\{(1-\alpha)\gamma+\varphi\}]y_{t}\\
+y_{t} & =c_{t}=(1-\alpha)n_{t}\\
+\pi_{t} & =(1-\Phi)(\psi/\eta)\{\gamma+(\varphi+\alpha)/(1-\alpha)\}y_{t}+\beta E_{t}\pi_{t+1}\\
+ & =\Psi y_{t}+\beta E_{t}\pi_{t+1}\\
+mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+\kappa^{S}(1-\alpha)(1-\Phi)n^{S}_{t}\\
+r_{t} & =mu^{S}_{t}-\mathbb{E}_{t}\left[mu^{S}_{t+1}\right]\\
+ & =r^{N}_{t}-E_{t}\pi_{t+1}\\
+r^{N}_{t} & =\phi\pi_{t}-m_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+経済的直感
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $(1-\Phi)\{\varphi+(1-\alpha)\gamma\}-\Phi>0$
+\end_inset
+
+を仮定
+\end_layout
+
+\begin_layout Itemize
+RANK（
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+）
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+一人の経済主体が働き利益を得ている。
+所得が増加すると賃金が増加し、利益は減少、互いに効果が相殺される。
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+TANK（
+\begin_inset Formula $\tau=0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\tilde{\varphi}>0$
+\end_inset
+
+）
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+需要増により賃金は増加し、Hの所得は増加する。
+配当が減少することによる負の所得効果を受けないためHの需要も比例して増加し、消費はさらに増加する
+\end_layout
+
+\begin_layout Itemize
+Sの所得は負の所得効果により減少するが、それを補うためにより働くようになる。
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+TANK（
+\begin_inset Formula $\tau>0$
+\end_inset
+
+）
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hは利益の負の所得効果の一部を移転によって内部化し始め、需要がそれほど増加しなくなる。
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tau=\lambda$
+\end_inset
+
+のとき、この所得効果は消滅。
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tau>\lambda\Leftrightarrow\tilde{\varphi}<0$
+\end_inset
+
+のとき、逆転。
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+不平等指標
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+不平等指標 ：
+
+\begin_inset Formula 
+\begin{align*}
+gap^{c}_{t} & :=c^{S}_{t}-c^{H}_{t}\\
+ & =-\frac{\tilde{\varphi}}{1-\lambda}y_{t}\\
+gap^{n}_{t} & :=n^{S}_{t}-n^{H}_{t}\\
+ & =\frac{\tilde{\gamma}}{1-\lambda}y_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\tilde{\varphi}>0$
+\end_inset
+
+ の時、消費の不平等指数は反循環的になる。
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tilde{\gamma}>0$
+\end_inset
+
+ の時、労働の不平等指数は循環的になる。
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(\lambda-\tau)\{(1-\Phi)\{\varphi+(1-\alpha)\gamma\}-\Phi\}>0$
+\end_inset
+
+の時、消費の不平等指数は反循環的に、労働の不平等指数は循環的になる。
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+限界効用
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Marginal Utility:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+\kappa^{S}(1-\alpha)(1-\Phi)n^{S}_{t}\\
+ & :=-\Gamma y_{t}
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\begin{align*}
+\Gamma & =\gamma+\Phi\kappa^{S}-\frac{\lambda}{1-\lambda}\left(\gamma\tilde{\varphi}+\kappa^{S}[\tilde{\varphi}+(1-\alpha)(1-\Phi)\tilde{\gamma}]\right)\\
+ & =\gamma-\gamma\varphi\frac{(\lambda-\tau)}{1-\lambda}\frac{(1-\Phi)(\varphi+(1-\alpha)\gamma)-\Phi}{\varphi+(1-\Phi)(1-\alpha)\gamma}\\
+ & +\kappa^{S}\left\{ \Phi-\frac{\lambda-\tau}{1-\lambda}\left[(1-\Phi)(\varphi+\gamma(1-\alpha))-\Phi\right]\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 3
+status collapsed
+
+\begin_layout Plain Layout
+allowframebreaks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+NK IS Curve
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+TANK 3 equations:
+\begin_inset Formula 
+\begin{align*}
+r_{t} & =mu^{S}_{t}-\mathbb{E}_{t}\left[mu^{S}_{t+1}\right]=-\Gamma\left(y_{t}-\mathbb{E}_{t}\left[y_{t+1}\right]\right)\\
+\pi_{t} & =\Psi y_{t}+\beta E_{t}\pi_{t+1}\\
+r_{t} & =\phi\pi_{t}-E_{t}\pi_{t+1}-m_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+NK IS Equation:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+ (RANK):
+\begin_inset Formula 
+\[
+\Gamma=\gamma+\kappa^{S}\Phi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\kappa^{S}=0$
+\end_inset
+
+ (CRRA preferences):
+\begin_inset Formula 
+\begin{align*}
+\Gamma & =\gamma\left(1-\frac{\lambda}{1-\lambda}\tilde{\varphi}\right)\\
+ & =\gamma\left(1-\frac{(\lambda-\tau)\varphi}{1-\lambda}\frac{(1-\Phi)\{\varphi+(1-\alpha)\gamma\}-\Phi}{(1-\Phi)(\varphi+(1-\alpha)\gamma)+\Phi\varphi}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\gamma=0$
+\end_inset
+
+ (GHH preferences):
+\begin_inset Formula 
+\begin{align*}
+\Gamma & =\kappa^{S}\left(\Phi-\frac{\lambda-\tau}{1-\lambda}\varphi\right)\\
+ & =\xi\frac{\varphi+1}{\varphi+1-(1-\alpha)(1-\Phi)}\left(\Phi-\frac{\lambda-\tau}{1-\lambda}\varphi\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Phi=\alpha=0$
+\end_inset
+
+ (efficient & linear economy):
+\begin_inset Formula 
+\begin{align*}
+\Gamma & =\gamma-\frac{(\lambda-\tau)\varphi}{1-\lambda}\left\{ \gamma+\kappa^{S}\frac{(\varphi+\gamma)}{\varphi}\right\} \\
+ & =\gamma-\frac{(\lambda-\tau)\varphi}{1-\lambda}\left\{ \gamma+\xi\frac{(\varphi+1)}{\varphi}\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Phi=0$
+\end_inset
+
+ (efficient economy):
+\begin_inset Formula 
+\begin{align*}
+\Gamma & =\gamma-\frac{\lambda-\tau}{1-\lambda}\left\{ \gamma\varphi+\kappa^{S}(\varphi+(1-\alpha)\gamma)\right\} \\
+ & =\gamma-\frac{(\lambda-\tau)\varphi}{1-\lambda}\left\{ \gamma+\frac{\xi(\varphi+1)(\varphi+(1-\alpha)\gamma)}{\varphi\{\varphi+(1-\alpha)\gamma+\alpha\}}\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 3
+status collapsed
+
+\begin_layout Plain Layout
+allowframebreaks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+GE-EIS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+IS曲線の傾きはGE-EISの逆数である
+\end_layout
+
+\begin_layout Itemize
+EIS (Elasticity of Intertemporal Substitution):
+ 異時点間の代替の弾力性に変化率対する消費の増加率
+\begin_inset Formula 
+\[
+-\frac{\partial\ln(C^{S}_{t+1}/C^{S}_{t})}{\partial\ln(MU^{S}_{t+1}/MU^{S}_{t})}=-\frac{\partial(c^{S}_{t+1}-c^{S}_{t})}{\partial(mu^{S}_{t+1}-mu^{S}_{t})}=\frac{1}{\gamma+\kappa^{S}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+GE-EIS (General Equilibrium EIS):
+ 均衡において、消費は生産量と等しく、異時点間の代替の弾力性は実質利子率の逆数と等しくなる
+\begin_inset Formula 
+\begin{align*}
+-\frac{d\ln(\mathbb{E}_{t}Y_{t+1}/Y_{t})}{d\ln(\mathbb{E}_{t}INFL_{t+1}/INT_{t})} & =\frac{d(\mathbb{E}_{t}y_{t+1}-y_{t})}{dr_{t}}\\
+ & :=\Gamma^{-1}.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+GE-EIS is positive iff 
+\begin_inset Formula $\lambda<\lambda^{+}$
+\end_inset
+
+ where
+\begin_inset Formula 
+\begin{align*}
+\lambda^{+}= & \tau+\frac{(1-\tau)(\gamma+\kappa^{S}\Phi)}{(1-\Phi)(\varphi+\gamma(1-\alpha))\left\{ \frac{\gamma(\varphi+1)}{\varphi+(1-\Phi)(1-\alpha)\gamma}+\kappa^{S}\right\} }
+\end{align*}
+
+\end_inset
+
+decreasing in 
+\begin_inset Formula $\kappa^{S}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\kappa^{S}=0$
+\end_inset
+
+ (CRRA preferences):
+\begin_inset Formula 
+\begin{align*}
+\lambda^{+} & =\tau+\frac{(1-\tau)\{\varphi+(1-\Phi)(1-\alpha)\gamma\}}{(1-\Phi)(\varphi+1)(\gamma(1-\alpha)+\varphi)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\gamma=0$
+\end_inset
+
+ (GHH preferences):
+\begin_inset Formula 
+\begin{align*}
+\lambda^{+}= & \tau+\frac{\Phi(1-\tau)}{\varphi(1-\Phi)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Phi=\alpha=0$
+\end_inset
+
+ (efficient & linear economy):
+\begin_inset Formula 
+\begin{align*}
+\lambda^{+} & =\tau+\frac{(1-\tau)\gamma}{\gamma(\varphi+1)+\xi(\varphi+1)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Phi=0$
+\end_inset
+
+ (efficient economy):
+\begin_inset Formula 
+\begin{align*}
+\lambda^{+}= & \tau+\frac{(1-\tau)\gamma}{\gamma(\varphi+1)+\kappa^{S}\{\varphi+(1-\alpha)\gamma\}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+GE-EIS is decreasing in 
+\begin_inset Formula $\kappa^{S}$
+\end_inset
+
+ in the case with RANK (
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+GE-EIS is increasing in 
+\begin_inset Formula $\kappa^{S}$
+\end_inset
+
+ iff 
+\begin_inset Formula $\lambda>\lambda^{\xi}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\lambda^{\xi} & =\tau+\frac{\Phi(1-\tau)}{(1-\Phi)\{\varphi+\gamma(1-\alpha)\gamma\}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\gamma=0$
+\end_inset
+
+ (GHH preferences):
+\begin_inset Formula 
+\begin{align*}
+\lambda^{\xi}= & \tau+\frac{\Phi(1-\tau)}{\varphi(1-\Phi)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Phi=0$
+\end_inset
+
+ (efficient economy):
+\begin_inset Formula 
+\begin{align*}
+\lambda^{\xi} & =\tau
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+GE-EIS is increasing in 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ iff 
+\begin_inset Formula 
+\[
+(\lambda-\tau)\left\{ (1-\Phi)(\varphi+(1-\alpha)\gamma)-\Phi\right\} >0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+消費の不平等が反循環になるための条件と同じ
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Phi=0$
+\end_inset
+
+ (efficient economy):
+ 
+\begin_inset Formula $\tau>\lambda$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 3
+status collapsed
+
+\begin_layout Plain Layout
+allowframebreaks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+まとめ
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+金利の低下により、資産保有者のSの需要が増加（直接的対応）
+\end_layout
+
+\begin_layout Enumerate
+Sが消費を増やすと、経済全体の需要（総需要）が高まり、企業はこの需要を満たすために生産を増やし、労働者をより多く雇う
+\end_layout
+
+\begin_layout Enumerate
+労働需要が増えると、実質賃金が上昇します。
+Hは資産を持たず、稼いだ賃金をすべてその期に使い切るため、賃金上昇分だけ即座に消費を増やす。
+
+\end_layout
+
+\begin_layout Enumerate
+Hの消費増がさらに総需要を押し上げ、さらなる賃金上昇を招く（乗数効果）
+\end_layout
+
+\begin_layout Enumerate
+このサイクルにより、最初の「金利低下によるSの消費増」以上に、経済全体の消費が大きく膨らむ。
+
+\end_layout
+
+\begin_layout Itemize
+Sは利潤減少というマイナスの所得効果を受けますが、それ以上に「金利が低いから今消費したい」という動機（代替効果）が強いため、結果として経済全体の生産活動（労働供給）を支える
+\end_layout
+
+\begin_layout Itemize
+経済全体の消費の増加幅（乗数効果）は、Hの所得が、経済全体の好況に対してどれだけ敏感に増えるかに依存
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+好況時に企業の利益よりも労働者の賃金の方が大きく伸びる構造（
+\begin_inset Formula $\tilde{\varphi}$
+\end_inset
+
+：
+不平等が反景気循環的）であれば、Hの消費パワーが爆発的に作用し、経済全体の消費は標準的なモデル（RANK）よりもはるかに大きく増加
+\end_layout
+
+\begin_layout Itemize
+逆に、Hの所得があまり増えない構造であれば、増幅効果は限定的に
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 3
+status collapsed
+
+\begin_layout Plain Layout
+allowframebreaks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+経済的直感
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+RANK（ 
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+）
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+GE-EISは所得効果
+\begin_inset Formula $\gamma$
+\end_inset
+
+の逆数で一対一の関係である。
+
+\end_layout
+
+\begin_layout Itemize
+GE-EISは補完性（
+\begin_inset Formula $\kappa$
+\end_inset
+
+）に影響を受けない
+\end_layout
+
+\begin_layout Itemize
+異時点間代替限界率（あるいは利子率）の変化は、
+\begin_inset Formula $\gamma$
+\end_inset
+
+が小さいほど、明日の消費に対して今日の消費をより大きく変化させることに対応する。
+
+\end_layout
+
+\begin_layout Itemize
+所得効果
+\begin_inset Formula $\gamma$
+\end_inset
+
+が小さいということは、労働供給のシフトを通じて、均衡所得を相対的に多く増加させる必要がある。
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Separable-TANK（
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\tilde{\varphi}>0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\kappa=0$
+\end_inset
+
+）
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+債券市場にアクセスできない消費者Hがいるため、Sの消費と労働によってGE-EISが決まる。
+
+\end_layout
+
+\begin_layout Itemize
+反循環的な不平等度（
+\begin_inset Formula $\tilde{\varphi}>1$
+\end_inset
+
+）のもとHの消費は総需要に対して弾力的である一方で、Sの消費は非弾力的である。
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\lambda$
+\end_inset
+
+が大きくなるほど消費者にアクセスできる割合が限られるため、利子率の変化に対する総需要への影響は大きくなる。
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Non-separable-TANK（
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\tilde{\varphi}>0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\kappa>0$
+\end_inset
+
+）
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\kappa\neq0$
+\end_inset
+
+のとき、所得効果
+\begin_inset Formula $\gamma$
+\end_inset
+
+は
+\begin_inset Formula $-U_{CC}C/U_{C}$
+\end_inset
+
+だけでなく、補完性に起因する部分
+\begin_inset Formula $\kappa=-U_{CN}C/U_{N}$
+\end_inset
+
+を含んでいる。
+ただ
+\begin_inset Formula $\kappa\neq0$
+\end_inset
+
+であっても
+\begin_inset Formula $c^{S}_{t}=n^{S}_{t}$
+\end_inset
+
+なら、相殺されてGE-EISに影響を与えない。
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $c^{S}_{t}\neq n^{S}_{t}$
+\end_inset
+
+のとき、異時点間代替によって求められる消費変動を実現するために必要な労働時間の変動を引き出す必要がある。
+
+\end_layout
+
+\begin_layout Itemize
+反循環的な不平等度（
+\begin_inset Formula $\tilde{\varphi}>0$
+\end_inset
+
+）のもと、Sの消費が非弾力的で労働が弾力的になり、補完性が大きくなるほどGS-EISは大きくなる
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 3
+status collapsed
+
+\begin_layout Plain Layout
+allowframebreaks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+TANK Multiplier with Non-separable preference
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Three-equation TANK:
+\begin_inset Formula 
+\begin{align*}
+r_{t} & =mu^{S}_{t}-\mathbb{E}_{t}\left[mu^{S}_{t+1}\right]=-\Gamma\left(y_{t}-\mathbb{E}_{t}\left[y_{t+1}\right]\right)\\
+\pi_{t} & =\Psi y_{t}+\beta E_{t}\pi_{t+1}\\
+r_{t} & =\phi\pi_{t}-E_{t}\pi_{t+1}-m_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+固定価格:
+ 
+\begin_inset Formula $\pi_{t}=0$
+\end_inset
+
+,
+ MP曲線:
+ 
+\begin_inset Formula $r_{t}=int_{t}=-m_{t}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+NK IS-MP Analysis with 
+\begin_inset Formula $E_{t}y_{t+1}=\rho y_{t}$
+\end_inset
+
+ (
+\begin_inset Formula $0<\rho<1$
+\end_inset
+
+):
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+固定価格のもとの乗数効果:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\Omega & =\left.\frac{dy_{t}}{dm_{t}}\right|_{{\rm fixed}\;{\rm price}}=\frac{dy_{t}}{d(-r_{t})}\\
+ & =\frac{1}{\Gamma}\frac{1}{1-\rho}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+経済が効率的な時、不平等指標に反循環的ならば、補完性の度合いおよびタイプHの割合が大きくなるにつれて、GE-EISが大きくなり、乗数効果は大きくなる。
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+NK AD curve:
+\begin_inset Formula 
+\begin{align*}
+y_{t} & =\mathbb{E}_{t}\left[y_{t+1}\right]-\frac{\phi\pi_{t}-E_{t}\pi_{t+1}-m_{t}}{\Gamma}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+NK AD-AS Analysis with 
+\begin_inset Formula $E_{t}\pi_{t+1}=\rho\pi_{t}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{t}y_{t+1}=\rho y_{t}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\phi>1$
+\end_inset
+
+ なら、価格硬直性のもとの乗数効果:
+\begin_inset Formula 
+\begin{align*}
+\frac{dy_{t}}{dm_{t}} & =\frac{1}{\Gamma(1-\rho)+\frac{\phi-\rho}{1-\beta\rho}\Psi}\\
+ & =\frac{1}{\Omega^{-1}+\frac{\phi-\rho}{1-\beta\rho}\Psi}<\Omega
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+AS-AS分析のもと、乗数効果は弱まるが、結論は変わらない
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+Labor-Union model
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+ 
+\backslash
+frame{
+\backslash
+tableofcontents[currentsection]}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 3
+status collapsed
+
+\begin_layout Plain Layout
+allowframebreaks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Labor-Union model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+定常状態を解析的に求めるために労働組合を導入
+\end_layout
+
+\begin_layout Itemize
+労働組合は共通の労働投入量を設定する：
+
+\begin_inset Formula 
+\begin{align*}
+n_{t} & =n^{H}_{t}=n^{S}_{t}\\
+w_{t} & =\gamma c_{t}+\varphi n_{t}\\
+(C^{H}/C)\lambda c^{H}_{t} & =(1-\alpha)(1-\Phi)\lambda(w_{t}+n_{t})+\tau^{D}d_{t}\\
+mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+\kappa^{S}(1-\alpha)(1-\Phi)(C/C^{S})n_{t}\\
+\kappa^{S} & =\frac{\varphi+1}{\varphi+1-(1-\gamma)(1-\alpha)(1-\Phi)C/C^{S}}\xi
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+前のモデル：
+
+\begin_inset Formula 
+\begin{align*}
+n_{t} & =\lambda^{n}n^{H}_{t}+(1-\lambda^{n})n^{S}_{t}\\
+w_{t} & =\gamma c^{H}_{t}+\varphi n^{H}_{t}\\
+w_{t} & =\gamma c^{S}_{t}+\varphi n^{S}_{t}\\
+\lambda^{c}c^{H}_{t} & =(1-\alpha)(1-\Phi)\lambda^{n}(w_{t}+n^{H}_{t})+\tau^{D}d_{t}\\
+mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+\kappa^{S}(1-\alpha)(1-\Phi)\frac{1-\lambda^{n}}{1-\lambda^{c}}n_{t}\\
+\kappa^{S} & =\frac{\varphi+1}{\varphi+1-(1-\gamma)(1-\alpha)(1-\Phi)\frac{1-\lambda^{n}}{1-\lambda^{c}}}\xi
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+定常状態：
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $C^{H}/C=\frac{(\lambda-\tau^{D})(1-\alpha)MC+\tau^{D}}{\lambda}$
+\end_inset
+
+,
+ decreasing with 
+\begin_inset Formula $\lambda$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $C^{S}/C=\frac{1-\tau^{D}-(\lambda-\tau^{D})(1-\alpha)MC}{1-\lambda}$
+\end_inset
+
+,
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+increasing with 
+\begin_inset Formula $\lambda$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\kappa^{S}$
+\end_inset
+
+,
+ decreasing with 
+\begin_inset Formula $\lambda$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 3
+status collapsed
+
+\begin_layout Plain Layout
+allowframebreaks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Solution with given 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $y_{t}$
+\end_inset
+
+が所与のもと以下のように解ける
+\end_layout
+
+\begin_layout Itemize
+Consumption:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+c^{H}_{t} & =\frac{C}{C^{H}}\left\{ 1+\tilde{\varphi}+(1-\alpha)(1-\Phi)\tilde{\gamma}\right\} y_{t}\\
+c^{S}_{t} & =\frac{C}{C^{S}}\left\{ 1-\frac{\lambda(\tilde{\varphi}+(1-\alpha)(1-\Phi)\tilde{\gamma})}{1-\lambda}\right\} y_{t}
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\[
+\tilde{\varphi}+(1-\alpha)(1-\Phi)\tilde{\gamma}=(1-\tau/\lambda)\left[(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C^{H}>C>C^{S}$
+\end_inset
+
+の時、
+\begin_inset Formula $c^{H}_{t}$
+\end_inset
+
+はより弾力的に、
+\begin_inset Formula $c^{S}_{t}$
+\end_inset
+
+はより非弾力的に,
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C^{H}<C<C^{S}$
+\end_inset
+
+の時、
+\begin_inset Formula $c^{H}_{t}$
+\end_inset
+
+はより非弾力的に、
+\begin_inset Formula $c^{S}_{t}$
+\end_inset
+
+はより弾力的に
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C=C^{H}=C^{S}$
+\end_inset
+
+の時、
+\begin_inset Formula $c^{H}_{t}$
+\end_inset
+
+は前のモデルより弾力的に、
+\begin_inset Formula $c^{S}_{t}$
+\end_inset
+
+はより非弾力的に,
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+不平等指標
+\begin_inset Formula 
+\begin{align*}
+c^{S}_{t}-c^{H}_{t} & =\frac{C(C^{H}-C^{S})}{C^{H}C^{S}}y_{t}\\
+ & -\frac{C^{2}(\tilde{\varphi}+(1-\alpha)(1-\Phi)\tilde{\gamma})}{C^{H}C^{S}(1-\lambda)}y_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $C^{H}<C<C^{S}$
+\end_inset
+
+かつ
+\begin_inset Formula $(\lambda-\tau)[(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi]\geq0$
+\end_inset
+
+の時、反循環的
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\lambda=\tau$
+\end_inset
+
+の時、
+\begin_inset Formula $C=C^{H}=C^{S}$
+\end_inset
+
+となり、
+\begin_inset Formula $c^{S}_{t}-c^{H}_{t}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C=C^{H}=C^{S}$
+\end_inset
+
+の時
+\begin_inset Formula 
+\begin{align*}
+c^{S}_{t}-c^{H}_{t} & =-\frac{\tilde{\varphi}+(1-\alpha)(1-\Phi)\tilde{\gamma}}{1-\lambda}\\
+ & =gap^{c}_{t}-(1-\alpha)(1-\Phi)gap^{n}_{t}
+\end{align*}
+
+\end_inset
+
+in previous model.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 3
+status collapsed
+
+\begin_layout Plain Layout
+allowframebreaks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+NK IS Curve
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Marginal Utility:
+\begin_inset Formula 
+\begin{align*}
+mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+\kappa^{S}(1-\alpha)(1-\Phi)\frac{Y}{C^{S}}n_{t}\\
+ & =-(\gamma+\kappa^{S})c^{S}_{t}+\kappa^{S}(1-\Phi)\frac{C}{C^{S}}y_{t}\\
+ & :=-\Upsilon y_{t}
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\begin{align*}
+\Upsilon & =\frac{C}{C^{S}}\left\{ \gamma+\kappa^{S}\Phi-\frac{\lambda}{1-\lambda}(\gamma+\kappa^{S})(\tilde{\varphi}+(1-\alpha)(1-\Phi)\tilde{\gamma})\right\} \\
+ & =\frac{C}{C^{S}}\left\{ \gamma-\gamma\frac{\lambda-\tau}{1-\lambda}\left[(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi\right]\right\} \\
+ & +\frac{C}{C^{S}}\kappa^{S}\left\{ \Phi-\frac{\lambda-\tau}{1-\lambda}\left[(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi\right]\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Note in the previous model
+\begin_inset Formula 
+\begin{align*}
+\Gamma & =\gamma-\gamma{\color{red}\varphi}\frac{\lambda-\tau}{1-\lambda}\frac{(1-\Phi)(\varphi+(1-\alpha)\gamma)-\Phi}{{\color{red}\varphi+(1-\Phi)(1-\alpha)\gamma}}\\
+ & +\kappa^{S}\left\{ \Phi-\frac{\lambda-\tau}{1-\lambda}\left[(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi\right]\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\kappa^{S}$
+\end_inset
+
+の中は共通
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $0<\frac{\varphi}{\varphi+(1-\Phi)(1-\alpha)\gamma}\leq1$
+\end_inset
+
+より、
+\begin_inset Formula $C^{S}\geq C$
+\end_inset
+
+なら、
+\begin_inset Formula $\Gamma\geq(C^{S}/C)\Upsilon\geq\Upsilon$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+NK IS Equation:
+\begin_inset Formula 
+\begin{align*}
+r_{t} & =mu^{S}_{t}-\mathbb{E}_{t}\left[mu^{S}_{t+1}\right]=-\Upsilon\left(y_{t}-\mathbb{E}_{t}\left[y_{t+1}\right]\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $C^{S}>C$
+\end_inset
+
+のもと、NK-IS曲線の傾きはフラットに
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+ (RANK):
+\begin_inset Formula 
+\[
+\Upsilon=\frac{C}{C^{S}}\left(\gamma+\kappa^{S}\Phi\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\kappa^{S}=0$
+\end_inset
+
+ (CRRA preferences):
+\begin_inset Formula 
+\begin{align*}
+\Upsilon & =\frac{C}{C^{S}}\gamma\left(1-\frac{\lambda-\tau}{1-\lambda}\{(1-\Phi)\{\varphi+(1-\alpha)\gamma\}-\Phi\}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\gamma=0$
+\end_inset
+
+ (GHH preferences):
+\begin_inset Formula 
+\begin{align*}
+\Upsilon & =\frac{C}{C^{S}}\kappa^{S}\left(\Phi-\frac{\lambda-\tau}{1-\lambda}\varphi\right)\\
+ & =\xi\frac{(\varphi+1)C}{(\varphi+1)C^{S}-(1-\alpha)(1-\Phi)C}\left(\Phi-\frac{\lambda-\tau}{1-\lambda}\varphi\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Phi=\alpha=0$
+\end_inset
+
+ (efficient & linear economy):
+\begin_inset Formula 
+\begin{align*}
+\Upsilon & =\frac{C}{C^{S}}\left\{ \gamma-\frac{\lambda}{1-\lambda}(\varphi+\gamma)(\gamma+\kappa^{S})\right\} \\
+ & =\frac{C}{C^{S}}\left\{ \gamma-\frac{(\lambda-\tau)}{1-\lambda}\left\{ \gamma(\varphi+\gamma)+\xi(\varphi+1)\right\} \right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Phi=0$
+\end_inset
+
+ (efficient economy):
+\begin_inset Formula 
+\begin{align*}
+\Upsilon & =\frac{C}{C^{S}}\left\{ \gamma-\frac{\lambda}{1-\lambda}(\gamma(1-\alpha)+\varphi)(\gamma+\kappa^{S})\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 3
+status collapsed
+
+\begin_layout Plain Layout
+allowframebreaks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+GE-EIS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+GE-EIS:
+ 
+\begin_inset Formula 
+\begin{align*}
+1/\Upsilon & =\frac{C^{S}/C,}{\gamma+\kappa^{S}\Phi-(\gamma+\kappa^{S})\frac{(\lambda-\tau)\left[(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi\right]}{1-\lambda}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $C^{S}/C$
+\end_inset
+
+,
+ increasing in 
+\begin_inset Formula $\lambda$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\kappa^{S}$
+\end_inset
+
+,
+ decreasing with 
+\begin_inset Formula $\lambda$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C^{S}\geq C$
+\end_inset
+
+なら、
+\begin_inset Formula $1/\Upsilon>1/\Gamma$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+GE-EIS is positive iff 
+\begin_inset Formula $\lambda<\lambda^{+}$
+\end_inset
+
+ where
+\begin_inset Formula 
+\begin{align*}
+\lambda^{+}= & \frac{\gamma+\kappa^{S}\Phi+(\gamma+\kappa^{S})\tau\left[(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi\right]}{\gamma+\kappa^{S}\Phi+(\gamma+\kappa^{S})\left[(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi\right]}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\kappa^{S}=0$
+\end_inset
+
+ (CRRA preferences):
+\begin_inset Formula 
+\begin{align*}
+\lambda^{+} & =\frac{1+\tau\left[(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi\right]}{1+(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi}\\
+ & =\tau+\frac{1-\tau}{1+(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\gamma=0$
+\end_inset
+
+ (GHH preferences):
+\begin_inset Formula 
+\begin{align*}
+\lambda^{+}= & \frac{\Phi+\tau\left[(1-\Phi)\varphi-\Phi\right]}{\Phi+\left[(1-\Phi)\varphi-\Phi\right]}\\
+= & \tau+\frac{\Phi(1-\tau)}{\varphi(1-\Phi)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Phi=\alpha=0$
+\end_inset
+
+ (efficient & linear economy):
+\begin_inset Formula 
+\begin{align*}
+\lambda^{+} & =\frac{\gamma+(\gamma+\kappa^{S})\tau(\gamma+\varphi)}{\gamma+(\gamma+\kappa^{S})(\gamma+\varphi)}\\
+ & =\tau+\frac{(1-\tau)\gamma}{\gamma(\varphi+\gamma+1)+\xi(\varphi+1)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Phi=0$
+\end_inset
+
+ (efficient economy):
+\begin_inset Formula 
+\begin{align*}
+\lambda^{+} & =\frac{\gamma+(\gamma+\kappa^{S})\tau\left[(\gamma(1-\alpha)+\varphi)\right]}{\gamma+(\gamma+\kappa^{S})\left[(\gamma(1-\alpha)+\varphi)\right]}\\
+= & \tau+\frac{(1-\tau)\gamma}{\gamma+(\gamma+\kappa^{S})\left[(\gamma(1-\alpha)+\varphi)\right]}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+GE-EIS is decreasing in 
+\begin_inset Formula $\kappa^{S}$
+\end_inset
+
+ in the case with RANK (
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+GE-EIS is increasing in 
+\begin_inset Formula $\kappa^{S}$
+\end_inset
+
+ iff 
+\begin_inset Formula 
+\[
+(\lambda-\tau)\left\{ (1-\Phi)(\varphi+(1-\alpha)\gamma)-\Phi\right\} >(1-\lambda)\Phi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+前のモデルと同じ
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+GE-EIS is increasing in 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ if 
+\begin_inset Formula 
+\[
+(\lambda-\tau)\left\{ (1-\Phi)(\varphi+(1-\alpha)\gamma)-\Phi\right\} >(1-\lambda)\Phi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\lambda$
+\end_inset
+
+増加すると、
+\begin_inset Formula $C^{S}/C$
+\end_inset
+
+が増加し
+\begin_inset Formula $\kappa^{S}$
+\end_inset
+
+が減少するため、必要十分条件でない。
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\lambda=\lambda^{c}$
+\end_inset
+
+なら前のモデルと同じで必要十分条件に
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+ 
+\backslash
+frame{
+\backslash
+tableofcontents[currentsection]}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+本報告の結論
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+非分離型効用関数のもとTANK（Two-Agent New Keynesian）モデルを解析的に考察
+\end_layout
+
+\begin_layout Itemize
+結論：
+RANKモデルでは非分離型効用関数は重要でないが、TANKモデルでは重要である。
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+歪みのない経済でもDynamic Euler-IS Curve の形状（GE-EIS）が変化する。
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+不平等指標が反循環的のとき、補完的なほど乗数効果は大きくなる
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+New Keynesian Cross (新45度分析) でのMPC（限界消費性向）が変化する
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+不平等指標が反循環的のとき、補完的なほどMPCは大きくなる
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+最適金融政策での目的関数の形状が変化する。
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+不平等指標が大きく、補完的なほどインフレより産出量を重視する
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+今後の課題
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bayesian Estimation
+\end_layout
+
+\begin_layout Itemize
+Applying this non-separable utility into:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+THANK (Tractable HANK) Model (Bilbiie,
+ 2021)
+\end_layout
+
+\begin_layout Itemize
+THRANK (Three-agent NK) Model (Eskelinen,
+ 2021)
+\end_layout
+
+\begin_layout Itemize
+The Four Equation New Keynesian Model (Sims & Wu,
+ 2021)
+\end_layout
+
+\begin_layout Itemize
+Epstein-Zin type DSGE Model (Rudebusch & Swanson,
+ 2012)
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_body
+\end_document

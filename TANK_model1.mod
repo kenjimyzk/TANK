@@ -23,7 +23,7 @@ P_psi     = 5.0;        // マークアップ弾力性 (カルボ型)
 P_lambda  = 0.25;       // Hand-to-Mouth 家計のシェア
 P_tau_s = 1/(1-1/P_psi)-1; // 定常状態補助金ゼロの売上税率
 //P_tau_s   = 0.0;        // 売上税率
-P_tau_d   = 0.0;        // 配当税率
+P_tau_d   = 0.25;        // 配当税率
 
 // -------------------------------------------------------------------------
 // 政策パラメータ
@@ -134,4 +134,4 @@ check;
 // パラメータと定常状態をテキストファイルに保存
 save_params_and_steady_state('TANK_model1_steady2.txt');
 
-//stoch_simul(order=1, irf=20) c n d w;
+//stoch_simul(order=1, irf=20) c n d w gap;
