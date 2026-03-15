@@ -4,6 +4,9 @@
 // =========================================================================
 
 // マクロスイッチ: CRRA=1 で CRRA 効用、KPR=1 で King-Plosser-Rebelo 型
+//@#define CRRA = 0
+//@#define ALPHA = 0
+//@#define PHI = 0
 @#define CRRA = 0
 @#define KPR  = 0
 @#if FLAG==1
@@ -22,23 +25,37 @@ parameters P_beta P_gamma_0 P_gamma P_varphi P_xi P_phi
 // -------------------------------------------------------------------------
 P_beta    = 0.95;       // 割引因子 (Saver)
 P_gamma_0 = 1.0;        // 労働の不効用レベル項
-P_gamma   = 2.0;        // 消費の曲率
-P_varphi  = 1.0;        // 労働の曲率
-P_xi      = 0.5;        // フリッシュ弾力性の逆数
+P_varphi  = 2.0;        // 労働の曲率
+
 @#if CRRA==1
     P_xi = 0;           // CRRA モードで労働分離型に
-@#endif
-@#if KPR==1
-    P_gamma = 1.0;      // KPR スイッチで消費曲率を1に
+@#else
+    P_xi = 0.5;        // フリッシュ弾力性の逆数
 @#endif
 
-P_alpha   = 0.3;       // 生産における労働シェア (資本なしケース)
-P_eta     = 1.0;        // 価格調整コストのスケール
+@#if KPR==1
+    P_gamma = 1.0;      // KPR スイッチで消費曲率を1に
+@#else
+    P_gamma = 2;
+@#endif
+
+@#if ALPHA==1
+    P_alpha   = 0.3;       // 生産における労働シェア (資本なしケース)
+@#else
+    P_alpha   = 0.0;       // 生産における労働シェア (資本なしケース)
+@#endif
+
 P_psi     = 5.0;        // マークアップ弾力性 (カルボ型)
-P_lambda  = 0.25;       // Hand-to-Mouth 家計のシェア
-P_tau_s = 1/(1-1/P_psi)-1; // 定常状態補助金ゼロの売上税率
-//P_tau_s   = 0.0;        // 売上税率
-P_tau_d   = 0.25;        // 配当税率
+
+@#if PHI==1
+    P_tau_s   = 0.0;        // 売上税率
+@#else
+    P_tau_s = 1/(1-1/P_psi)-1; // 定常状態補助金ゼロの売上税率
+@#endif
+
+P_eta     = 1.0;        // 価格調整コストのスケール
+P_lambda  = 0.2;       // Hand-to-Mouth 家計のシェア
+P_tau_d   = 0.1;        // 配当税率
 
 // -------------------------------------------------------------------------
 // 政策パラメータ
@@ -185,5 +202,5 @@ check;
 // パラメータと定常状態をテキストファイルに保存
 save_params_and_steady_state('TANKC_model1_steady.txt');
 
-stoch_simul(order=1, irf=20, nograph) c n d w gap;
+//stoch_simul(order=1, irf=20, nograph) c n d w gap;
 //stoch_simul(order=1, irf=20) c n d w gap;

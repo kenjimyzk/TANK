@@ -210,7 +210,7 @@ status open
 
 \end_deeper
 \begin_layout Itemize
-ミクロ実証では、所得が増えても労働時間を減らす効果は限定的である
+ミクロ実証では、所得が増えても労働時間を減らす効果は限定的であるが、マクロモデルではEISとの関連で1から2前後の値が取られている
 \end_layout
 
 \begin_layout Itemize
@@ -250,15 +250,8 @@ TANK
 （Two-Agent New Keynesian）モデルにおいて、Bilbiie (2008) はIS曲線の傾きや金融政策の乗数や最適金融政策の目的関数がRANKモデルと異なることを解析的に明らかにした
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-さらにBilbiie (2021,
- Best Paper in JME) は恒常所得仮説よりNK 消費関数を導出し、限界消費性向MPCがRANKとTANKモデルが大きく異なることを示した
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-しかしながら、補完性は導入したTANKモデルはGHHモデルを使った数値計算以外存在しない
+しかしながら、補完性は導入したTANKモデルはGHHモデルを使った数値計算以外存在しな（かった）
 \end_layout
 
 \end_deeper
@@ -457,7 +450,7 @@ GE-EISに絞り、inefficient & concave economyに一般化した
 \end_layout
 
 \begin_layout Itemize
-ほぼ解析的導出は済んだが経済学的解釈はまだ。
+ほぼ解析的導出は済んだが経済学的解釈はまだ不十分。
 
 \end_layout
 
@@ -576,22 +569,6 @@ status open
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\Pi_{t},\pi_{t}$
-\end_inset
-
-:
- 物価上昇率（インフレ）
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $R^{N}_{t},\;r^{N}_{t}$
-\end_inset
-
-:
- 名目利子率
-\end_layout
-
-\begin_layout Itemize
 \begin_inset Formula $m_{t}$
 \end_inset
 
@@ -653,6 +630,22 @@ status open
 
 :
  物価水準
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Pi_{t},\pi_{t}$
+\end_inset
+
+:
+ 物価上昇率（インフレ）
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R^{N}_{t},\;r^{N}_{t}$
+\end_inset
+
+:
+ 名目利子率
 \end_layout
 
 \begin_layout Itemize
@@ -894,6 +887,18 @@ status open
 :
  配当税率 (
 \begin_inset Formula $0\leq\tau<1$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\sigma$
+\end_inset
+
+:
+ 生産への補助率 (
+\begin_inset Formula $0\leq\sigma<1$
 \end_inset
 
 )
@@ -1630,13 +1635,62 @@ TANK Model
 
 \begin_deeper
 \begin_layout Itemize
-Let:
+定常状態:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\lambda=\tau$
+\end_inset
+
+の時、
+\begin_inset Formula $C^{H}=C^{S}=C$
+\end_inset
+
+,
+ 
+\begin_inset Formula $N^{H}=N^{S}=N$
+\end_inset
+
+となり、解析的にとける
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\lambda>\tau$
+\end_inset
+
+の時、
+\begin_inset Formula $C^{H}<C<C^{S}$
+\end_inset
+
+、
+\begin_inset Formula $N^{H}>N>N^{S}$
+\end_inset
+
+となるが、解析的にとけない
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\lambda<\tau$
+\end_inset
+
+の時、
+\begin_inset Formula $C^{H}>C>C^{S}$
+\end_inset
+
+、
+\begin_inset Formula $N^{H}<N<N^{S}$
+\end_inset
+
+となるが、解析的にとけない
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+補完性:
 \begin_inset Formula 
 \begin{align*}
-\kappa^{S} & =\frac{\varphi+1}{\varphi+1-(1-\gamma)(1-\alpha)(1-\Phi)(N^{S}/N)/(C^{S}/C)}\xi\\
- & =\frac{\varphi+1}{\varphi+1-(1-\gamma)(1-\alpha)(1-\Phi)\frac{1-\lambda^{n}}{1-\lambda^{c}}}\xi\\
-\lambda^{c} & =(C^{H}/C)\lambda=1-(C^{S}/C)\lambda,\\
-\lambda^{n} & =(N^{H}/N)\lambda=1-(N^{S}/N)\lambda
+\kappa^{S} & =\frac{\varphi+1}{\varphi+1-(1-\gamma)(1-\alpha)(1-\Phi)\frac{{\color{red}N^{S}/N}}{{\color{red}C^{S}/C}}}\xi
 \end{align*}
 
 \end_inset
@@ -1648,7 +1702,7 @@ Let:
 Type S Household:
 \begin_inset Formula 
 \begin{align*}
-mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+{\color{red}\kappa^{S}}(1-\Phi)(1-\alpha)\frac{1-{\color{red}\lambda^{n}}}{1-{\color{red}\lambda^{c}}}n^{S}_{t}\\
+mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+{\color{red}\kappa^{S}}(1-\Phi)(1-\alpha)\frac{{\color{red}N^{S}/N}}{{\color{red}C^{S}/C}}n^{S}_{t}\\
 r_{t} & :=r^{N}_{t}-E_{t}\pi_{t+1}\\
  & =mu^{S}_{t}-\mathbb{E}_{t}\left[mu^{S}_{t+1}\right]\\
 w_{t} & =\gamma c^{S}_{t}+\varphi n^{S}_{t}
@@ -1663,7 +1717,7 @@ w_{t} & =\gamma c^{S}_{t}+\varphi n^{S}_{t}
 Type H Household:
 \begin_inset Formula 
 \begin{align*}
-{\color{red}\lambda^{c}}c^{H}_{t} & =(1-\alpha)(1-\Phi){\color{red}\lambda^{n}}(w_{t}+n^{H}_{t})+\tau^{D}d_{t}\\
+\lambda{\color{red}\frac{C^{H}}{C}}c^{H}_{t} & =(1-\alpha)(1-\Phi)\lambda{\color{red}\frac{N^{H}}{N}}(w_{t}+n^{H}_{t})+\tau^{D}d_{t}\\
 w_{t} & =\gamma c^{H}_{t}+\varphi n^{H}_{t}
 \end{align*}
 
@@ -1696,8 +1750,8 @@ d_{t} & =\Phi y_{t}-(1-\alpha)(1-\Phi)w_{t}
 Market Clearing Conditions
 \begin_inset Formula 
 \begin{align*}
-c_{t} & ={\color{red}\lambda^{c}}c^{H}_{t}+(1-{\color{red}\lambda^{c}})c^{S}_{t}\\
-n_{t} & ={\color{red}\lambda^{n}}n^{H}_{t}+(1-{\color{red}\lambda^{n}})n^{S}_{t}\\
+c_{t} & =\lambda{\color{red}\frac{C^{H}}{C}}c^{H}_{t}+(1-\lambda){\color{red}\frac{C^{S}}{C}}c^{S}_{t}\\
+n_{t} & =\lambda{\color{red}\frac{N^{H}}{N}}n^{H}_{t}+(1-\lambda){\color{red}\frac{N^{S}}{N}}n^{S}_{t}\\
 y_{t} & =c_{t}=(1-\alpha)n_{t}
 \end{align*}
 
@@ -1775,11 +1829,7 @@ allowframebreaks
 status open
 
 \begin_layout Plain Layout
-Solution with given 
-\begin_inset Formula $y_{t}$
-\end_inset
-
-
+Lump-sum Transfer model
 \end_layout
 
 \end_inset
@@ -1802,24 +1852,6 @@ Efficient & Linear economy (
 \end_layout
 
 \begin_layout Itemize
-また、
-\begin_inset Formula $\tau=\lambda$
-\end_inset
-
-の時、
-\begin_inset Formula $C^{H}=C^{S}=C$
-\end_inset
-
-,
- 
-\begin_inset Formula $N^{H}=N^{S}=N$
-\end_inset
-
-となる。
-
-\end_layout
-
-\begin_layout Itemize
 \begin_inset Formula $\tau\neq\lambda$
 \end_inset
 
@@ -1836,6 +1868,59 @@ Efficient & Linear economy (
 
 \end_layout
 
+\begin_layout Itemize
+補完性:
+\begin_inset Formula 
+\begin{align*}
+\kappa^{S} & =\frac{\varphi+1}{\varphi+1-(1-\gamma)(1-\alpha)(1-\Phi)}\xi
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\kappa^{S}$
+\end_inset
+
+,
+ increasing with 
+\begin_inset Formula $\varphi$
+\end_inset
+
+,
+ decreasing with 
+\begin_inset Formula $\gamma$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\Phi$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+concavity condition:
+\begin_inset Formula 
+\[
+\kappa^{S}\geq-\gamma\varphi\left(\varphi+(1-\alpha)(1-\Phi)\gamma\right)^{-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 この時、
 \begin_inset Formula $y_{t}$
@@ -1863,6 +1948,37 @@ c^{S}_{t} & =\left(1-\frac{\lambda\tilde{\varphi}}{1-\lambda}\right)y_{t}\\
 \end_layout
 
 \begin_layout Itemize
+\begin_inset Formula $\tilde{\varphi}=0$
+\end_inset
+
+ with 
+\begin_inset Formula $\lambda=\tau$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tilde{\varphi}$
+\end_inset
+
+,
+ decreasing in 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ as long as 
+\begin_inset Formula $\lambda>\tau$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
 \begin_inset Formula $\tilde{\varphi}>0$
 \end_inset
 
@@ -1878,17 +1994,6 @@ c^{S}_{t} & =\left(1-\frac{\lambda\tilde{\varphi}}{1-\lambda}\right)y_{t}\\
 \end_inset
 
 
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\lambda=\tau$
-\end_inset
-
-の時、
-\begin_inset Formula $\tilde{\varphi}=0$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Itemize
@@ -1916,6 +2021,26 @@ n^{S}_{t} & =\left(\frac{1}{1-\alpha}+\frac{\lambda\tilde{\gamma}}{1-\lambda}\ri
 \tilde{\gamma} & =\gamma(1-\tau/\lambda)\frac{(1-\Phi)(\varphi+(1-\alpha)\gamma)-\Phi}{\varphi+(1-\Phi)(1-\alpha)\gamma}
 \end{align*}
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tilde{\gamma}$
+\end_inset
+
+,
+ decreasing in 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ as long as 
+\begin_inset Formula $\lambda>\tau$
 \end_inset
 
 
@@ -1960,10 +2085,12 @@ Others:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
+c_{t} & =y_{t}\\
+n_{t} & =(1/(1-\alpha))y_{t}\\
 w_{t} & =(\gamma+\varphi/(1-\alpha))y_{t}\\
+mc_{t} & =\{\gamma+(\varphi+\alpha)/(1-\alpha)\}y_{t}\\
 d_{t} & =[\Phi-(1-\Phi)\{(1-\alpha)\gamma+\varphi\}]y_{t}\\
-y_{t} & =c_{t}=(1-\alpha)n_{t}\\
-\pi_{t} & =(1-\Phi)(\psi/\eta)\{\gamma+(\varphi+\alpha)/(1-\alpha)\}y_{t}+\beta E_{t}\pi_{t+1}\\
+\pi_{t} & =(\psi/\eta)(1-\Phi)\{\gamma+(\varphi+\alpha)/(1-\alpha)\}y_{t}+\beta E_{t}\pi_{t+1}\\
  & =\Psi y_{t}+\beta E_{t}\pi_{t+1}\\
 mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+\kappa^{S}(1-\alpha)(1-\Phi)n^{S}_{t}\\
 r_{t} & =mu^{S}_{t}-\mathbb{E}_{t}\left[mu^{S}_{t+1}\right]\\
@@ -2192,6 +2319,22 @@ where
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Gamma$
+\end_inset
+
+,
+ increasing in 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ 
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -2251,7 +2394,11 @@ NK IS Equation:
 \begin_inset Formula $\lambda=0$
 \end_inset
 
- (RANK):
+ (RANK) or 
+\begin_inset Formula $\tau=\lambda$
+\end_inset
+
+:
 \begin_inset Formula 
 \[
 \Gamma=\gamma+\kappa^{S}\Phi
@@ -2270,7 +2417,7 @@ NK IS Equation:
 \begin_inset Formula 
 \begin{align*}
 \Gamma & =\gamma\left(1-\frac{\lambda}{1-\lambda}\tilde{\varphi}\right)\\
- & =\gamma\left(1-\frac{(\lambda-\tau)\varphi}{1-\lambda}\frac{(1-\Phi)\{\varphi+(1-\alpha)\gamma\}-\Phi}{(1-\Phi)(\varphi+(1-\alpha)\gamma)+\Phi\varphi}\right)
+ & =\gamma\left(1-\frac{(\lambda-\tau)\varphi}{1-\lambda}\frac{(1-\Phi)\{\varphi+(1-\alpha)\gamma\}-\Phi}{\varphi+(1-\Phi)(1-\alpha)\gamma}\right)
 \end{align*}
 
 \end_inset
@@ -2295,14 +2442,13 @@ NK IS Equation:
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\Phi=\alpha=0$
+\begin_inset Formula $\Phi=0$
 \end_inset
 
- (efficient & linear economy):
+ (efficient economy):
 \begin_inset Formula 
 \begin{align*}
-\Gamma & =\gamma-\frac{(\lambda-\tau)\varphi}{1-\lambda}\left\{ \gamma+\kappa^{S}\frac{(\varphi+\gamma)}{\varphi}\right\} \\
- & =\gamma-\frac{(\lambda-\tau)\varphi}{1-\lambda}\left\{ \gamma+\xi\frac{(\varphi+1)}{\varphi}\right\} 
+\Gamma & =\gamma-\frac{\lambda-\tau}{1-\lambda}\left\{ \gamma\varphi+\kappa^{S}(\varphi+(1-\alpha)\gamma)\right\} 
 \end{align*}
 
 \end_inset
@@ -2311,14 +2457,14 @@ NK IS Equation:
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\Phi=0$
+\begin_inset Formula $\Phi=\alpha=0$
 \end_inset
 
- (efficient economy):
+ (efficient & linear economy):
 \begin_inset Formula 
 \begin{align*}
-\Gamma & =\gamma-\frac{\lambda-\tau}{1-\lambda}\left\{ \gamma\varphi+\kappa^{S}(\varphi+(1-\alpha)\gamma)\right\} \\
- & =\gamma-\frac{(\lambda-\tau)\varphi}{1-\lambda}\left\{ \gamma+\frac{\xi(\varphi+1)(\varphi+(1-\alpha)\gamma)}{\varphi\{\varphi+(1-\alpha)\gamma+\alpha\}}\right\} 
+\Gamma & =\gamma-\frac{(\lambda-\tau)\varphi}{1-\lambda}\left\{ \gamma+\kappa^{S}\frac{(\varphi+\gamma)}{\varphi}\right\} \\
+ & =\gamma-\frac{(\lambda-\tau)\varphi}{1-\lambda}\left\{ \gamma+\xi\frac{(\varphi+1)}{\varphi}\right\} 
 \end{align*}
 
 \end_inset
@@ -2390,6 +2536,24 @@ GE-EIS (General Equilibrium EIS):
 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Gamma^{-1}$
+\end_inset
+
+,
+ decreasing in 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 GE-EIS is positive iff 
 \begin_inset Formula $\lambda<\lambda^{+}$
@@ -2398,7 +2562,7 @@ GE-EIS is positive iff
  where
 \begin_inset Formula 
 \begin{align*}
-\lambda^{+}= & \tau+\frac{(1-\tau)(\gamma+\kappa^{S}\Phi)}{(1-\Phi)(\varphi+\gamma(1-\alpha))\left\{ \frac{\gamma(\varphi+1)}{\varphi+(1-\Phi)(1-\alpha)\gamma}+\kappa^{S}\right\} }
+\lambda^{+}= & \tau+\frac{(1-\tau)(\gamma+\kappa^{S}\Phi)}{(1-\Phi)(\varphi+\gamma(1-\alpha))\left\{ \kappa^{S}+\frac{\gamma(\varphi+1)}{\varphi+(1-\Phi)(1-\alpha)\gamma}\right\} }
 \end{align*}
 
 \end_inset
@@ -2442,21 +2606,6 @@ decreasing in
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\Phi=\alpha=0$
-\end_inset
-
- (efficient & linear economy):
-\begin_inset Formula 
-\begin{align*}
-\lambda^{+} & =\tau+\frac{(1-\tau)\gamma}{\gamma(\varphi+1)+\xi(\varphi+1)}
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
 \begin_inset Formula $\Phi=0$
 \end_inset
 
@@ -2471,29 +2620,40 @@ decreasing in
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-GE-EIS is decreasing in 
-\begin_inset Formula $\kappa^{S}$
+\begin_inset Formula $\Phi=\alpha=0$
 \end_inset
 
- in the case with RANK (
-\begin_inset Formula $\lambda=0$
+ (efficient & linear economy):
+\begin_inset Formula 
+\begin{align*}
+\lambda^{+} & =\tau+\frac{(1-\tau)\gamma}{(\gamma+\xi)(\varphi+1)}
+\end{align*}
+
 \end_inset
 
-).
+
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 GE-EIS is increasing in 
 \begin_inset Formula $\kappa^{S}$
 \end_inset
 
  iff 
+\begin_inset Formula 
+\[
+(\lambda-\tau)\left\{ (1-\Phi)(\varphi+(1-\alpha)\gamma)-\Phi\right\} >(1-\lambda)\Phi
+\]
+
+\end_inset
+
+or 
 \begin_inset Formula $\lambda>\lambda^{\xi}$
 \end_inset
 
-
+ where
 \begin_inset Formula 
 \begin{align*}
 \lambda^{\xi} & =\tau+\frac{\Phi(1-\tau)}{(1-\Phi)\{\varphi+\gamma(1-\alpha)\gamma\}}
@@ -2505,6 +2665,22 @@ GE-EIS is increasing in
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+GE-EIS is decreasing in 
+\begin_inset Formula $\kappa^{S}$
+\end_inset
+
+ in the case with RANK (
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+) with 
+\begin_inset Formula $\Phi>0$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Itemize
 \begin_inset Formula $\gamma=0$
 \end_inset
@@ -2680,6 +2856,13 @@ status open
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Phi=0$
+\end_inset
+
+を仮定
+\end_layout
+
 \begin_layout Itemize
 RANK（ 
 \begin_inset Formula $\lambda=0$
@@ -2868,7 +3051,7 @@ TANK Multiplier with Non-separable preference
 Three-equation TANK:
 \begin_inset Formula 
 \begin{align*}
-r_{t} & =mu^{S}_{t}-\mathbb{E}_{t}\left[mu^{S}_{t+1}\right]=-\Gamma\left(y_{t}-\mathbb{E}_{t}\left[y_{t+1}\right]\right)\\
+r_{t} & =-\Gamma\left(y_{t}-\mathbb{E}_{t}\left[y_{t+1}\right]\right)\\
 \pi_{t} & =\Psi y_{t}+\beta E_{t}\pi_{t+1}\\
 r_{t} & =\phi\pi_{t}-E_{t}\pi_{t+1}-m_{t}
 \end{align*}
@@ -2954,7 +3137,7 @@ NK AD-AS Analysis with
 
 \begin_deeper
 \begin_layout Itemize
-\begin_inset Formula $\phi>1$
+\begin_inset Formula $\phi>\rho$
 \end_inset
 
  なら、価格硬直性のもとの乗数効果:
@@ -3049,9 +3232,9 @@ mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+\kappa^{S}(1-\alpha)(1-\Phi)(C/C^{S}
 n_{t} & =\lambda^{n}n^{H}_{t}+(1-\lambda^{n})n^{S}_{t}\\
 w_{t} & =\gamma c^{H}_{t}+\varphi n^{H}_{t}\\
 w_{t} & =\gamma c^{S}_{t}+\varphi n^{S}_{t}\\
-\lambda^{c}c^{H}_{t} & =(1-\alpha)(1-\Phi)\lambda^{n}(w_{t}+n^{H}_{t})+\tau^{D}d_{t}\\
-mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+\kappa^{S}(1-\alpha)(1-\Phi)\frac{1-\lambda^{n}}{1-\lambda^{c}}n_{t}\\
-\kappa^{S} & =\frac{\varphi+1}{\varphi+1-(1-\gamma)(1-\alpha)(1-\Phi)\frac{1-\lambda^{n}}{1-\lambda^{c}}}\xi
+(C^{H}/C)\lambda c^{H}_{t} & =(1-\alpha)(1-\Phi)(C^{S}/C)\lambda(w_{t}+n^{H}_{t})+\tau^{D}d_{t}\\
+mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+\kappa^{S}(1-\alpha)(1-\Phi)\frac{N^{S}/N}{C^{S}/C}n_{t}\\
+\kappa^{S} & =\frac{\varphi+1}{\varphi+1-(1-\gamma)(1-\alpha)(1-\Phi)\frac{N^{S}/N}{C^{S}/C}}\xi
 \end{align*}
 
 \end_inset
@@ -3066,12 +3249,34 @@ mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+\kappa^{S}(1-\alpha)(1-\Phi)\frac{1-
 
 \begin_deeper
 \begin_layout Itemize
-\begin_inset Formula $C^{H}/C=\frac{(\lambda-\tau^{D})(1-\alpha)MC+\tau^{D}}{\lambda}$
+\begin_inset Formula $\tau=\lambda$
+\end_inset
+
+,
+ 
+\begin_inset Formula $C^{S}=C=C^{H}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C^{H}/C=\frac{(\lambda-\tau^{D})(1-\alpha)(1-\Phi)+\tau^{D}}{\lambda}$
 \end_inset
 
 ,
  decreasing with 
 \begin_inset Formula $\lambda$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\Phi$
 \end_inset
 
 
@@ -3092,7 +3297,7 @@ mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+\kappa^{S}(1-\alpha)(1-\Phi)\frac{1-
 \uwave off
 \noun off
 \color none
-\begin_inset Formula $C^{S}/C=\frac{1-\tau^{D}-(\lambda-\tau^{D})(1-\alpha)MC}{1-\lambda}$
+\begin_inset Formula $C^{S}/C=\frac{1-\tau^{D}-(\lambda-\tau^{D})(1-\alpha)(1-\Phi)}{1-\lambda}$
 \end_inset
 
 ,
@@ -3114,6 +3319,16 @@ increasing with
 \begin_inset Formula $\lambda$
 \end_inset
 
+,
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\Phi$
+\end_inset
+
 
 \end_layout
 
@@ -3122,59 +3337,34 @@ increasing with
 \end_inset
 
 ,
+ increasing with 
+\begin_inset Formula $\varphi$
+\end_inset
+
+,
  decreasing with 
 \begin_inset Formula $\lambda$
 \end_inset
 
+,
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\Phi$
+\end_inset
+
 
 \end_layout
 
 \end_deeper
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 3
-status collapsed
-
-\begin_layout Plain Layout
-allowframebreaks
-\end_layout
-
-\end_inset
-
-
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Solution with given 
-\begin_inset Formula $y_{t}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
 \begin_layout Itemize
 \begin_inset Formula $y_{t}$
 \end_inset
 
 が所与のもと以下のように解ける
-\end_layout
-
-\begin_layout Itemize
-Consumption:
 \end_layout
 
 \begin_deeper
@@ -3199,6 +3389,10 @@ where
 \end_layout
 
 \begin_layout Itemize
+\begin_inset Formula $\tau>\lambda\Leftrightarrow$
+\end_inset
+
+
 \begin_inset Formula $C^{H}>C>C^{S}$
 \end_inset
 
@@ -3215,6 +3409,10 @@ where
 \end_layout
 
 \begin_layout Itemize
+\begin_inset Formula $\tau<\lambda\Leftrightarrow$
+\end_inset
+
+
 \begin_inset Formula $C^{H}<C<C^{S}$
 \end_inset
 
@@ -3246,6 +3444,28 @@ where
 \end_layout
 
 \end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+不平等指標
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 不平等指標
 \begin_inset Formula 
@@ -3261,11 +3481,11 @@ c^{S}_{t}-c^{H}_{t} & =\frac{C(C^{H}-C^{S})}{C^{H}C^{S}}y_{t}\\
 
 \begin_deeper
 \begin_layout Itemize
-\begin_inset Formula $C^{H}<C<C^{S}$
+\begin_inset Formula $\tau<\lambda\Leftrightarrow$
 \end_inset
 
-かつ
-\begin_inset Formula $(\lambda-\tau)[(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi]\geq0$
+
+\begin_inset Formula $C^{H}<C<C^{S}$
 \end_inset
 
 の時、反循環的
@@ -3279,11 +3499,7 @@ c^{S}_{t}-c^{H}_{t} & =\frac{C(C^{H}-C^{S})}{C^{H}C^{S}}y_{t}\\
 \begin_inset Formula $C=C^{H}=C^{S}$
 \end_inset
 
-となり、
-\begin_inset Formula $c^{S}_{t}-c^{H}_{t}=0$
-\end_inset
-
-
+となり、独立
 \end_layout
 
 \begin_layout Itemize
@@ -3339,7 +3555,7 @@ NK IS Curve
 Marginal Utility:
 \begin_inset Formula 
 \begin{align*}
-mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+\kappa^{S}(1-\alpha)(1-\Phi)\frac{Y}{C^{S}}n_{t}\\
+mu^{S}_{t} & =-(\gamma+\kappa^{S})c^{S}_{t}+\kappa^{S}(1-\alpha)(1-\Phi)\frac{C}{C^{S}}n_{t}\\
  & =-(\gamma+\kappa^{S})c^{S}_{t}+\kappa^{S}(1-\Phi)\frac{C}{C^{S}}y_{t}\\
  & :=-\Upsilon y_{t}
 \end{align*}
@@ -3463,14 +3679,13 @@ r_{t} & =mu^{S}_{t}-\mathbb{E}_{t}\left[mu^{S}_{t+1}\right]=-\Upsilon\left(y_{t}
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\Phi=\alpha=0$
+\begin_inset Formula $\Phi=0$
 \end_inset
 
- (efficient & linear economy):
+ (efficient economy):
 \begin_inset Formula 
 \begin{align*}
-\Upsilon & =\frac{C}{C^{S}}\left\{ \gamma-\frac{\lambda}{1-\lambda}(\varphi+\gamma)(\gamma+\kappa^{S})\right\} \\
- & =\frac{C}{C^{S}}\left\{ \gamma-\frac{(\lambda-\tau)}{1-\lambda}\left\{ \gamma(\varphi+\gamma)+\xi(\varphi+1)\right\} \right\} 
+\Upsilon & =\frac{C}{C^{S}}\left\{ \gamma-\frac{\lambda}{1-\lambda}(\gamma(1-\alpha)+\varphi)(\gamma+\kappa^{S})\right\} 
 \end{align*}
 
 \end_inset
@@ -3479,13 +3694,14 @@ r_{t} & =mu^{S}_{t}-\mathbb{E}_{t}\left[mu^{S}_{t+1}\right]=-\Upsilon\left(y_{t}
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\Phi=0$
+\begin_inset Formula $\Phi=\alpha=0$
 \end_inset
 
- (efficient economy):
+ (efficient & linear economy):
 \begin_inset Formula 
 \begin{align*}
-\Upsilon & =\frac{C}{C^{S}}\left\{ \gamma-\frac{\lambda}{1-\lambda}(\gamma(1-\alpha)+\varphi)(\gamma+\kappa^{S})\right\} 
+\Upsilon & =\frac{C}{C^{S}}\left\{ \gamma-\frac{\lambda}{1-\lambda}(\varphi+\gamma)(\gamma+\kappa^{S})\right\} \\
+ & =\frac{C}{C^{S}}\left\{ \gamma-\frac{(\lambda-\tau)}{1-\lambda}\left\{ \gamma(\varphi+\gamma)+\xi(\varphi+1)\right\} \right\} 
 \end{align*}
 
 \end_inset
@@ -3584,7 +3800,7 @@ GE-EIS is positive iff
  where
 \begin_inset Formula 
 \begin{align*}
-\lambda^{+}= & \frac{\gamma+\kappa^{S}\Phi+(\gamma+\kappa^{S})\tau\left[(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi\right]}{\gamma+\kappa^{S}\Phi+(\gamma+\kappa^{S})\left[(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi\right]}
+\lambda^{+} & =\tau+\frac{(1-\tau)(\gamma+\kappa^{S}\Phi)}{(1-\Phi)\{\gamma+(\gamma+\kappa^{S})(\gamma(1-\alpha)+\varphi)\}}
 \end{align*}
 
 \end_inset
@@ -3600,8 +3816,7 @@ GE-EIS is positive iff
  (CRRA preferences):
 \begin_inset Formula 
 \begin{align*}
-\lambda^{+} & =\frac{1+\tau\left[(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi\right]}{1+(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi}\\
- & =\tau+\frac{1-\tau}{1+(1-\Phi)(\gamma(1-\alpha)+\varphi)-\Phi}
+\lambda^{+} & =\tau+\frac{1-\tau}{(1-\Phi)(1+\varphi+\gamma(1-\alpha))}
 \end{align*}
 
 \end_inset
@@ -3616,24 +3831,7 @@ GE-EIS is positive iff
  (GHH preferences):
 \begin_inset Formula 
 \begin{align*}
-\lambda^{+}= & \frac{\Phi+\tau\left[(1-\Phi)\varphi-\Phi\right]}{\Phi+\left[(1-\Phi)\varphi-\Phi\right]}\\
-= & \tau+\frac{\Phi(1-\tau)}{\varphi(1-\Phi)}
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\Phi=\alpha=0$
-\end_inset
-
- (efficient & linear economy):
-\begin_inset Formula 
-\begin{align*}
-\lambda^{+} & =\frac{\gamma+(\gamma+\kappa^{S})\tau(\gamma+\varphi)}{\gamma+(\gamma+\kappa^{S})(\gamma+\varphi)}\\
- & =\tau+\frac{(1-\tau)\gamma}{\gamma(\varphi+\gamma+1)+\xi(\varphi+1)}
+\lambda^{+}= & \tau+\frac{\Phi(1-\tau)}{\varphi(1-\Phi)}
 \end{align*}
 
 \end_inset
@@ -3648,8 +3846,22 @@ GE-EIS is positive iff
  (efficient economy):
 \begin_inset Formula 
 \begin{align*}
-\lambda^{+} & =\frac{\gamma+(\gamma+\kappa^{S})\tau\left[(\gamma(1-\alpha)+\varphi)\right]}{\gamma+(\gamma+\kappa^{S})\left[(\gamma(1-\alpha)+\varphi)\right]}\\
-= & \tau+\frac{(1-\tau)\gamma}{\gamma+(\gamma+\kappa^{S})\left[(\gamma(1-\alpha)+\varphi)\right]}
+\lambda^{+} & =\tau+\frac{(1-\tau)\gamma}{\gamma+(\gamma+\kappa^{S})\left[(\gamma(1-\alpha)+\varphi)\right]}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Phi=\alpha=0$
+\end_inset
+
+ (efficient & linear economy):
+\begin_inset Formula 
+\begin{align*}
+\lambda^{+} & =\tau+\frac{(1-\tau)\gamma}{\gamma^{2}+(\gamma+\xi)(\varphi+1)}
 \end{align*}
 
 \end_inset
@@ -3658,18 +3870,6 @@ GE-EIS is positive iff
 \end_layout
 
 \end_deeper
-\begin_layout Itemize
-GE-EIS is decreasing in 
-\begin_inset Formula $\kappa^{S}$
-\end_inset
-
- in the case with RANK (
-\begin_inset Formula $\lambda=0$
-\end_inset
-
-).
-\end_layout
-
 \begin_layout Itemize
 GE-EIS is increasing in 
 \begin_inset Formula $\kappa^{S}$
@@ -3700,7 +3900,7 @@ GE-EIS is increasing in
  if 
 \begin_inset Formula 
 \[
-(\lambda-\tau)\left\{ (1-\Phi)(\varphi+(1-\alpha)\gamma)-\Phi\right\} >(1-\lambda)\Phi
+(\lambda-\tau)\left\{ (1-\Phi)(\varphi+(1-\alpha)\gamma)-\Phi\right\} >0
 \]
 
 \end_inset
@@ -3709,6 +3909,10 @@ GE-EIS is increasing in
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+前のモデルと同じ
+\end_layout
+
 \begin_layout Itemize
 \begin_inset Formula $\lambda$
 \end_inset
@@ -3721,18 +3925,781 @@ GE-EIS is increasing in
 \begin_inset Formula $\kappa^{S}$
 \end_inset
 
-が減少するため、必要十分条件でない。
+が減少する、必要十分条件
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Numerical Analysis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+ 
+\backslash
+frame{
+\backslash
+tableofcontents[currentsection]}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+数値例
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\gamma=1$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\varphi=1$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\xi=0.5$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\tau=0.2$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\lambda=0.4$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\alpha=\{0,\;0.3\}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\Phi=\{0,\;0.2\}$
+\end_inset
+
 
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\lambda=\lambda^{c}$
+定常状態:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="8">
+<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<row color="default">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+param.
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Base Model
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Labor Union Model
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\alpha$
 \end_inset
 
-なら前のモデルと同じで必要十分条件に
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Phi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C^{H}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C^{S}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C^{H}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C^{S}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.935
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.855
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.955
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.935
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.794
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.970
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.946
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.895
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.959
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.946
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.851
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.969
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.897
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.776
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.928
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.896
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.699
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.945
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\lambda^{+}$
+\end_inset
+
+ (Lump-sum Transfer model)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename figure2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\lambda^{+}$
+\end_inset
+
+ (Labor Union model)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename figure3.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IRF (model comparison)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename figure4.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IRF (model comparison)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename figure5.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IRF (Base model)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename figure7.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+IRF (Base model)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename figure8.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -3788,37 +4755,21 @@ RANKモデルでは非分離型効用関数は重要でないが、TANKモデル
 
 \begin_deeper
 \begin_layout Itemize
-歪みのない経済でもDynamic Euler-IS Curve の形状（GE-EIS）が変化する。
-
+その日暮らしの消費者の割合が再配分割合より高い時、不平等指標が反循環的に
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-不平等指標が反循環的のとき、補完的なほど乗数効果は大きくなる
+歪みのない経済では、不平等指標が反循環的のとき、補完的なほど、乗数効果は大きくなる
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-New Keynesian Cross (新45度分析) でのMPC（限界消費性向）が変化する
+不平等指標が反循環的のとき、その日暮らしの消費者の割合が大きいほど、乗数効果は大きくなる
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-不平等指標が反循環的のとき、補完的なほどMPCは大きくなる
+その日暮らしの消費者の割合が大きすぎると効果が反転する可能性があるが、その閾値は補完的なほど小さくなる
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-最適金融政策での目的関数の形状が変化する。
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-不平等指標が大きく、補完的なほどインフレより産出量を重視する
-\end_layout
-
-\end_deeper
 \end_deeper
 \end_deeper
 \begin_layout Standard
@@ -3852,23 +4803,7 @@ Applying this non-separable utility into:
 
 \begin_deeper
 \begin_layout Itemize
-THANK (Tractable HANK) Model (Bilbiie,
- 2021)
-\end_layout
-
-\begin_layout Itemize
-THRANK (Three-agent NK) Model (Eskelinen,
- 2021)
-\end_layout
-
-\begin_layout Itemize
-The Four Equation New Keynesian Model (Sims & Wu,
- 2021)
-\end_layout
-
-\begin_layout Itemize
-Epstein-Zin type DSGE Model (Rudebusch & Swanson,
- 2012)
+Sticky wage model
 \end_layout
 
 \end_deeper

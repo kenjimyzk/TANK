@@ -4,7 +4,7 @@
 // 2つの家計タイプ: Saver (リカード型) と Hand-to-Mouth (流動性制約)
 // =========================================================================
 
-var D W N N_H N_S MC C C_H C_S Y R_N R PI m a c n d w;
+var D W N N_H N_S MC C C_H C_S Y R_N R PI m a c n d w gap;
 varexo eps_a eps_m;
 
 parameters P_beta P_gamma_0 P_gamma_c P_gamma_n P_phi
@@ -20,10 +20,10 @@ P_gamma_n = 1.0;        // フリッシュ弾力性の逆数
 P_alpha   = 0.0;        // 生産における労働シェア (資本なしケース)
 P_eta     = 1.0;        // 価格調整コストのスケール
 P_psi     = 5.0;        // マークアップ弾力性 (カルボ型)
-P_lambda  = 0.25;       // Hand-to-Mouth 家計のシェア
+P_lambda  = 0.4;       // Hand-to-Mouth 家計のシェア
 P_tau_s = 1/(1-1/P_psi)-1; // 定常状態補助金ゼロの売上税率
 //P_tau_s   = 0.0;        // 売上税率
-P_tau_d   = 0.25;        // 配当税率
+P_tau_d   = 0.2;        // 配当税率
 
 // -------------------------------------------------------------------------
 // 政策パラメータ
@@ -94,6 +94,7 @@ c = log(C / steady_state(C));
 n = log(N / steady_state(N));
 w = log(W / steady_state(W));
 d = (D -steady_state(D))/ steady_state(Y);
+gap = log(C_S / C_H);
 end;
 
 // =========================================================================
@@ -133,5 +134,4 @@ check;
 
 // パラメータと定常状態をテキストファイルに保存
 save_params_and_steady_state('TANK_model1_steady2.txt');
-
-//stoch_simul(order=1, irf=20) c n d w gap;
+//
