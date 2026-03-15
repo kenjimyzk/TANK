@@ -50,6 +50,7 @@ yline(tau, '--', '\lambda=\tau', 'LabelHorizontalAlignment', 'left');
 xline(0, '--', '\xi=0', 'LabelHorizontalAlignment', 'left');
 legend('\alpha=0.3,\Phi=0.2', '\alpha=0,\Phi=0', '\alpha=0,\Phi=0.2', '\alpha=0.3,\Phi=0', ...
   'Location', 'best');
+saveas(gcf,'figure3.png')
 
 function kappa = calc_kappa(xi, varphi, Phi, alpha, gamma)
 denom = (1 + varphi) + (1 - Phi) * (1 - alpha) * (gamma - 1);

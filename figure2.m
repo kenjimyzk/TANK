@@ -39,13 +39,12 @@ lambda2 = calc_lambda(kappa2, gamma, varphi, Phi2, alpha2, tau);
 lambda3 = calc_lambda(kappa3, gamma, varphi, Phi3, alpha3, tau);
 lambda4 = calc_lambda(kappa4, gamma, varphi, Phi4, alpha4, tau);
 
-% plot
+% plot (styled like figure3)
 figure;
-plot(xi, lambda2, '-', 'LineWidth', 1.5);
-hold on;
-plot(xi, lambda3, '--', 'LineWidth', 1.5);
+plot(xi, lambda, '-', 'LineWidth', 1.5); hold on;
+plot(xi, lambda2, '--', 'LineWidth', 1.5);
+plot(xi, lambda3, ':', 'LineWidth', 1.5);
 plot(xi, lambda4, '-.', 'LineWidth', 1.5);
-plot(xi, lambda, ':', 'LineWidth', 1.5);
 xlabel('\xi');
 ylabel('\lambda');
 grid on;
@@ -53,7 +52,8 @@ xlim([xi_min xi_max]);
 ylim([0 1]);
 yline(tau, '--', '\lambda=\tau', 'LabelHorizontalAlignment', 'left');
 xline(0, '--', '\xi=0', 'LabelHorizontalAlignment', 'left');
-legend(make_legend_labels(cases), 'Location', 'best');
+legend('\alpha=0.3,\Phi=0.2', '\alpha=0,\Phi=0', '\alpha=0,\Phi=0.2', '\alpha=0.3,\Phi=0', 'Location', 'best');
+saveas(gcf,'figure2.png')
 
 function kappa = calc_kappa(xi, varphi, Phi, alpha, gamma)
 denom = (1 + varphi) + (1 - Phi) * (1 - alpha) * (gamma - 1);
@@ -69,16 +69,4 @@ lambda = (gamma + kappa_s .* Phi + tau .* (1 - Phi_tilde) .* common_term) ./ ...
   (gamma + kappa_s .* Phi + (1 - Phi_tilde) .* common_term);
 end
 
-function labels = make_legend_labels(cases)
-labels = arrayfun(@(c) make_case_label(c), cases, 'UniformOutput', false);
-end
-
-function label = make_case_label(case_params)
-if strcmp(case_params.name, 'benchmark')
-  prefix = 'benchmark';
-else
-  prefix = 'case';
-end
-label = sprintf('%s (\\alpha=%.2g,\\Phi=%.2g)', ...
-  prefix, case_params.alpha, case_params.Phi);
-end
+% (helper functions retained above)
