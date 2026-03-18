@@ -845,7 +845,7 @@ status open
 \end_inset
 
 :
- 労働分配率
+ 所得分配率
 \end_layout
 
 \begin_layout Itemize
@@ -1590,16 +1590,12 @@ status open
 
 \begin_inset Formula 
 \begin{align*}
-R^{N}_{t} & =\frac{\exp(-m_{t})}{\beta}\Pi^{\phi}_{t},\;\phi>1\\
+R^{N}_{t} & =\frac{\exp(-m_{t})}{\beta}\mathbb{E}_{t}\Pi^{\phi}_{t+1},\;\phi>1\\
 m_{t} & =\rho m_{t-1}+e^{m}_{t},\;0<\rho<1,
 \end{align*}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Itemize
 
 \end_layout
 

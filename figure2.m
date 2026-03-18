@@ -41,10 +41,10 @@ lambda4 = calc_lambda(kappa4, gamma, varphi, Phi4, alpha4, tau);
 
 % plot (styled like figure3)
 figure;
-plot(xi, lambda, '-', 'LineWidth', 1.5); hold on;
-plot(xi, lambda2, '--', 'LineWidth', 1.5);
-plot(xi, lambda3, ':', 'LineWidth', 1.5);
-plot(xi, lambda4, '-.', 'LineWidth', 1.5);
+plot(xi, lambda2, '-', 'LineWidth', 1.5); hold on;
+plot(xi, lambda3, '--', 'LineWidth', 1.5);
+plot(xi, lambda4, ':', 'LineWidth', 1.5);
+plot(xi, lambda, '-.', 'LineWidth', 1.5);
 xlabel('\xi');
 ylabel('\lambda');
 grid on;
@@ -52,7 +52,7 @@ xlim([xi_min xi_max]);
 ylim([0 1]);
 yline(tau, '--', '\lambda=\tau', 'LabelHorizontalAlignment', 'left');
 xline(0, '--', '\xi=0', 'LabelHorizontalAlignment', 'left');
-legend('\alpha=0.3,\Phi=0.2', '\alpha=0,\Phi=0', '\alpha=0,\Phi=0.2', '\alpha=0.3,\Phi=0', 'Location', 'best');
+legend('\alpha=0,\Phi=0', '\alpha=0.3,\Phi=0', '\alpha=0,\Phi=0.2', '\alpha=0.3,\Phi=0.2', 'Location', 'best');
 saveas(gcf,'figure2.png')
 
 function kappa = calc_kappa(xi, varphi, Phi, alpha, gamma)

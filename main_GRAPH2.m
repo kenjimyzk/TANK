@@ -7,10 +7,6 @@ clear all
 % y  = oo_.irfs.y_eps_m;
 
 
-dynare TANKC_model3.mod
-y_a  = oo_.irfs.c_eps_m;
-
-
 % t=1:20;
 
 

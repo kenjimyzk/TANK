@@ -43,8 +43,8 @@ switch GRAPH_MODE
 
     figure;
     plot(xi, EIS2, '-', 'LineWidth', 1.5); hold on;
-    plot(xi, EIS3, '--', 'LineWidth', 1.5);
-    plot(xi, EIS4, ':', 'LineWidth', 1.5);
+    plot(xi, EIS4, '--', 'LineWidth', 1.5);
+    plot(xi, EIS3, ':', 'LineWidth', 1.5);
     plot(xi, EIS, '-.', 'LineWidth', 1.5);
     xlabel('\xi');
     ylabel('GE-EIS');
@@ -80,8 +80,8 @@ switch GRAPH_MODE
 
     figure;
     plot(lambda, EIS2, '-', 'LineWidth', 1.5); hold on;
-    plot(lambda, EIS3, '--', 'LineWidth', 1.5);
-    plot(lambda, EIS4, ':', 'LineWidth', 1.5);
+    plot(lambda, EIS4, '--', 'LineWidth', 1.5);
+    plot(lambda, EIS3, ':', 'LineWidth', 1.5);
     plot(lambda, EIS, '-.', 'LineWidth', 1.5);
     xlabel('\lambda');
     ylabel('GE-EIS');
