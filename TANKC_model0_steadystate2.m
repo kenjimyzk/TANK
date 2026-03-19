@@ -16,6 +16,7 @@ MC  = (1 + P_tau_s) * (1 - 1/P_psi);
 R_N = 1 / P_beta;
 R   = R_N;
 m = 0; a = 0; c = 0; n = 0; d = 0; w = 0;
+% KPR (P_gamma=1) のとき N_exp の (P_gamma-1) 項はゼロになる
 N_exp = 1 + P_varphi + (1 - P_alpha) * (P_gamma - 1);
 if abs(N_exp) < 1e-12; check = 1; return; end
 N0    = ((1 - P_alpha) * MC)^(1 / N_exp);
@@ -30,6 +31,7 @@ if ~flag0
     C_S = (C - P_lambda * C_H) / (1 - P_lambda);
     if C_H <= 0 || C_S <= 0; check = 1; return; end
     if abs(P_gamma - 1) < 1e-10
+        % KPR 極限 (γ→1): memo-KPR.qmd 参照
         MU_S = C_S^(-P_xi - 1) * exp(P_xi * N^(1 + P_varphi) / (1 + P_varphi));
     else
         inner = C_S^(1 - P_gamma) + (P_gamma - 1) * N^(1 + P_varphi) / (1 + P_varphi);
@@ -52,10 +54,12 @@ else
     C   = Y;
     D   = Y * (1 - (1 - P_alpha) * MC);
     C_S = (C - P_lambda * C_H) / (1 - P_lambda);
+    % 労働供給条件 W = C_i^P_gamma * N_i^P_varphi から N_i を逆算
     N_H = (W / C_H^P_gamma)^(1 / P_varphi);
     N_S = (W / C_S^P_gamma)^(1 / P_varphi);
     if C_H <= 0 || C_S <= 0 || N_H <= 0 || N_S <= 0; check = 1; return; end
     if abs(P_gamma - 1) < 1e-10
+        % KPR 極限 (γ→1): memo-KPR.qmd 参照
         MU_S = C_S^(-P_xi - 1) * exp(P_xi * N_S^(1 + P_varphi) / (1 + P_varphi));
     else
         inner = C_S^(1 - P_gamma) + (P_gamma - 1) * N_S^(1 + P_varphi) / (1 + P_varphi);
